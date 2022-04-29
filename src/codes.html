@@ -1,0 +1,871 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Short Code</title>
+  <link rel="icon" type="image/x-icon" href="images/favicon.png" />
+  <link rel="stylesheet" href="../Files/style.css" />
+  <link rel="stylesheet" href="../Files/prism.css" />
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+</head>
+
+<body id="darkmode">
+
+<header>
+  <a href="../index.html" class="logo">Code<span>s</span>
+    <img src="../images/code.png" class="white-filter" style="width:2.3rem;height:inherit;"/>
+  </a>
+      <nav class="navbar">
+          <a href="../index.html">Home</a>
+          <a href="HTML.html">HTML</a>
+          <a href="JavaScript.html">JavaScript</a>
+          <a href="#" id="btn-dark">Dark Mode off</a>
+      </nav>
+  
+      <div class="icons">
+          <div id="menu-btn" class="fas fa-bars"></div>
+      </div>
+  </header>
+
+
+
+  <button onclick="topFunction()" id="myBtn" title="Go to top">
+    <i class="fas fa-arrow-circle-up"></i>
+  </button>
+
+  <div class="container">
+
+<div class="heading2">
+  <h3> AdBlocker Script </h3>
+</div>
+    <p><span class="outputh">CSS File</span></p>
+<pre class="language-css "><code class="language-css match-braces" >* {
+  margin: 0;
+  padding: 0;
+}
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: transparent;
+}
+
+@media screen and (min-width: 1024px) {
+    .fixblock::-webkit-scrollbar {
+        -webkit-appearance: none;
+        width: 4px;
+        height: 5px;
+    }
+
+    .fixblock::-webkit-scrollbar-thumb {
+        background-color: rgba(0, 0, 0, 0.15);
+        border-radius: 10px;
+    }
+
+    .fixblock::-webkit-scrollbar-track {
+        background-color: transparent;
+    }
+
+    .fixblock::-webkit-scrollbar-thumb:hover {
+        background-color: rgba(0, 0, 0, 0.25);
+    }
+}
+
+/*! CSS Used from: Embedded */
+#arlinablock {
+    background: rgba(28, 39, 51, 0.67);
+    position: fixed;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    overflow: auto;
+    z-index: 999999;
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+}
+
+#arlinablock .inner {
+    background: #fff;
+    border-radius: 8px;
+    color: #222;
+    box-shadow: 0 0 2rem -1rem rgb(0 0 0 / 50%);
+    text-align: center;
+    width: 100%;
+    max-width: 640px;
+    padding: 30px;
+    margin: 7% auto 2% auto;
+    animation: flipInX 1s;
+}
+
+#arlinablock .inner&gt;.isi&gt;p,
+.fixblock&gt;.active&gt;ol&gt;li {
+    font-size: 18px;
+    color: black;
+    font-weight: 200;
+}
+
+.fixblock&gt;.active&gt;ol {
+    list-style: decimal outside;
+}
+
+.fixblock&gt;.active&gt;ol&gt;li {
+    margin: 0;
+}
+
+.fixblock&gt;.active&gt;ol {
+    counter-reset: li;
+    list-style: none;
+    padding: 0;
+}
+
+#arlinablock .header {
+    margin: 10px 0 20px 0;
+    position: relative;
+    top: initial;
+    left: initial;
+}
+
+#arlinablock .header h2 {
+    color: #222;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+#arlinablock button {
+    position: relative;
+    overflow: hidden;
+    padding: 6px 20px;
+    background: #f5aa33;
+    color: #fff;
+    margin: 20px 5px;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    border: 2px solid #f5aa33;
+    transition: initial;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.01), 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+#arlinablock button:hover {
+    background: #fff;
+    color: #f5aa33;
+    outline: none;
+    border-color: #f5aa33;
+}
+
+#arlinablock .inner&gt;.isi .tombol&gt;button {
+    transition: all 0.3s;
+}
+
+#arlinablock .inner&gt;.isi .tombol&gt;button {
+    -webkit-appearance: button;
+    cursor: pointer;
+    outline: none;
+}
+
+#arlinablock button.active,
+#arlinablock button:hover.active {
+    background: #ee5253;
+    color: #fff;
+    border-color: #ee5253;
+    outline: none;
+}
+
+#arlinablock .fixblock {
+    background: #f7f9f8;
+    text-align: left;
+    color: #000;
+    padding: 20px;
+    height: 250px;
+    overflow: auto;
+    line-height: 30px;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+#arlinablock .fixblock div {
+    display: none;
+}
+
+#arlinablock .fixblock div.active {
+    display: block;
+    animation: fadeInUp 0.5s;
+    background-color: #f7f9f8;
+}
+
+#arlinablock ol {
+    margin-left: 20px;
+}
+
+#arlinablock ol li {
+    margin: 0;
+}
+
+#arlinablock ol li&gt;img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+    border: 0;
+}
+
+#arlinablock button:after,
+#arlinablock button:before {
+    content: &quot;&quot;;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 50%;
+    background: rgba(155, 155, 155, 0.15);
+    background-repeat: no-repeat;
+    transition: all 0.3s;
+}
+
+#arlinablock button:before {
+    height: 0;
+    top: 0;
+    bottom: initial;
+}
+
+#arlinablock button:hover:after {
+    height: 0;
+}
+
+#arlinablock button:hover:before {
+    height: 50%;
+}
+
+@media (max-width: 768px) {
+    #arlinablock .inner {
+        width: calc(100% - 20px);
+        margin: 10px auto;
+        padding: 15px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    #arlinablock .header {
+        max-width: 100%;
+        position: absolute;
+        top: 0;
+        left: 20px;
+        z-index: 1;
+    }
+}
+
+/*! CSS Used keyframes */
+@keyframes flipInX {
+    from {
+        -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+        transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+        opacity: 0;
+    }
+
+    40% {
+        -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+        transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+    }
+
+    60% {
+        -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+        transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+        opacity: 1;
+    }
+
+    80% {
+        -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+        transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+    }
+
+    to {
+        -webkit-transform: perspective(400px);
+        transform: perspective(400px);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 100%, 0);
+        transform: translate3d(0, 100%, 0);
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+
+@media (max-width: 800px) {
+    #arlinablock .header {
+        position: relative;
+    }
+
+    #arlinablock .header h2 {
+        position: relative;
+        top: 0;
+    }
+}
+
+@media (max-width: 400px) {
+    #arlinablock {
+        background: rgba(28, 39, 51, 0.67);
+    }
+
+    #arlinablock .header {
+        position: relative;
+    }
+
+    #arlinablock .header h2 {
+        position: relative;
+        top: 0;
+    }
+
+    #arlinablock .fixblock {
+        height: 300px;
+    }
+}
+
+@media (max-width: 450px) {
+    #arlinablock .header h2 {
+        font-size: 18px;
+        width: 100%;
+        padding: 5px;
+    }
+}</code></pre>
+<p><span class="outputh">JavaScript File</span></p>
+<pre class="language-html "><code class="language-html match-braces" >&lt;script type='text/javascript'&gt;
+//&lt;![CDATA[
+  function downloadJSAtOnload() { var e = document.createElement(&quot;script&quot;); e.src = &quot;https://cdn.jsdelivr.net/gh/Arlina-Design/quasar@master/arlinablock.js&quot;, document.body.appendChild(e) } window.addEventListener ? window.addEventListener(&quot;load&quot;, downloadJSAtOnload, !1) : window.attachEvent ? window.attachEvent(&quot;onload&quot;, downloadJSAtOnload) : window.onload = downloadJSAtOnload;
+//]]&gt;
+&lt;/script&gt;</code></pre>
+
+
+    <h5 class="heading1" style="color: white; background-color: red">MCQS Layout</h5>
+
+    <p><strong>CSS File</strong></p>
+<pre class="language-css"><code class="language-css">/*Accordion Style */
+  .accordion {
+  text-align: center;
+  color: white;
+  font-family: consolas;
+  width: 100%;
+  background-color: red;
+  height: 29px;
+  line-height: 18px;
+  font-size: 20px;
+  cursor: pointer;
+  border: none;
+  margin-top: 4px;
+  font-weight: 600;
+  border-radius: 30px;
+  }
+  .active-color,
+  .accordion:hover {
+  background-color: #130f40;
+  color: white;
+  outline: none;
+  }
+  .panel {
+  margin-top: 12px;
+  display: none;
+  background-color: blue;
+  width: 100%;
+  border-radius: 5px;
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
+  rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
+  rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+  }
+  .panel > p {
+  margin-left: 13px;
+  margin-right: 10px;
+  text-align: justify;
+  font-family: verdana;
+  color: white;
+  font-weight: 550px;
+  }
+  .heading {
+  text-align: center;
+  font-family: verdana;
+  width: 100%;
+  height: auto;
+  line-height: 27px;
+  border: none;
+  border-radius: 8px;
+  box-sizing: border-box;
+  padding: 2px;
+  font-size: 19px !important;
+  }
+  /*color Apply on Background and Font */
+  .blue {
+  color: white !important;
+  background-color: blue;
+  }
+  .green {
+  color: white !important;
+  background-color: green;
+  }
+  .red {
+  color: white !important;
+  background-color: red;
+  }
+  .white {
+  color: black !important;
+  background-color: aliceblue;
+  }
+  .orange {
+  color: white !important;
+  background-color: orange;
+  }
+  /* MCQs CSS Code */
+  .mcqs-ol > .box > li,
+  .mcqs-ol > .box > li,
+  .box > li {
+  font-weight: bold;
+  }
+  .mcqs-ol > .box > li > p,
+  .mcqs-ol > .box > li > p {
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+  }
+  .mcqs-ol > .box > li > a {
+  font-family: arial;
+  line-height: 26px;
+  text-decoration: none;
+  }
+  .mcqs-ol > .box > li {
+  font-family: arial;
+  line-height: 26px;
+  text-decoration: none;
+  }
+  /* Related Post */
+  .Related-Post {
+  width: 100%;
+  background-color: #d63031;
+  color: white;
+  line-height: 35px;
+  height: 35px;
+  border-radius: 30px 0px 30px 0px;
+  font-size: 20px;
+  font-family: verdana;
+  }
+  .Related-Post-head {
+  margin-left: 18px;
+  }
+  /* KeyWord style */
+  .keywords-head {
+  text-align: center;
+  color: white !important;
+  font-family: consolas;
+  width: 100%;
+  background-color: #2c3e50;
+  height: 35px;
+  line-height: 35px;
+  font-size: 20px;
+  }
+  .write-keyword {
+  font-family: "verdana", "consolas", "arial", "cursive";
+  }
+  /* Tag Design */
+  span.tags-label {
+  display: block;
+  height: 28px;
+  font-size: 16px;
+  line-height: 28px;
+  font-weight: bold;
+  box-sizing: border-box;
+  padding: 0 6px;
+  }
+  a.label-link {
+  display: block;
+  height: 28px;
+  background-color: var(--button-bg);
+  color: var(--button-color);
+  font-size: 14px;
+  line-height: 28px;
+  font-weight: 400;
+  box-sizing: border-box;
+  padding: 0 15px;
+  border: 0;
+  border-radius: 8px;
+  text-decoration: none;
+  }
+  a.label-link:hover {
+  background-color: var(--button-hover-bg);
+  color: var(--button-hover-color);
+  }
+  /* For Dark Theme */
+  .txt-color {
+  color: white;
+  }
+  .box {
+  border-radius: 8px;
+  border: 1px solid rgb(218, 220, 224);
+  break-inside: avoid;
+  margin-bottom: 12px;
+  overflow-wrap: break-word;
+  padding: 14px;
+  transition: background-color 200ms cubic-bezier(0, 0, 0.2, 1) 0s;
+  }
+  details > summary {
+  list-style-type: " ";
+  text-align: center;
+  background-color: #f2f2f2;
+  color: black;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 3px;
+  border-radius: 5px;
+  }
+  details[open] > summary {
+  list-style-type: " ";
+  background-color: red;
+  color: white;
+  }
+  details {
+  /*
+  border: 1px solid gray;
+  padding: 0.5rem;
+  */
+  border-radius: 0.2rem;
+  }
+  details[open] > summary {
+  margin-bottom: 0.5rem;
+  }
+  details > summary::before {
+  font-family: "fontawesome";
+  content: "\f06e";
+  margin: 3px;
+  }
+  details[open] > summary::before {
+  font-family: "fontawesome";
+  content: "\f070 ";
+  }
+  details > p {
+  background-color: green;
+  color: white;
+  padding: 4px 5px;
+  margin: 0;
+  }
+  .questions {
+  margin-left: 9px;
+  }
+  /* for mark the code */
+  .markcode {
+  background-color: #2b3233;
+  color: #fff;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  padding: 1px 3px;
+  font-size: 18px;
+  margin: 0 5px;
+  font-family: monospace !important;
+  }
+  </code></pre>  
+  <p><strong>HTML File</strong></p> 
+    <pre class="language-html "><code class="language-html match-braces" >&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+
+&lt;head&gt;
+  &lt;title&gt;&lt;/title&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;meta name=&quot;description&quot; content=&quot;fgf&quot; /&gt;
+  &lt;meta name=&quot;keywords&quot; content=&quot;gf&quot; /&gt;
+  &lt;meta name=&quot;author&quot; content=&quot;Hassan Ali&quot; /&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+&lt;h1 class=&quot;heading blue&quot;&gt;&lt;/h1&gt;
+
+    &lt;ol type=&quot;1&quot; class=&quot;mcqs-ol&quot;&gt;
+
+        &lt;div class=&quot;box&quot;&gt;
+            &lt;li&gt;&lt;/li&gt;
+            &lt;p&gt;
+                (a) &lt;br&gt;
+                (b) &lt;br&gt;
+                (c) &lt;br&gt;
+                (d) &lt;br&gt;
+            &lt;/p&gt;
+            &lt;button class=&quot;accordion&quot;&gt;Answer&lt;/button&gt;
+            &lt;div class=&quot;panel&quot;&gt;
+                &lt;p&gt;&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;box&quot;&gt;
+            &lt;li&gt;&lt;/li&gt;
+            &lt;p&gt;
+                (a) &lt;br&gt;
+                (b) &lt;br&gt;
+                (c) &lt;br&gt;
+                (d) &lt;br&gt;
+            &lt;/p&gt;
+            &lt;button class=&quot;accordion&quot;&gt;Answer&lt;/button&gt;
+            &lt;div class=&quot;panel&quot;&gt;
+                &lt;p&gt;&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;box&quot;&gt;
+            &lt;li&gt;&lt;/li&gt;
+            &lt;p&gt;
+                (a) &lt;br&gt;
+                (b) &lt;br&gt;
+                (c) &lt;br&gt;
+                (d) &lt;br&gt;
+            &lt;/p&gt;
+            &lt;button class=&quot;accordion&quot;&gt;Answer&lt;/button&gt;
+            &lt;div class=&quot;panel&quot;&gt;
+                &lt;p&gt;&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;box&quot;&gt;
+            &lt;li&gt;&lt;/li&gt;
+            &lt;p&gt;
+                (a) &lt;br&gt;
+                (b) &lt;br&gt;
+                (c) &lt;br&gt;
+                (d) &lt;br&gt;
+            &lt;/p&gt;
+            &lt;button class=&quot;accordion&quot;&gt;Answer&lt;/button&gt;
+            &lt;div class=&quot;panel&quot;&gt;
+                &lt;p&gt;&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;box&quot;&gt;
+            &lt;li&gt;&lt;/li&gt;
+            &lt;p&gt;
+                (a) &lt;br&gt;
+                (b) &lt;br&gt;
+                (c) &lt;br&gt;
+                (d) &lt;br&gt;
+            &lt;/p&gt;
+            &lt;button class=&quot;accordion&quot;&gt;Answer&lt;/button&gt;
+            &lt;div class=&quot;panel&quot;&gt;
+                &lt;p&gt;&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;box&quot;&gt;
+            &lt;li&gt;&lt;/li&gt;
+            &lt;p&gt;
+                (a) &lt;br&gt;
+                (b) &lt;br&gt;
+                (c) &lt;br&gt;
+                (d) &lt;br&gt;
+            &lt;/p&gt;
+            &lt;button class=&quot;accordion&quot;&gt;Answer&lt;/button&gt;
+            &lt;div class=&quot;panel&quot;&gt;
+                &lt;p&gt;&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;box&quot;&gt;
+            &lt;li&gt;&lt;/li&gt;
+            &lt;p&gt;
+                (a) &lt;br&gt;
+                (b) &lt;br&gt;
+                (c) &lt;br&gt;
+                (d) &lt;br&gt;
+            &lt;/p&gt;
+            &lt;button class=&quot;accordion&quot;&gt;Answer&lt;/button&gt;
+            &lt;div class=&quot;panel&quot;&gt;
+                &lt;p&gt;&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;box&quot;&gt;
+            &lt;li&gt;&lt;/li&gt;
+            &lt;p&gt;
+                (a) &lt;br&gt;
+                (b) &lt;br&gt;
+                (c) &lt;br&gt;
+                (d) &lt;br&gt;
+            &lt;/p&gt;
+            &lt;button class=&quot;accordion&quot;&gt;Answer&lt;/button&gt;
+            &lt;div class=&quot;panel&quot;&gt;
+                &lt;p&gt;&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;box&quot;&gt;
+            &lt;li&gt;&lt;/li&gt;
+            &lt;p&gt;
+                (a) &lt;br&gt;
+                (b) &lt;br&gt;
+                (c) &lt;br&gt;
+                (d) &lt;br&gt;
+            &lt;/p&gt;
+            &lt;button class=&quot;accordion&quot;&gt;Answer&lt;/button&gt;
+            &lt;div class=&quot;panel&quot;&gt;
+                &lt;p&gt;&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;box&quot;&gt;
+            &lt;li&gt;&lt;/li&gt;
+            &lt;p&gt;
+                (a) &lt;br&gt;
+                (b) &lt;br&gt;
+                (c) &lt;br&gt;
+                (d) &lt;br&gt;
+            &lt;/p&gt;
+            &lt;button class=&quot;accordion&quot;&gt;Answer&lt;/button&gt;
+            &lt;div class=&quot;panel&quot;&gt;
+                &lt;p&gt;&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;box&quot;&gt;
+            &lt;li&gt;&lt;/li&gt;
+            &lt;p&gt;
+                (a) &lt;br&gt;
+                (b) &lt;br&gt;
+                (c) &lt;br&gt;
+                (d) &lt;br&gt;
+            &lt;/p&gt;
+            &lt;button class=&quot;accordion&quot;&gt;Answer&lt;/button&gt;
+            &lt;div class=&quot;panel&quot;&gt;
+                &lt;p&gt;&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;box&quot;&gt;
+            &lt;li&gt;&lt;/li&gt;
+            &lt;p&gt;
+                (a) &lt;br&gt;
+                (b) &lt;br&gt;
+                (c) &lt;br&gt;
+                (d) &lt;br&gt;
+            &lt;/p&gt;
+            &lt;button class=&quot;accordion&quot;&gt;Answer&lt;/button&gt;
+            &lt;div class=&quot;panel&quot;&gt;
+                &lt;p&gt;&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;box&quot;&gt;
+            &lt;li&gt;&lt;/li&gt;
+            &lt;p&gt;
+                (a) &lt;br&gt;
+                (b) &lt;br&gt;
+                (c) &lt;br&gt;
+                (d) &lt;br&gt;
+            &lt;/p&gt;
+            &lt;button class=&quot;accordion&quot;&gt;Answer&lt;/button&gt;
+            &lt;div class=&quot;panel&quot;&gt;
+                &lt;p&gt;&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;box&quot;&gt;
+            &lt;li&gt;&lt;/li&gt;
+            &lt;p&gt;
+                (a) &lt;br&gt;
+                (b) &lt;br&gt;
+                (c) &lt;br&gt;
+                (d) &lt;br&gt;
+            &lt;/p&gt;
+            &lt;button class=&quot;accordion&quot;&gt;Answer&lt;/button&gt;
+            &lt;div class=&quot;panel&quot;&gt;
+                &lt;p&gt;&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+    &lt;/ol&gt;
+
+    &lt;ul class=&quot;mcqs-ul&quot;&gt;&lt;/ul&gt;
+
+    &lt;hr /&gt;
+    &lt;div class=&quot;Related-Post&quot;&gt;
+        &lt;span class=&quot;Related-Post-head&quot;&gt;Related Posts:&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;ul class=&quot;mcqs-ul&quot;&gt;
+        &lt;li&gt;
+            &lt;a href=&quot;#&quot;&gt; &lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;a href=&quot;#&quot;&gt; &lt;/a&gt;
+        &lt;/li&gt;
+        &lt;hr /&gt;
+    &lt;/ul&gt;
+
+    &lt;figure&gt;
+        &lt;figcaption&gt;Fig1. - Trulli, Puglia, Italy.&lt;/figcaption&gt;
+    &lt;/figure&gt;
+
+    &lt;h5 class=&quot;keywords-head&quot;&gt;Keywords&lt;/h5&gt;
+    &lt;p class=&quot;write-keyword&quot;&gt;&lt;/p&gt;
+  
+&lt;body&gt;
+  &lt;/html&gt;</code></pre>
+
+    <!--
+<h5 class="heading1" style="color: white; background-color: red"></h5>
+
+<div class="Short-head">
+   <h3> </h3>
+</div>
+
+<div class="heading2">
+    <h3>  </h3>
+</div>
+<p><code class="markcode"></code></p>
+<pre  class="language-javascript "><code class="language-javascript match-braces" ></code></pre>
+
+
+<pre  class="language-diff-javascript"><code class="language-diff-javascript diff-highlight" >
+
+</code></pre>
+
+
+  <div class="notecard note">
+    <p><strong>Note:</strong> See the <a href="#body">Body</a> section for similar methods to extract other types of body content.</p>
+  </div>
+
+<div class="success size">
+  <p><i class="fas fa-check-circle"></i><strong> </strong></p>
+</div>
+
+
+data-line="2,4"
+<div class="heading2">
+    <h3> Challenge Time <span style="float:right; margin-right:15px;">#01</span></h3>
+</div>
+     -->
+  </div>
+
+  <script src="../Files/prism.js"></script>
+  <script src="../Files/javaScript.js"></script>
+  <script src="https://kit.fontawesome.com/991a8d9f0e.js" crossorigin="anonymous">
+  </script>
+
+</body>
+
+</html>

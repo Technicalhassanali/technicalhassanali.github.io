@@ -1,0 +1,2665 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP CheatSheet</title>
+    <link rel="icon" type="image/x-icon" href="images/javascript-favicon.gif">
+    <link rel="stylesheet" href="../Files/style.css">
+    <link rel="stylesheet" href="../Files/prism.css" />
+    <script src="../Files/prism.js"></script>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+</head>
+
+<body id="darkmode">
+
+    <header>
+        <a href="../index.html" class="logo">P<span>HP</span>
+            <img src="../images/php.png" style="width:2.3rem;height:inherit;"/>
+        </a>
+        <nav class="navbar">
+            <a href="../index.html">Home</a>
+            <a href="HTML.html">HTML</a>
+            <a href="JavaScript.html">JavaScript</a>
+            <a href="php-code.html">PHP</a>
+            <a href="php-crud.html">PHP Crude</a>
+            <a href="#" id="btn-dark">Dark Mode off</a>
+        </nav>
+        </nav>
+    
+        <div class="icons">
+            <div id="menu-btn" class="fas fa-bars"></div>
+        </div>
+    </header>
+
+    <!-- Top Up Button -->
+    <button onclick="topFunction()" id="myBtn" title="Go to top">
+        <i class="fas fa-arrow-circle-up"></i>
+    </button>
+
+    <div class="container">
+
+        <div class="heading2">
+            <h3>What is PHP?</h3>
+        </div>
+        <p>PHP is Server Side Scripting Language(A script is a set of programming instructions that is interpreted at
+            runtime.) .It is used for Static or Dynamic Pages Design in the website.PHP Script is only run on the server
+            side.The client computer Access the PHP Script require on web browser. <br>
+            A PHP File contain PHP Tags and the Extension of the PHP file is <code class="markcode">.php</code>.</p>
+        <div class="success size">
+            <p><i class="fas fa-check-circle"></i> <strong> Note: </strong>PHP is Server Side Scripting Language But the
+                JavaScript is Client Side Scripting Language.Both PHP and JavaScript can be embedded into HTML pages.
+            </p>
+            <p><strong>PHP</strong> mean – Personal Home Page</p>
+        </div>
+        <div class="outputh">Syntax:</div>
+        <pre class="language-php"><code class="language-php">&lt;&quest;php
+        echo &quot;Hello World!&quot;;
+&quest;&gt;</code></pre>
+
+
+        <div class="heading2">
+            <h3>What is xampp?</h3>
+        </div>
+        <p>xampp is open source,cross-plateform web server that consist of web server,mysql database engine, and PHP and
+            Perl Programming Packages. <br>
+            The acronym XAMPP stands for; <br>
+        <ul>
+            <li><strong>X :</strong>[cross platform operating systems] meaning it can run on any OS Mac OX , Windows ,
+                Linux etc.</li>
+            <li><strong>A :</strong>Apache – this is the web server software.</li>
+            <li><strong>M :</strong>MySQL – Database.</li>
+            <li><strong>P :</strong>PHP</li>
+            <li><strong>P :</strong> Perl – scripting language</li>
+        </ul>
+        </p>
+
+        <div class="heading2">
+            <h3>echo &amp; print statement</h3>
+        </div>
+        <p><code class="markcode">echo</code> is more faster then print statement.echo statement is print more then one
+            statement at the time but the print statement only print the one statement at the time.</p>
+        <pre class="language-php"><code class="language-php">&lt;?php
+echo &quot;statement 1 &quot;,&quot;statement 2&quot;;
+echo &quot;Hassan &quot;.&quot;Ali&quot;; //concatination
+echo 335; //Number print
+?&gt;</code></pre>
+        <p><code class="markcode">print</code>is less faster then echo statement.print statement is same work as echo
+            statement but they only print one statement at the time and very slow then echo statement.</p>
+        <pre class="language-php"><code class="language-php">&lt;?php
+    print &quot;Hassan &quot;.&quot;Ali&quot;; //show error
+    print &quot;Hassan Ali&quot;; //No Error
+    print 335; //Number print
+?&gt;</code></pre>
+
+        <div class="heading2">
+            <h3>PHP Comments</h3>
+        </div>
+        <p>Three types of Comments in PHP like single comment,multiline comment.</p>
+        <pre class="language-php"><code class="language-php">// Single line comment
+# Single line comment
+/*
+Multi Line Comment
+*/</code></pre>
+
+        <div class="heading2">
+            <h3>PHP Variables</h3>
+        </div>
+        <p>In PHP declare the variable using sign <code class="markcode">$</code>. <br>
+            Variables in the PHP must declare first doller sign then you can use letter or underscore and not use number
+            first.</p>
+        <pre class="language-php"><code class="language-php">&lt;&quest;php
+        $text = "Hello World!";
+        echo $text;
+&quest;&gt;</code></pre>
+
+        <div class="Short-head">
+            <h3>PHP variable Scope</h3>
+        </div>
+        <p><span class="outputh">How to write a variables Name?</span></p>
+        <pre class="language-php"><code class="language-php">(1) $firstname   (2) $_firstname  (3) $first_name  (4) $first-name
+(5) $firstName   (6) $firstname99</code></pre>
+
+        <p><strong>Note : </strong>php is the case sensitive language.In php the capital letter and small letter are
+            metter.</p>
+        <p>
+        <ul>
+            <li>Local Variable</li>
+            <li>Global Variable</li>
+            <li>Static</li>
+        </ul>
+        </p>
+        <div class="Short-head">
+            <h3>Local Variables</h3>
+        </div>
+        <p><strong>Local Variables</strong>: are those variables whoes access within the function.You cann't access
+            outside the function.</p>
+        <div class="Short-head">
+            <h3>Global Variables</h3>
+        </div>
+        <p><strong>Global Variables</strong>: are those variables whoes access outside the function those variables are
+            declare in the outside the function.</p>
+        <p><code class="markcode">global</code>The global keyword is used to access a global variable from within a
+            function.To do this, use the global keyword before the variables (inside the function)</p>
+        <p>PHP also stores all global variables in an array called <code class="markcode">$GLOBALS[index]</code>.The
+            <u>index</u> is hold the name of the variable.
+        </p>
+        <pre class="language-php"><code class="language-php">&lt;&quest;php
+    $x = 10;
+    $y = 20;
+function ali(){
+    echo $GLOBALS['x']+$GLOBALS['y'];
+}
+ali();
+&quest;&gt;</code></pre>
+
+        <div class="Short-head">
+            <h3>Static Keywords</h3>
+        </div>
+        <p><strong>Static</strong> It is the <b>characteristic of PHP to delete the variable, ones it completes its
+                execution and the memory is freed</b>. But sometimes we need to store the variables even after the
+            completion of function execution. To do this we use static keyword and the variables are then called as
+            static variables.</p>
+        <pre class="language-php"><code class="language-php">&lt;&quest;php
+function myTest() {
+  static $x = 0;
+  echo $x;
+  $x++;
+}
+myTest();
+    echo &quot;&lt;br&gt&gt;&quot;;
+myTest();
+    echo &quot;&lt;br&gt;&quot;;
+myTest();
+&quest;&gt; </code></pre>
+
+        <div class="heading2">
+            <h3>PHP Data Types</h3>
+        </div>
+        <p>String,Number,True/false mean boolean,Alphanumeric characters</p>
+        <pre class="language-php"><code class="language-php">    $x = "Hello World!";           //String
+    $x = 25;                       //Integer
+    $x = 30.50;                    //Float
+    $x = true;                     //Boolean
+    $x = array("HTML","CSS","JS"); //Array
+    $x = new MyClass();            //Object
+    $x = null;                     //Null</code></pre>
+
+        <div class="Short-head">
+            <h3>How to check the variable Data type and value of the variables?</h3>
+        </div>
+        <p><code class="markcode">var_dump();</code> is used to find the variable data type and size of the variables.
+        </p>
+        <pre class="language-php"><code class="language-php">&lt;?php
+    $x = 10;
+    var_dump($x);  //int(10)
+    $y = true;
+    var_dump($y);  //bool(true)
+    $array = array("HTML","CSS","JS");
+    var_dump($array); //return array
+?&gt;</code></pre>
+
+
+        <div class="Short-head">
+            <h3>PHP Constant Variables</h3>
+        </div>
+        <p><code class="markcode">define(name,value,case-insensitive);</code> is used for the constat variables.In first
+            parameter we pass the name of variables then value of the variables assign the last third parameter is
+            case-sensitive.By default last parameter is false,if you write true then variable name make a case
+            sensitive.
+            <br>
+        </p>
+        <p>
+            <b>name:</b> Specifies the name of the constant<br>
+            <b>value:</b> Specifies the value of the constant<br>
+            <b>case-insensitive:</b> Specifies whether the constant name should be case-insensitive. Default is false
+        </p>
+        <p><span class="outputh">Note : </span> Constent Variables are the global variables.</p>
+        <pre class="language-php"><code class="language-php">define("num",500);
+echo num;
+//case-insensitive is same captital or small letter.
+define("Text","Hi Hassan",true);
+echo Text;</code></pre>
+
+
+        <div class="heading2">
+            <h3> PHP Strings Operations
+                <span style="float:right; margin-right:15px;"> Read More Ref &gt;&gt;
+                    <a href="https://www.w3schools.com/php/php_ref_string.asp" target="_blank"><i class="fas fa-link"
+                            style="color:white;" aria-hidden="true"></i></a>
+                </span>
+            </h3>
+        </div>
+
+        <pre class="language-php"><code class="language-php">strlen("Hassan Ali");         // Length of Letter
+str_word_count("Hassan Ali"); // use for world count
+strrev("Hassan");             //Reverse String
+strpos("Hassan Ali","Ali");   //search Text within String 
+/* str_replace(search_string,replace string word,string) */
+str_replace("Hi","Hassan","Hi Ali"); //String Replace</code></pre>
+
+
+        <div class="heading2">
+            <h3>PHP Conditional Statements</h3>
+        </div>
+        <ul>
+            <li>if condition</li>
+            <li>if/else condition</li>
+            <li>switch condition</li>
+        </ul>
+
+        <div class="Short-head">
+            <h3>if condition code</h3>
+        </div>
+        <pre class="language-php"><code class="language-php">if (condition) {
+  code to be executed if condition is true;
+}</code></pre>
+
+        <div class="Short-head">
+            <h3>if else condition code</h3>
+        </div>
+        <pre class="language-php"><code class="language-php">if (condition) {
+  code to be executed if condition is true;
+} else {
+  code to be executed if condition is false;
+}</code></pre>
+
+        <div class="Short-head">
+            <h3>else if condition code</h3>
+        </div>
+        <pre class="language-php"><code class="language-php">if (condition) {
+  code to be executed if this condition is true;
+} elseif (condition) {
+  code to be executed if first condition is false and this condition is true;
+} else {
+  code to be executed if all conditions are false;
+}</code></pre>
+
+        <div class="Short-head">
+            <h3>switch condition code</h3>
+        </div>
+        <pre class="language-php"><code class="language-php">switch (n) {
+  case label1:
+    code to be executed if n=label1;
+    break;
+  case label2:
+    code to be executed if n=label2;
+    break;
+    ...
+  default:
+    code to be executed if n is different from all labels;
+}</code></pre>
+
+        <div class="heading2">
+            <h3>PHP Loops</h3>
+        </div>
+        <p>
+        <ul>
+            <li>while loop</li>
+            <li>do-while loop</li>
+            <li>for loop</li>
+            <li>foreach loop</li>
+            <li>goto statement</li>
+        </ul>
+        </p>
+        <pre class="language-php"><code class="language-php"></code></pre>
+
+
+        <div class="heading2">
+            <h3>goto Statement</h3>
+        </div>
+        <p><code class="markcode">goto</code> statement is used for if the loop is running and we apply the condition in
+            within loop.If the condition is true then loop stop and go to run the label. <br>
+            If the condition not true then code run normal way.</p>
+        <pre class="language-php"><code class="language-php">for($i = 0; $i<=5; $i++){
+    if($i==3){ //condition true then run abc Label
+        goto abc; //Label
+    }
+}
+echo &quot;Before Go to Back&quot;;
+abc:  //run after the condition abc
+echo &quot;This is go to statement&quot;;</code></pre>
+
+
+        <div class="heading2">
+            <h3>Functions</h3>
+        </div>
+        <p><span class="outputh">Syntax:</span></p>
+        <pre class="language-php"><code class="language-php">function functionName() {
+  code to be executed;
+}</code></pre>
+        <p class="strong outputh">Example:</p>
+        <pre class="language-php"><code class="language-php">function hassan(){
+    for($i=0; $i<5; $i++){
+    echo "Hi Hassan";
+    }
+}
+//call function
+hassan();
+                            //Parametrized Functions
+function hassan($x){
+    echo "$x Hassan";
+}
+hassan("Hi");
+                            // Return Functions
+function hassan(){
+    return "Hassan Ali";
+}
+$a = hassan(); //return value store in variable
+echo $a;</code></pre>
+
+        <p><span class="outputh">Variable Functions:</span></p>
+        <pre class="language-php"><code class="language-php">function hassan(){
+    echo "Hassan Ali";
+}
+    //new function = function name 
+    $func = "hassan";
+    $func(); //call functions
+// pass Argument is variables functions
+function hassan($name){
+    echo "$name Ali";
+}//new function = function name 
+$func = "hassan";
+$func("Hassan");</code></pre>
+
+        <div class="heading2">
+            <h3>PHP Anonymous Functions</h3>
+        </div>
+        <p>In this we assign the function in the variable then call the those variable.</p>
+        <pre class="language-php"><code class="language-php">$sayHello = function(){
+    echo "Hassan Ali";
+}; //treat like a variable and assign end semicolon
+$sayHello();
+                //Pass Parameter Anonymous Function
+$sayHello = function($fname){
+    echo "$fname Ali";
+}; 
+$sayHello("Hassan");</code></pre>
+
+        <div class="heading2">
+            <h3>Recursive Functions</h3>
+        </div>
+        <p>A Functions call by itself is called Recursive Function.</p>
+        <pre class="language-php"><code class="language-php">function display($number){
+    if($number &lt;= 5){
+        echo $number,&quot;\n&quot;;
+        display($number +1);//call itself for increment
+    }
+}
+display(1);
+                     // How to Find Factorials of Number?
+function factorial($number){
+    if($number == 0){
+        return 1;
+    }else{
+        return($number * factorial($number-1));
+    }
+}
+$returnfact = factorial(5);
+echo $returnfact;</code></pre>
+
+        <div class="heading2">
+            <h3>Local and Global variables in Functions || global keyword</h3>
+        </div>
+        <p><strong>Local Variables</strong> if we declare the variables within function then the variables is local.we
+            cann't use this variables outside the functions.If we declare those variables outside the function then they
+            are use within function or outside the functions.</p>
+        <p><strong>Global Variables</strong> are those variable whoes access global in file. if you declare the variable
+            as global then two ways; <br>
+            <strong> 01 :</strong> Declare the variable not in function. <br>
+            <strong> 02 :</strong> if you declare the variable in function then used the globally you can used <code
+                class="markcode">global</code> keyword before variable declare.
+        </p>
+        <pre class="language-php"><code class="language-php">function globalFunctions(){
+    global $x, $y;
+    $x = 10;
+    $y = 20;
+    echo "Within Function :",$x+$y;
+}
+globalFunctions();
+echo "\nOutside Function : $y";</code></pre>
+
+
+        <div class="heading2">
+            <h3>PHP Arrays</h3>
+        </div>
+        <p>we used Array to store the string,number,numeric,data in one variable.</p>
+        <p>Three types of Arrays in the PHP;</p>
+        <p>
+            <strong> 01 :</strong> Indexed Array<br>
+            <strong> 02 :</strong> Associative Array<br>
+            <strong> 03 :</strong> Multidimensional Array
+        </p>
+
+        <div class="Short-head">
+            <h3>PHP Indexed Array</h3>
+        </div>
+        <p>In PHP Indexed Array we cann't edit index or change the index number of Array.</p>
+        <p class="outputh">Syntax</p>
+        <pre class="language-php"><code class="language-php">$colors = array("Red","White","Blue","orange","green");
+    //Second way to store data in array
+$colors = ["Red","White","Blue","orange","green"];
+</code></pre>
+        <p><code class="markcode">print_r($variablename);</code> is used for testing purpose to print the array data
+            with index number.</p>
+        <pre class="language-php"><code class="language-php">print_r($colors);</code></pre>
+        <pre class="language-php"><code class="language-php">    // Array Print with Index No.
+for ($i = 0; $i <= 4; $i++) {
+    echo $i . &quot; : &quot; . $colors[$i] . &quot;\n&quot;;
+}
+    // Array Print without Index No
+for($i = 0; $i<=4; $i++){
+    echo $colors[$i]."\n";
+}
+</code></pre>
+
+
+        <div class="Short-head">
+            <h3>Associative Array</h3>
+        </div>
+        <p>General we stored the value in array.In array those value has the index number where the value is stored and
+            default index number start from 0.You can not edit the index number of default array. <br><br>
+            But in Associative Array you can assign the index number(key) on your own and assign the value from those
+            index no.(key).</p>
+        <p><strong class="outputh">Example 01</strong></p>
+        <pre class="language-php"><code class="language-php">$age = array(
+// index Number => value assign to index no.
+    &quot;Peter&quot;=>&quot;35&quot;, 
+    &quot;Ben&quot;  =>&quot;37&quot;, 
+    &quot;Joe&quot;  =>&quot;43&quot;
+);
+echo $age["Peter"]."\n";
+echo $age["Ben"]."\n";
+echo $age["Joe"];</code></pre>
+
+        <p><strong class="outputh">Example 02</strong></p>
+        <pre class="language-php"><code class="language-php">$age = [
+    // index Number => value assign to index no.
+        &quot;Peter&quot;=>&quot;35&quot;, 
+        &quot;Ben&quot;  =>&quot;37&quot;, 
+        &quot;Joe&quot;  =>&quot;43&quot;
+];
+echo $age[&quot;Peter&quot;].&quot;\n&quot;;
+echo $age[&quot;Ben&quot;].&quot;\n&quot;;
+echo $age[&quot;Joe&quot;];</code></pre>
+
+        <p><strong class="outputh">Example 03</strong></p>
+        <pre class="language-php"><code class="language-php">$age = [
+        100=>&quot;35&quot;, 
+        &quot;Ben&quot;  =>&quot;37&quot;, 
+        30  =>&quot;43&quot;
+];
+print_r($age);
+var_dump($age);</code></pre>
+
+
+        <div class="heading2">
+            <h3>PHP Foreach Loop</h3>
+        </div>
+        <p>It is used for print the all values of the given array.In foreach loop it can first get the value of array
+            the print the value of array.</p>
+        <pre class="language-php"><code class="language-php">foreach ($array as $value) {
+  code to be executed;
+}
+</code></pre>
+
+        <p><span class="outputh">Example 01: Print the Indexed Array</span></p>
+        <p>If your print the Indexed Number of the Array element the you can use the key variables.</p>
+        <pre class="language-php"><code class="language-php">$colors = ["Red","White","Blue","orange","green"];
+foreach($colors as $values){
+        echo $values."\n";
+}
+                         Step 02 Print with Indexed Number
+foreach($colors as $keys => $values){
+        echo  $keys." : ".$values."\n";
+}                         
+</code></pre>
+
+        <p><span class="outputh">Example 02 : print the Associative Array</span></p>
+        <pre class="language-php"><code class="language-php">$age = array(
+        &quot;Peter&quot; =>&quot;35&quot;,
+        &quot;Ben&quot;  => &quot;37&quot;,
+        &quot;Joe&quot;  => &quot;43&quot;
+);
+foreach ($age as $key => $values) {
+        echo $key . &quot; : &quot; . $values . &quot;\n&quot;;
+}</code></pre>
+
+        <div class="heading2">
+            <h3>PHP Multidimensional Arrays</h3>
+        </div>
+        <p>Arrays containing one or more arrays.In Multidimensional array we can store the array within Array.The simple
+            concept is that we create first Array then in the every index we have an array present.</p>
+        <span class="outputh">Example :</span>
+        <pre class="language-php"><code class="language-php">$emp = [
+        [1,&quot;Hassan&quot;,&quot;Manager&quot;,50000],
+        [2,&quot;Ali&quot;,&quot;Employee&quot;,38000],
+        [3,&quot;Khan&quot;,&quot;Employee&quot;,38000],
+        [4,&quot;Rind&quot;,&quot;Employee&quot;,38000],
+        [5,&quot;Balouch&quot;,&quot;Employee&quot;,38000],
+];</code></pre>
+
+        <span class="outputh">Print Multidimensional Array</span>
+        <pre class="language-php"><code class="language-php">print_r($emp);</code></pre>
+
+        <span class="outputh">Print Multidimensional Array using Array</span>
+        <pre class="language-php"><code class="language-php">  for($outer = 0; $outer&lt;5; $outer++){
+        for($inner = 0; $inner&lt;4; $inner++){
+                echo $emp[$outer][$inner]." ";
+        }
+        echo "\n";
+}</code></pre>
+
+
+        <p><span class="outputh">Print Indexed Array</span></p>
+        <pre class="language-php"><code class="language-php">foreach ($emp as $outer_value) {
+        foreach ($outer_value as $inner_value) {
+                echo $inner_value . " ";
+        }
+        echo "\n";
+}</code></pre>
+
+
+        <div class="Short-head">
+            <h3>Multidimensional Associative Array</h3>
+        </div>
+        <!-- <p><span class="outputh"></span></p> -->
+        <pre class="language-php"><code class="language-php">$result = [
+        &quot;Hassan&quot; => [
+                &quot;chemistry&quot; => 40,
+                &quot;urdu&quot;      => 50,
+                &quot;Islamiyat&quot; => 60,
+        ],
+        &quot;Ali&quot; => [
+                &quot;chemistry&quot; => 70,
+                &quot;urdu&quot;      => 80,
+                &quot;Islamiyat&quot; => 90,
+        ],
+        &quot;Faheem&quot; => [
+                &quot;chemistry&quot; => 100,
+                &quot;urdu&quot;      => 110,
+                &quot;Islamiyat&quot; => 120,
+        ],
+        &quot;Akbar&quot; => [
+                &quot;chemistry&quot; => 130,
+                &quot;urdu&quot;      => 140,
+                &quot;Islamiyat&quot; => 150,
+        ]
+];</code></pre>
+
+        <p><span class="outputh">Print Multidimensional Associative Array</span></p>
+        <pre class="language-php"><code class="language-php">foreach ($result as $key =&gt; $values) {
+        echo $key.&quot; &quot;;                 
+        foreach ($values as $inner) {
+                echo $inner.&quot; &quot;;
+        }
+        echo &quot;\n&quot;;
+}</code></pre>
+
+
+        <div class="heading2">
+            <h3>foreach Loop with list()</h3>
+        </div>
+        <p><code class="markcode">list()</code> In this method we pass the variables name then those variable name get
+            the value from the array index by index.</p>
+        <pre class="language-php"><code class="language-php">    foreach($emp as list($id,$name,$post,$salary)){
+        echo &quot;$id $name $post $salary \n&quot;;
+}
+</code></pre>
+
+        <p><span class="outputh">Print Multidimenstional Associative Array using list( )</span></p>
+        <pre class="language-php"><code class="language-php">$emp = [
+        [
+                &quot;id&quot;     => 1,
+                &quot;name&quot;   => &quot;Hassan&quot;,
+                &quot;post&quot;   => &quot;Manager&quot;,
+                &quot;Salary&quot; => 30000,
+        ], [
+                &quot;id&quot;     => 2,
+                &quot;name&quot;   => &quot;Ali&quot;,
+                &quot;post&quot;   => &quot;Intern&quot;,
+                &quot;Salary&quot; => 10000,
+
+        ], [
+                &quot;id&quot;     => 3,
+                &quot;name&quot;   => &quot;Faheem&quot;,
+                &quot;post&quot;   => &quot;Manager&quot;,
+                &quot;Salary&quot; => 30000,
+
+        ], [
+                &quot;id&quot; => 4,
+                &quot;name&quot;   => &quot;Akbar&quot;,
+                &quot;post&quot;   => &quot;Manager&quot;,
+                &quot;Salary&quot; => 30000,
+
+        ]
+
+];
+
+
+foreach ($emp as list(&quot;id&quot; =&gt; $id, &quot;name&quot; =&gt; $name, &quot;post&quot; =&gt; $post, 
+&quot;Salary&quot; =&gt; $salary)) {
+        echo &quot;$id $name $post $salary \n&quot;;
+}</code></pre>
+
+
+        <div class="heading2">
+            <h3>PHP Array Functions</h3>
+        </div>
+        <pre class="language-php"><code class="language-php line-numbers">count(); or sizeof();                   // Array Length
+array_count_values();                   //Array element repeat check
+in_Array() and array_search()           //Used for Search In Array
+array_replace() &amp; array_replace_reursive()
+Array_pop() &amp; Array_push()
+array_merge() &amp; array_combine() &amp; array_merge_recursive();
+_________________________________________________________________________________
+// ------------------- PHP Array Key Functions --------
+array_keys();            // return all the key of array
+array_key_first();       // return the first key of array
+array_key_last();        // return the last key of array        
+array_key_exits();       // check in array key is exits or not
+keys_exit();             // same work like array_key_exits();
+_________________________________________________________________________________
+//------------------PHP Intersect Functions --------
+array_intersect();         
+array_intersect_key();     
+array_intersect_assoc();   
+array_intersect_uassoc();
+array_intersect_ukey();
+array_uintersect();
+array_uintersect_assoc():
+array_uintersect_uassoc():
+_________________________________________________________________________________
+//----------------Array Diff and undiff -----------
+
+array_diff();          // Return Different Value in Both Array
+array_diff_key();      // Return Different Keys in Both Array
+array_diff_assoc();    // Return Different value and Keys of Both Array
+array_diff_iassoc();   // In this method the function parameter is pass
+array_diff_ukey();     // 
+array_udiff_assoc();   //
+array_udiff_uassoc();  //
+array_udiff();
+
+array_values();        
+array_unique(); 
+array_flip();
+array_change_key_case();
+array_sum();
+array_product(); 
+array_walk();      
+array_walk_recursive(); 
+array_replace();     
+array_replace_recursive();   
+array_map();
+array_reduce();
+
+array_rand();      //Used for random number select in array
+suffle();          //return the suffle index of array
+                  
+                    // Array Sorting Functions
+_________________________________________________________________________________
+sort();               // Sorting Array in Acending     
+rsort();              // Reverse Sort Array in Decending
+asort();              // Associative values Sort       
+arsort();             // Associative Reverse Order Sort        
+ksort();              // Key Sorting (Accending Order) Sort
+krsort();             // Key Reverse (Decending Order) Sort
+natsort();            // Natural Order Sort
+natcasesort();        // Case Sensitive Order
+array_multisort();    // Sort one or more arrays
+array_reverse();      // Reverse the Array
+_________________________________________________________________________________
+//--------------------Array Traversing Functions-------------------
+next();               // Move the pointer in next position    
+prev();               // Move the pointer in previous index no
+end();                // Move the pointer End of Array
+reset();              // Move the Pointer in first index
+each();               //remove in php 8.0.0
+current();            // current value of pointer
+pos();                // same as current()
+key();                // return the key of current position of array
+_________________________________________________________________________________
+list();               // array values are assign to variables
+extract();            // array to variables conversion
+compact();            // variable value and name convert to asscociative array
+range();              // create the elemenent in array within given range
+explode();            // seprate string and convert into array
+implode();            // join array elements</code></pre>
+
+        <div class="heading2">
+            <h3>count() and sizeof()</h3>
+        </div>
+        <p>Both Function are used to check the size of the Arrays.</p>
+        <pre class="language-php"><code class="language-php">$emp = [&quot;Hassan&quot;,&quot;Ali&quot;,&quot;khan&quot;,&quot;Rin&quot;",&quot;Balouch&quot;];
+echo count($emp);
+echo sizeof($emp);</code></pre>
+
+
+        <div class="heading2">
+            <h3>array_count_values()</h3>
+        </div>
+        <p><code class="markcode">array_count_values()</code> function is return the index element(value) and it tell
+            that how much time they repeat the element in the array.</p>
+        <pre class="language-php"><code class="language-php">$emp = [&quot;Hassan&quot;,&quot;Ali&quot;,&quot;khan&quot;,&quot;Rind&quot;,&quot;Hassan&quot;];
+print_r(array_count_values($emp));</code></pre>
+
+
+        <div class="heading2">
+            <h3>in_Array() and array_search() </h3>
+        </div>
+
+        <pre
+            class="language-php"><code class="language-php">$emp = [&quot;Hassan&quot;, &quot;Ali&quot;, &quot;khan&quot;, &quot;Rind&quot;, &quot;Hassan&quot;];</code></pre>
+        <p>Basically,three parameter are used in <code class="markcode">in_Array</code>, and <code
+                class="markcode">array_search()</code>. <br>
+            <strong>First Parameter</strong> is used for the search element in the array.<br>
+            <strong>Second Parameter</strong> is used for the name of searching array.<br>
+            <strong>Third parameter</strong> is not compulsory but the it is strict mode true or false.If you write true
+            then if you search in the array element then the array element and search element data type(string,number)
+            are matched.if not matched then it return false.
+        </p>
+
+        <p><code class="markcode">in_Array()</code> is used to for search in array.In in_Array(); it return two result 1
+            or 0. 1 mean true or 0 mean false.</p>
+        <pre class="language-php"><code class="language-php">echo in_array(&quot;Hassan&quot;, $emp);
+echo in_array(&quot;Hassan&quot;, $emp,true/false);</code></pre>
+
+        <p><code class="markcode">array_search()</code>is used for search in the array.It return the index of the
+            indexed array, and if the array is multidimensional then they return the key of the Array.</p>
+        <pre class="language-php"><code class="language-php">echo array_search(&quot;Hassan&quot;, $emp);
+echo array_search(&quot;Hassan&quot;, $emp,true/false);</code></pre>
+
+        <div class="heading2">
+            <h3>Array_pop() &amp; Array_push()</h3>
+        </div>
+        <p><code class="markcode">array_pop();</code>remove the last element in the array.</p>
+        <pre class="language-php"><code class="language-php">array_pop(array);</code></pre>
+
+        <p><code class="markcode">array_push();</code>inserts one or more elements to the end of an array.</p>
+        <pre class="language-php"><code class="language-php">array_push(array, value1, value2, ...);</code></pre>
+
+        <div class="heading2">
+            <h3>array_shift() &amp; array_unshift()</h3>
+        </div>
+        <p><code class="markcode">array_shift()</code>function removes the first element from an array, and returns the
+            value of the removed element.</p>
+        <pre class="language-php"><code class="language-php">$emp = [&quot;Hassa&quot;", &quot;Ali&quot;, &quot;khan&quot;, &quot;Rind&quot;];
+array_shift($emp);
+print_r($emp);</code></pre>
+
+        <p><code class="markcode">array_unshift()</code>function inserts new elements to an array. The new array values
+            will be inserted in the beginning of the array.</p>
+        <pre class="language-php"><code class="language-php">array_unshift($emp,&quot;xyz&quot;);
+print_r($emp);</code></pre>
+
+        <div class="heading2">
+            <h3>array_merge() &amp; array_combine() &amp; array_merge_recursive();</h3>
+        </div>
+        <p>These function are used for the combine of two or more arrays and make the third array that combine array.
+        </p>
+        <p><code class="markcode">array_merge()</code>It is used for index or Associative Array.</p>
+        <pre class="language-php"><code class="language-php">$name = [&quot;Hassan&quot;, &quot;Ali&quot;, &quot;khan&quot;];
+$age = [&quot;18&quot;];
+$color = [&quot;green&quot;,&quot;red&quot;,&quot;blue&quot;];
+$combine = array_merge($name,$age,$color);
+print_r($combine);</code></pre>
+
+        <p><code class="markcode">array_combine()</code>It is used in only Indexed Array.Array_combine() is combine two
+            array but the elements of the two array are same and it make the first array as the key and second array
+            make the key of value.</p>
+        <pre class="language-php"><code class="language-php">$first_name = array("Hassan");
+$last_name = array("Ali");
+$combine = array_combine($first_name,$last_name);
+print_r($combine);</code></pre>
+
+        <p><code class="markcode">array_merge_recursive()</code>It is used for Multidimensional Array.If the two array
+            has the some element key is match then it make the new array box associate.</p>
+        <pre class="language-php"><code class="language-php">$name = [
+    &quot;a&quot; => &quot;Hassan&quot;,
+    &quot;b&quot; => &quot;Ali&quot;,
+    &quot;c&quot; => &quot;khan&quot;
+];
+$age = [
+    &quot;age&quot; => &quot;18&quot;
+];
+$combine = array_merge_recursive($name, $age,);
+print_r($combine);</code></pre>
+
+
+        <div class="heading2">
+            <h3>array_slice() &amp; array_splice()</h3>
+        </div>
+        <p><code class="markcode">array_slice()</code>method is used to show the specific part of the string.In this
+            Start index with 0 of string, and String display with start number and end number not print of index
+            value.method returns a shallow copy of a portion of an array into a new array object selected from start to
+            end (end not included) where start and end represent the index of items in that array. The original array
+            will not be modified.</p>
+        <pre class="language-php"><code class="language-php">array_slice(array,start,length);
+Example : -
+$colors = ["green","red","blue","white","orange"];
+$getElement = array_slice($colors,1,3);
+print_r($getElement);</code></pre>
+
+        <p><code class="markcode">array_splice()</code>method changes the contents of an array by removing or replacing
+            existing elements and/or adding new elements in place. To access part of an array without modifying it.</p>
+        <pre class="language-php"><code class="language-php">splice(start)
+splice(start, deleteCount)
+splice(start, deleteCount, item1)
+splice(start, deleteCount, item1, item2, itemN)</code></pre>
+
+
+        <div class="heading2">
+            <h3>PHP Array Key Functions</h3>
+        </div>
+        <br>
+        <pre class="language-php"><code class="language-php">$colors = [
+    &quot;first&quot;  => &quot;green&quot;,
+    &quot;second&quot; => &quot;red&quot;,
+    &quot;third&quot;  => &quot;blue&quot;,
+    &quot;fourth&quot; => &quot;white&quot;,
+    &quot;last&quot;   => &quot;orange&quot;
+];</code></pre>
+        <p><code class="markcode">array_keys()</code> is used for get the all keys of the arrays.</p>
+        <pre class="language-php"><code class="language-php">print_r(array_keys($colors));</code></pre>
+
+        <p><code class="markcode">array_key_first()</code> is used for get the first element keys of the arrays.</p>
+        <pre class="language-php"><code class="language-php">print_r(array_key_first($colors));</code></pre>
+
+        <p><code class="markcode">array_key_last()</code> is used for get the last element keys of the arrays.</p>
+        <pre class="language-php"><code class="language-php">print_r(array_key_last($colors));</code></pre>
+
+        <p><code class="markcode">array_key_exits(); &am; key_exits()</code> is used for check the following key exits
+            or not in array.If the key found then they return 0(true) and otherwiser return false. <br>
+            Same <code class="markcode">key_exits()</code> working is same as array_key_exits().</p>
+        <pre class="language-php"><code class="language-php">print_r(array_key_exists("first", $colors));
+print_r(key_exists("first", $colors));</code></pre>
+
+        <div class="heading1" style="background-color: red;color:white;">
+            <h3> PHP Intersect Functions</h3>
+        </div>
+
+        <div class="heading2">
+            <h3>PHP Intersect Functions</h3>
+        </div>
+        <p>Intersect mean is the common things get from two or more arrays. <br>
+            All the intersect functions is make a new Array and store a value.</p>
+        </p>
+        <p><strong class="outputh">Example :</strong></p>
+        <pre class="language-php"><code class="language-php">$a = [&quot;a&quot;=>&quot;Hassan&quot;,&quot;b&quot;=>&quot;Ali&quot;,&quot;c&quot;=>&quot;khan&quot;];
+$b = [&quot;a&quot;=>&quot;Hassan&quot;,&quot;b&quot;=>&quot;faheem&quot;,&quot;c&quot;=>&quot;Muhammad&quot;];
+$c = [&quot;x&quot; =>&quot;xy&quot;,&quot;y&quot; =>&quot;yz&quot;,&quot;a&quot; =>&quot;Hassan&quot;];</code></pre>
+
+        <div class="heading2">
+            <h3>array_intersect();</h3>
+        </div>
+        <p><code class="markcode">array_intersect();</code> is the case-sensitive function.It mean that it is used for
+            search the common values between two arrays if the Both array letter are same but one is capital an other is
+            not capital then they not return the common value. <br>
+            You can add unlimited array for intersect method.</p>
+        <pre class="language-php"><code class="language-php">//Syntax : array_intersect(array,array,...);
+$newArray = array_intersect($a,$b);
+print_r($newArray);</code></pre>
+
+
+        <div class="heading2">
+            <h3>array_intersect_key(); </h3>
+        </div>
+        <p><code class="markcode">array_intersect_key();</code> is used for the find the key of the intersect value.</p>
+        <pre class="language-php"><code class="language-php">$newArray = array_intersect_key($a,$b,$c);
+print_r($newArray);</code></pre>
+
+
+        <div class="heading2">
+            <h3>array_intersect_assoc();</h3>
+        </div>
+        <p><code class="markcode">array_intersect_assoc();</code> is used for the find the intersect of values and keys
+            that are common and return the new array of intersect key and value.</p>
+        <pre class="language-php"><code class="language-php">$newArray = array_intersect_assoc($a,$b);
+print_r($newArray);</code></pre>
+
+        <div class="heading1" style="background-color: red;color:white;">
+            <h3> PHP Array diff and udiff</h3>
+        </div>
+        <div class="heading2">
+            <h3>PHP Array Diff &amp; udiff Functions</h3>
+        </div>
+        <p><code class="markcode">diff &amp; udiff</code> functions are used for the difference between two or more
+            arrays.</p>
+
+        <p class="outputh">Example Using in Blow</p>
+        <pre class="language-php"><code class="language-php">    $a = [
+    &quot;a&quot; => &quot;Hassan&quot;,
+    &quot;b&quot; => &quot;Ali&quot;,
+    &quot;c&quot; => &quot;Khan&quot;,
+    &quot;d&quot; => &quot;Hassan&quot;
+];</code></pre>
+
+        <div class="heading2">
+            <h3>array_values();</h3>
+        </div>
+        <p><code class="markcode">array_values();</code> is working on Associative Array, and it return the values and
+            make the new indexed Array. <br>
+            The main benefit of array_values() is to get the value of associative array and make the indexed array.</p>
+        <pre class="language-php"><code class="language-php">$newArray = array_values($a);
+print_r($newArray);</code></pre>
+
+        <div class="heading2">
+            <h3>array_unique();</h3>
+        </div>
+        <p><code class="markcode">array_unique();</code> function is removes duplicate values from an array. If two or
+            more array values are the same, the first appearance will be kept and the other will be removed.</p>
+        <pre class="language-php"><code class="language-php">$newArray = array_unique($a);
+print_r($newArray);</code></pre>
+
+        <div class="heading2">
+            <h3>array_flip();</h3>
+        </div>
+        <p><code class="markcode">array_flip();</code> function is used to exchange the keys with their associated
+            values in an array. The function returns an array in flip order, i.e. keys from array become values and
+            values from array become keys. Note: The values of the array need to be valid keys, i.e. they need to be
+            either integer or string.</p>
+        <pre class="language-php"><code class="language-php">$newArray = array_flip($a);
+print_r($newArray);</code></pre>
+
+
+        <div class="heading2">
+            <h3>array_change_key_case(); </h3>
+        </div>
+        <p><code class="markcode">array_change_key_case();</code> function is an inbuilt function in PHP and is used to
+            change case of all of the keys in a given array either to lower case or upper case. ... CASE_UPPER value
+            determines the uppercase and CASE_LOWER determines lowercase.</p>
+        <pre class="language-php"><code class="language-php">    case  :- CASE_UPPER/CASE_LOWER
+    Syntax : - array_change_key_case(arrayname,case);  
+_________________________________________________________
+$newArray = array_change_key_case($a,CASE_UPPER);
+print_r($newArray);</code></pre>
+
+
+        <div class="heading2">
+            <h3>array_sum();</h3>
+        </div>
+        <p><code class="markcode">array_sum();</code>returns the sum of all the values in the array.It work with Integer
+            and float value only.</p>
+        <pre class="language-php"><code class="language-php">$a = [10,11,12,13,14];
+// $a = [1.5,2.4,3.8];
+$sum = array_sum($a);
+echo $sum;</code></pre>
+
+
+        <div class="heading2">
+            <h3>array_product(); </h3>
+        </div>
+        <p><code class="markcode">array_product();</code> is return the product of all values in the Arrays.</p>
+        <pre class="language-php"><code class="language-php">$a = [2,4,3,5];
+// $a = [1.5,2.4,3.8];
+$Product = array_product($a);
+echo $Product = array_product($a);</code></pre>
+
+        <div class="heading2">
+            <h3>array_walk();</h3>
+        </div>
+        <p><code class="markcode">array_walk();</code> function is used to run the user defined function for each values
+            in the array.This function is accept three type of parameters; one parameter is arrayname second parameter
+            is the user function name and third parameter is the optional.If you pass the external value in the function
+            then you can used the 3rd parameter. <br>
+            <span><strong>Note: </strong> array_walk(); function is used in indexed or associative array.It can not work
+                in multidimensional arrays.</span>
+        </p>
+        <pre class="language-php"><code class="language-php">Syntax :- 
+array_walk(arrayName,"functionName","parameter pass in function");
+code : -
+    $fruits = [
+    &quot;a&quot; => &quot;Lemon&quot;,
+    &quot;b&quot; => &quot;Orange&quot;,
+    &quot;c&quot; => &quot;Banana&quot;,
+    &quot;d&quot; => &quot;Apple&quot;
+];
+array_walk($fruits,&quot;myFunction&quot;);
+//$value parameter get the value of array
+//$key parameter is get the key of array
+function myFunction($value,$key){
+    echo "$key : $value \n";
+}
+______________________________________________________________
+
+array_walk($fruits,&quot;myFunction&quot;,"Hassan Ali");
+function myFunction($value,$key,$para){
+    echo &quot;$key : $value $para  \n&quot;;
+}</code></pre>
+
+        <div class="heading2">
+            <h3>array_walk_recursive(); </h3>
+        </div>
+        <p><code class="markcode">array_walk_recursive();</code>is used for multidimensional arrays.It work same as
+            array_walk();.</p>
+        <pre class="language-php"><code class="language-php">array_walk_recursive($result,"myFunction");
+function myFunction($values,$key){
+    echo "$key : $values  \n";
+}</code></pre>
+
+        <div class="heading2">
+            <h3>array_replace();</h3>
+        </div>
+        <p><code class="markcode">array_replace();</code> function is used for the indexed array,Associative array.It
+            doesn't effect the target array.It can replace the value and create the new array.You can add the multiple
+            array and replace the values.But the first array is the target array.</p>
+        <pre class="language-php"><code class="language-php">//Syntax :- array_replace(1st array,2nd array,3rd array....);
+$fruit = array(&quot;orange&quot;,&quot;banana&quot;,&quot;apple&quot;,&quot;grapes&quot;);
+$vagie = array(&quot;carrot&quot;,&quot;pea&quot;);
+$newArray = array_replace($fruit,$vagie);
+print_r($newArray);</code></pre>
+
+        <div class="heading2">
+            <h3>array_replace_recursive();</h3>
+        </div>
+        <p><code class="markcode">array_replace_recursive();</code> is used for the multidimensional array to replace
+            the value in arrays.</p>
+        <!-- <pre class="language-php"><code class="language-php"></code></pre>
+ -->
+        <div class="heading2">
+            <h3>array_map();</h3>
+        </div>
+        <p><code class="markcode">array_map();</code>function is used to print the every value of array in the
+            function.One is array_map();.is same array_walk(); but they have two difference.one is the array_map()
+            function can return the new array.The get the value of exisiting array and after change apply in the
+            function they return the new array.Second Difference is that we can take the multiple arrays in the
+            functions.
+        </p>
+
+        <p><strong>Syntax : </strong>
+            <code class="markcode">array_map(function,$array1,$array2..);</code>
+        </p>
+        <pre class="language-php"><code class="language-php">function squre($n){
+    return $n * $n;
+}
+$number = [1,2,3,4,5,6,7];
+$newArray = array_map('squre',$number);
+print_r($newArray);
+             //   ----2 Array Example----
+/*
+name array value assign in function parameter name.
+*/
+function squre($n,$name){
+    return &quot;$n = $name&quot;;
+}
+$number = [1,2,3,4];
+$name = [&quot;lemon&quot;,&quot;orange&quot;,&quot;banana&quot;,&quot;Apple&quot;];
+$newArray = array_map('squre',$number,$name);
+print_r($newArray);
+</code></pre>
+
+        <div class="heading2">
+            <h3>array_reduce();</h3>
+        </div>
+        <p><code class="markcode">array_reduce();</code>Iteratively reduce the array to a single value using a callback
+            function.array_reduce(); is get three parameter one is array name , second function name,third is
+            initial(optional value that is external value outside the array pass) point. <br>
+            Mostly array_reduce(); is used to pass the array in function and return only one value as string,integer
+            etc.</p>
+        <p><strong>Syntax : </strong><code class="markcode">array_reduce(array,function,initial);</code></p>
+
+        <pre class="language-php"><code class="language-php">/*
+$n parameter is first empty then Hiphen print
+.Basically array_reduce() return the string
+array.
+*/
+function reduceFunction($n,$m){
+    return $n.&quot;-&quot;.$m;
+}
+$a = [&quot;Apple&quot;,&quot;Banana&quot;,&quot;Orange&quot;];
+$newArray = array_reduce($a,'reduceFunction');
+print_r($newArray);
+                    // Initial Parameter
+// initial value concat with array string start
+function reduceFunction($n,$m){
+    return $n.&quot;-&quot;.$m;
+}
+$a = [&quot;Apple&quot;,&quot;Banana&quot;,&quot;Orange&quot;];
+$newArray = array_reduce($a,'reduceFunction',&quot;Lemon&quot;);
+print_r($newArray);
+                    //Addition of Array
+function reduceFunction($n,$m){
+    return $n+$m;
+}
+$a = [1,2,3,4,5,6,7,8,9,10];
+$newArray = array_reduce($a,'reduceFunction');
+print_r($newArray);</code></pre>
+
+        <div class="heading2">
+            <h3>array_rand(); &amp; suffle();</h3>
+        </div>
+        <p><code class="markcode">array_rand();</code> is return the random number(index) of the array.It accept two
+            parameter one parameter is the array name and second parameter is the how much random value you can get.</p>
+        <pre class="language-php"><code class="language-php">//Syntax : array_rand($arrayName,Number);
+$color = [&quot;red&quot;,&quot;green&quot;,&quot;blue&quot;,&quot;white&quot;,&quot;orange&quot;]; //array
+$randomIndex = array_rand($color,2); //return 2 random index 
+print_r($randomIndex);  // print 2 random index
+echo &quot;$color[$randomIndex]&quot;;
+
+$onerandomIndex = array_rand($color); //return 1 random index  
+echo &quot;\n&quot;;  // line change
+echo &quot;$color[$onerandomIndex]&quot;;</code></pre>
+
+        <p><code class="markcode">shuffle();</code>function randomizes the order of the elements in the array.They
+            change in the existing array. they donn't make the separate array.</p>
+        <pre class="language-php"><code class="language-php">$color = [&quot;red&quot;,&quot;green&quot;,&quot;blue&quot;,&quot;white&quot;,&quot;orange&quot;]; //array
+shuffle($color);
+print_r($color);</code></pre>
+
+        <div class="heading2">
+            <h3>sort();</h3>
+        </div>
+        <p><code class="markcode">sort();</code>is sort the value &quot;A&quot; to &quot;Z&quot; in Ascending Order.</p>
+        <p>
+            sort(); only sort indexed array values <br>
+            Sort value in the existing Arrays <br>
+            Sort(); is the Acending order sorting
+        </p>
+        <pre class="language-php"><code class="language-php">$food = ['bnana','grapes','apple','orange'];
+$number = [1,2,3,4,5];
+sort($food);
+print_r($food);
+sort($number);
+print_r($number);</code></pre>
+
+
+        <div class="heading2">
+            <h3>rsort();</h3>
+        </div>
+        <p><code class="markcode">rsort();</code> is used to reverse the sorting array.They make the Descending Array.
+        </p>
+        <p>
+            rsort(); is used for decending order sorting <br>
+            starting 'Z' and End from 'a' <br>
+            reverse sort is working is same in integer
+        </p>
+        <pre class="language-php"><code class="language-php">$food = ['bnana','grapes','apple','orange'];
+$number = [1,2,3,4,5];
+rsort($food);
+print_r($food);
+rsort($number);
+print_r($number);</code></pre>
+
+
+        <div class="heading2">
+            <h3>asort();</h3>
+        </div>
+        <p><code class="markcode">asort();</code>function sorts an associative array in ascending order, according to
+            the value.</p>
+        <pre class="language-php"><code class="language-php">$a = array(
+    &quot;e&quot; => &quot;Lemon&quot;,
+    &quot;d&quot; => &quot;Apple&quot;,
+    &quot;a&quot; => &quot;Orange&quot;,
+    &quot;c&quot; => &quot;Mango&quot;,
+    &quot;b&quot; => &quot;Banana&quot;
+);
+
+asort($a);
+print_r($a);</code></pre>
+
+
+        <div class="heading2">
+            <h3>asort(); | Associative Reverse Sort</h3>
+        </div>
+        <p><code class="markcode">asort();</code>is sort the Associative array in reverse (Descending Order).</p>
+        <pre class="language-php"><code class="language-php">$a = array(
+    &quot;e&quot; => &quot;Lemon&quot;,
+    &quot;d&quot; => &quot;Apple&quot;,
+    &quot;a&quot; => &quot;Orange&quot;,
+    &quot;c&quot; => &quot;Mango&quot;,
+    &quot;b&quot; => &quot;Banana&quot;
+);
+arsort($a);
+print_r($a);</code></pre>
+
+        <div class="heading2">
+            <h3>arsort(); | Associative Reverse Sort</h3>
+        </div>
+        <p><code class="markcode">arsort();</code>is used to reverse sort of the Associative Array as decending order.
+        </p>
+        <pre class="language-php"><code class="language-php">$a = array(
+    &quot;e&quot; => &quot;Lemon&quot;,
+    &quot;d&quot; => &quot;Apple&quot;,
+    &quot;a&quot; => &quot;Orange&quot;,
+    &quot;c&quot; => &quot;Mango&quot;,
+    &quot;b&quot; => &quot;Banana&quot;
+);
+
+arsort($a);
+print_r($a);</code></pre>
+
+        <div class="heading2">
+            <h3>ksort();</h3>
+        </div>
+        <p><code class="markcode">ksort();</code>function to sort an associative array in ascending order, according to
+            the key.The key is sort according to Ascendign order.(A-Z) or (1-infinit). <br>
+            ksort(); is sort the Associative array in the key and values both.</p>
+        <pre class="language-php"><code class="language-php">$a = array(
+    &quot;e&quot; => &quot;Lemon&quot;,
+    &quot;d&quot; => &quot;Apple&quot;,
+    &quot;a&quot; => &quot;Orange&quot;,
+    &quot;c&quot; => &quot;Mango&quot;,
+    &quot;b&quot; => &quot;Banana&quot;
+);
+ksort($a);
+print_r($a);</code></pre>
+
+        <div class="heading2">
+            <h3>krsort();</h3>
+        </div>
+        <p><code class="markcode">krsort();</code>function sorts an associative array in descending order, according to
+            the key. In this Sort Key and values Both are reverse Descending Order Sort.</p>
+        <pre class="language-php"><code class="language-php">$a = array(
+    &quot;e&quot; => &quot;Lemon&quot;,
+    &quot;d&quot; => &quot;Apple&quot;,
+    &quot;a&quot; => &quot;Orange&quot;,
+    &quot;c&quot; => &quot;Mango&quot;,
+    &quot;b&quot; => &quot;Banana&quot;
+);
+krsort($a);
+print_r($a);</code></pre>
+
+        <div class="heading2">
+            <h3>natsort();</h3>
+        </div>
+        <p><code class="markcode">natsort();</code>function sorts an array by using a "natural order" algorithm. The
+            values keep their original keys. <br>
+            We have first some letter of the word is same but the other is change then the other sort function is
+            confuse.But natsort(); function sort the array. <br>
+            But some case natsort() is not work properly.If the file name of all is not same mean two file name first
+            letter is capital but the other is not captial then they confused.But this is only possible using
+            natcasesort(); function.</p>
+        <pre class="language-php"><code class="language-php">$img = [&quot;img1.jpg&quot;,&quot;img2.jpg&quot;,&quot;img3.jpg&quot;,&quot;img4.jpg&quot;,&quot;img5.jpg&quot;];
+natsort($img);
+print_r($img);
+//----------------------Error in Case Sensitive-------------
+$img = [&quot;Img1.jpg&quot;,&quot;img2.jpg&quot;,&quot;img3.jpg&quot;,&quot;img4.jpg&quot;,&quot;Img5.jpg&quot;];
+natsort($img);
+print_r($img);</code></pre>
+
+        <div class="heading2">
+            <h3>natcasesort();</h3>
+        </div>
+        <p><code class="markcode">natcasesort();</code>function is place the capital letter name first then lower value
+            are placed.</p>
+        <pre class="language-php"><code class="language-php">$temp_files = array(&quot;temp15.txt&quot;,&quot;Temp10.txt&quot;,
+&quot;temp1.txt&quot;,&quot;Temp22.txt&quot;,&quot;temp2.txt&quot;);
+natsort($temp_files);
+echo &quot;Natural order: &quot;;
+print_r($temp_files);</code></pre>
+
+        <div class="heading2">
+            <h3>array_multisort();</h3>
+        </div>
+        <p><code class="markcode">array_multisort();</code>function returns a sorted array. You can assign one or more
+            arrays. The function sorts the first array, and the other arrays follow, then, if two or more values are the
+            same, it sorts the next array, and so on. <br>
+            The most important thing is the both arrays values mean length of array same if one array length is greater
+            then other they show error.</p>
+        <pre class="language-php"><code class="language-php">$a = [&quot;Apple&quot;,&quot;Banana&quot;];
+$b = [&quot;lemon&quot;,&quot;carrot&quot;];
+
+array_multisort($a,$b);
+print_r($a);
+print_r($b);</code></pre>
+
+        <div class="heading2">
+            <h3>array_reverse();</h3>
+        </div>
+        <p><code class="markcode">array_reverse();</code> can return the new reverse array of existing array.</p>
+        <pre class="language-php"><code class="language-php">$a = [&quot;Apple&quot;,&quot;Banana&quot;,&quot;lemon&quot;,&quot;carrot&quot;];
+
+$newArray = array_reverse($a);
+print_r($newArray);</code></pre>
+
+
+        <div class="heading2">
+            <h3>Array Traversing Functions</h3>
+        </div>
+        <p>In Array internal pointer is initial placed is the array first index. The indexed Number where the first
+            initial pointer is present is 0.</p>
+        <p><strong class="outputh">Move pointer in Arrays :</strong></p>
+
+        <p><code class="markcode">next();</code> function move the internal pointer in the next index position.</p>
+        <p><code class="markcode">prev();</code> function move the internal pointer into the array in previous index.
+        </p>
+        <p><code class="markcode">end();</code> function move the internal pointer in the end of the arrays, means last
+            of the array element index.</p>
+        <p><code class="markcode">reset();</code> moves the internal pointer to the first element of the array </p>
+
+        <p><strong class="outputh">Getting Value from Pointer :</strong></p>
+        <p><code class="markcode">current();</code>Return the current value of pointer in the Array.</p>
+        <p><code class="markcode">key();    </code>Return the current pointer index value.</p>
+        <p><code class="markcode">pos();    </code>work same as current();</p>
+        <p><code class="markcode">each();   </code>function is return the current position of pointer key and value both
+            in the new Array.This function has been DEPRECATED as of PHP 7.2.0, and REMOVED as of PHP 8.0.0. Relying on
+            this function is highly discouraged.</p>
+
+        <pre class="language-php"><code class="language-php">$food = ['orange','banana','apple'];
+echo " next() : ".next($food);
+echo "\n prev() : ".prev($food);
+echo "\n end()  : ".end($food);
+
+echo " current() = ".current($food);
+echo "\n key(); = ".key($food);
+echo "\n pos(); = ".pos($food);</code></pre>
+
+        <div class="heading2">
+            <h3>list();</h3>
+        </div>
+        <p><code class="markcode">list();</code>function work with indexed array &amp; Associative Array with Numeric
+            key.The list() function is an inbuilt function in PHP which is used to assign array values to multiple
+            variables at a time. This function will only work on numerical arrays.</p>
+        <p><code class="markcode">list($a,$b,$c) = $arrayname;</code></p>
+        <pre class="language-php"><code class="language-php">$color = ['red','green','blue','white'];
+list($a,$b,$c,$d) = $color;
+echo &quot;&quot;.$a;
+echo &quot;\n&quot;.$b;
+echo &quot;\n&quot;.$c;
+echo &quot;\n&quot;.$d;
+//---------------------Example 02 ----------------------
+$color = [
+    0 => 'red',
+    1 => 'green',
+    2 => 'blue',
+    3 => 'white'
+];
+list($a,$b,$c,$d) = $color;
+echo &quot;&quot;.$a;
+echo &quot;\n&quot;.$b;
+echo &quot;\n&quot;.$c;
+echo &quot;\n&quot;.$d;
+//------------------------Example 03 --------------------
+list($a[0],$b[1],$c[2],$d) = $color;
+print_r($a);
+print_r($b);
+print_r($c);
+echo "\n".$d;</code></pre>
+
+        <div class="heading2">
+            <h3>extract();</h3>
+        </div>
+        <p><code class="markcode">extract();</code>Function is an inbuilt function in PHP. The extract() function does
+            array to variable conversion. That is it converts array keys into variable names and array values into
+            variable value. In other words, we can say that the extract() function imports variables from an array to
+            the symbol table.</p>
+        <p><strong>Syntax : </strong><code class="markcode">extract(arrayName,extract_rule,Prefix);</code></p>
+
+        <p><strong class="outputh">Extract Rule</strong></p>
+        <p>Extract Rule is optional.When this rule is apply mean that if a variable is already declare then the array
+            variables are match then what should value print,then i used the extract rule that depend on prefix.we add
+            prefix of those variable are already declare then variable name and values are not match.</p>
+        <p>
+            <code class="markcode">EXTR_OVERWRITE(default)</code>,
+            <code class="markcode">EXTR_SKIP</code>,
+            <code class="markcode">EXTR_PREFIX_SAME</code>,
+            <code class="markcode">EXTR_PREFIX_ALL</code>
+        </p>
+        <pre class="language-php"><code class="language-php">$color = [
+    &quot;a&quot; => 'red',
+    &quot;b&quot; => 'green',
+    &quot;c&quot; => 'blue',
+    &quot;d&quot; => 'white'
+];
+extract($color);
+echo $a;
+echo &quot;\n&quot;.$b;
+echo &quot;\n&quot;.$c;
+echo &quot;\n&quot;.$d;
+//----------------------------Example 02 ----------------------
+$a = &quot;orange&quot;;
+$color = [
+    &quot;a&quot; => 'red',
+    &quot;b&quot; => 'green',
+    &quot;c&quot; => 'blue',
+    &quot;d&quot; => 'white'
+];
+extract($color,EXTR_PREFIX_SAME,'test');
+echo $test_a;
+echo &quot;\n&quot;.$b;
+echo &quot;\n&quot;.$c;
+echo &quot;\n&quot;.$d;
+//----------------------------Example 03 ----------------------
+$a = &quot;orange&quot;;
+$color = [
+    &quot;a&quot; => 'red',
+    &quot;b&quot; => 'green',
+    &quot;c&quot; => 'blue',
+    &quot;d&quot; => 'white'
+];
+extract($color,EXTR_SKIP);
+echo $a;
+echo &quot;\n&quot;.$b;
+echo &quot;\n&quot;.$c;
+echo &quot;\n&quot;.$d;</code></pre>
+
+        <div class="heading2">
+            <h3>compact();</h3>
+        </div>
+        <p><code class="markcode">compact();</code>inbuilt function in PHP and it is used to create an array using
+            variables. This function is opposite of extract() function. It creates an associative array whose keys are
+            variable names and their corresponding values are array values.</p>
+        <p><strong>Syntax : </strong><code class="markcode">compact(variable name);</code></p>
+        <pre class="language-php"><code class="language-php">$firstName = &quot;Hassan&quot;;
+$lastName = &quot;Ali&quot;;
+$age = &quot;19&quot;;
+$gender = &quot;Male&quot;;
+$newArray = compact(&quot;firstName&quot;,&quot;lastName&quot;,&quot;age&quot;,&quot;gender&quot;);
+print_r($newArray);</code></pre>
+
+        <div class="heading2">
+            <h3>range();</h3>
+        </div>
+        <p><code class="markcode">range();</code>is used to create an array of elements of any kind such as integer,
+            alphabets within a given range(from low to high) i.e, list's first element is considered as low and last one
+            is considered as high. <br>
+            It is work with number and Alphabets both.</p>
+        <p>
+            <strong>Syntax : </strong>
+            <code class="markcode">range(start,end,step(optional));</code>
+        </p>
+        <p><code class="markcode">step(optional)</code> parameter is optional and it is used for increment of 1,2,3,5...
+            and default increment is 1.</p>
+        <pre class="language-php"><code class="language-php">$newArray = range(1,100,2);
+print_r($newArray);
+//------------------Example 02 -----------------------
+$newArray = range('A','Z');
+print_r($newArray);</code></pre>
+
+        <div class="heading2">
+            <h3>explode(); &amp; implode();</h3>
+        </div>
+        <p><code class="markcode">explode();</code>is inbuilt function in the php.explode() accepts three parameter in
+            the php. <br>
+            <b>seperator</b> is used to seprate the string and make the new array. if <b>No.ofElement</b> is passed in
+            the negative(-1) then they return the array to remove last element. if <b>No.OfElement</b> is zero this
+            means that hole string convert into array.
+        </p>
+        <p><strong>Syntax : </strong><code class="markcode">explode(sperator,array,(optional)No.ofElement);</code></p>
+        <pre class="language-php"><code class="language-php">$a = &quot;How are you?&quot;;
+print_r(explode(&quot; &quot;,$a));
+print_r(explode(&quot; &quot;,$a,1));
+print_r(explode(&quot; &quot;,$a,0));
+print_r(explode(&quot; &quot;,$a,-2));</code></pre>
+
+        <p><code class="markcode">implode();</code>The implode() is a builtin function in PHP and is used to join the
+            elements of an array. implode() is an alias for PHP | join() function and works exactly same as that of
+            join() function.</p>
+        <p><strong>Syntax : </strong><code class="markcode">implode(seprator,$array);</code></p>
+        <pre class="language-php"><code class="language-php">$a = [&quot;first&quot;,&quot;second&quot;,&quot;third&quot;];
+$str = implode(&quot;-&quot;,$a);
+echo $str;</code></pre>
+
+<h5 class="heading1" style="color: white; background-color: red">PHP String Functions</h5>
+<pre class="language-php line-numbers"><code class="language-php line-numbers">//------------------------- String Functions-------------------
+str_split();          // String spit into parts
+chunk_split();        // String convert into array parts
+strtolower();         // Convert String All character into UpperCase
+strtoupper();         // Convert String All character into LowerCase
+ucWords();            // Covert all word character first letter capital
+ucFirst();            // Convert string into frist letter capital
+lcfirst();            // Convert the string first letter into small
+_________________________________________________________________________________
+//------------------------- PHP String Length Count Functions-------------------
+strlen();             // Count Character with space in String
+str_word_count();     // Count the words in String
+substr_count();       // Search value how much time they repeat in string
+_________________________________________________________________________________
+//------------------------- PHP Position Functions------------------------------
+strpos();             // Find Position of first occurrence of a string
+strrpos();            // Find Position of last occurrence of a string
+stripos();            // Find Position of first occurrence of a string
+strripos();           // Find Position of last occurrence of a string
+_________________________________________________________________________________
+//------------------------- String Search Functions----------------------------
+strstr();             
+stristr();              
+strchr();              
+strrchr();            
+strbark();            
+substr();             
+_________________________________________________________________________________
+//------------------------ String Find & Replace Functions--------------------
+str_replace();        // Find & Replace String (case-sensitive)   
+str_ireplace();       // Find & Replace String (case-insensitive)
+substr_replace();     // Replace Specific Part of String
+strtr();              // Replace Character on String
+_________________________________________________________________________________
+//------------------------- String compare Functions---------------------------
+strcmp();             // Two string (case-sensitive)
+strncmp();            // Two string spacific character length(case-sensitive)
+strcasecmp();         // Two string (case-insensitive)
+strncasecmp();        // Two string spacific character length(case-insensitive)
+substr_compare();     // Two string specific part of string
+similiar_text();      // Return percentage character of two string match 
+_________________________________________________________________________________
+//------------------------- String Reverse &amp; suffle-------------------------
+strrev();             // Reverse String Character
+str_shuffle();        // Random Shuffle the String Character
+_________________________________________________________________________________
+//------------------------- PHP String Repeat Functions -------------------------
+str_pad();                
+str_repeat();         //  Used to Repeat the String multiple time
+_________________________________________________________________________________
+//------------------------- PHP String Trim Functions ---------------------------
+trim();               // Trim left &amp; Right Both Side
+rtrim();              // Right Side Trim
+ltrim();              // Left Side Trim
+chop();               // Work Same as rtrim();
+_________________________________________________________________________________
+//------------------------- PHP String Slash Functions For DB Security-----------
+addslashes();        // Add Slashes before string quotes
+stripslashes();      // Remove Slashes 
+addcslashes();       // Add Slashes between specific character
+stripcslashes();     // Remove Slashes</code></pre>
+
+<div class="heading2">
+    <h3>String Functions</h3>
+</div>
+<p><code class="markcode">str_split();      </code> is used to convert the given string into an array.</p>
+<p><strong>Syntax : </strong> <code class="markcode">str_split(array,LimitCharacter(optional));</code></p>
+<pre class="language-php"><code class="language-php">$str = &quot;Hello Hassan&quot;;
+$newArray = str_split($str);
+$newArrayLimit = str_split($str,5);
+print_r($newArray);
+print_r($newArrayLimit);</code></pre>
+
+<p><code class="markcode">chunk_split();    </code>is used to split the given input string into small chunks of
+    defined length.</p>
+<p><strong>Syntax : </strong> <code class="markcode">string chunk_split($string, $length, $end);</code></p>
+<pre class="language-php"><code class="language-php">$str = &quot;PHP is a general-purpose scripting language&quot;;
+$newString1 = chunk_split($str,4);
+$newString2 = chunk_split($str,4,&quot;*&quot;);
+print_r($newString1);
+print_r($newString2);</code></pre>
+
+<p><code class="markcode">strtoupeer(); </code>convert string into uppercase.</p>
+<p><code class="markcode">strtolower(); </code>convert string into lowercase.</p>
+<p><code class="markcode">ucWords();    </code>covert string all word character first letter capital.</p>
+<p><code class="markcode">ucFirst();    </code>convert string into frist letter capital.</p>
+<p><code class="markcode">lcfirst();    </code>convert the string first letter into small</p>
+
+<pre class="language-php"><code class="language-php">$str = &quot;php is a scripting language&quot;;
+//convert string into uppercase
+print strtoupper($str).&quot;\n&quot;;
+//convert string into lowercase
+print strtolower($str).&quot;\n&quot;;
+/*covert string all word character first letter
+capital*/
+print ucwords($str).&quot;\n&quot;;
+//convert string into frist letter capital
+print ucFirst($str).&quot;\n&quot;;
+//convert the string first letter into small
+print lcfirst($str);</code></pre>
+
+<p><code class="markcode">strlen();      </code> function is used for the count the length of character in the
+string and also count the spaces in the strings.</p>
+
+<p><code class="markcode">str_word_count(); </code> function is used to count the words in the strings.</p>
+<pre class="language-php"><code class="language-php">$str = &quot;Hello World!&quot;;
+// String Length count with space
+print strlen($str).&quot;\n&quot;;
+// String word count
+print str_word_count($str).&quot;\n&quot;;</code></pre>
+
+<p><code class="markcode">substr_count();   </code>is a built-in function in PHP and is used to count the number
+    of times a substring occurs in a given string. The function also provides us with an option to search for
+    the given substring in a given range of the index. It is case sensitive, i.e., “abc” substring is not
+    present in the string “Abcab”. <br>
+    <strong>string parameter</strong> is necessary for search in the string. <br>
+    <strong>substring parameter</strong> is the search value is passed. <br>
+    <strong>start parameter</strong> is used to start the search in the string.This parameter is optional.If you
+    not enter any value then they start searching from the start(default). <br>
+    <strong>length parameter</strong> is the optional parameter that define the end where the searching is stop.
+</p>
+<p>
+    <strong>Syntax : </strong> 
+    <code class="markcode">substr_count(string,substring,start(optional),length(optional)); or substr_count(string,searchValue);</code>
+</p>
+<pre class="language-php"><code class="language-php">$str = &quot;Geek for Geek&quot;;
+print substr_count($str,&quot;Geek&quot;).&quot;\n&quot;;</code></pre>
+
+<div class="heading2">
+    <h3>PHP Position Functions</h3>
+</div>
+<p>The <code class="markcode">strpos();</code> function finds the position of the 
+    first occurrence of a string inside another string.</p>
+<p><strong class="outputh">Syntax : </strong></p>
+<pre class="language-php"><code class="language-php">strpos(string,find,start);</code></pre> 
+
+<p><code class="markcode">strrpos()  </code>Finds the position of the last occurrence of a string inside another string (case-sensitive)</p>
+<p><code class="markcode">stripos()  </code>Finds the position of the first occurrence of a string inside another string (case-insensitive)</p>
+<p><code class="markcode">strripos() </code>Finds the position of the last occurrence of a string inside another string (case-insensitive)</p>
+
+<div class="heading2">
+    <h3>String Find & Replace Functions</h3>
+</div>
+<p><code class="markcode">str_replace();</code>is the php function to find and replace the value in the 
+string.It is case-sensitive function.</p>
+<p><strong>Syntax : </strong></p>
+<pre class="language-php"><code class="language-php">str_replace(find,replace,string,count(optional))</code></pre>
+<p><strong>Example : </strong></p>
+<pre class="language-php"><code class="language-php">$str = &quot;PHP is a general-purpose scripting language&quot;;
+$find = strtoupper(&quot;php&quot;); //first convert to upper then search b/c string is uppercase
+$replace_value = &quot;Python&quot;;
+print_r(str_replace($find, $replace_value, $str));</code></pre> 
+
+<p><code class="markcode">str_ireplace();</code> is the case-insensitive function.You donn't need to 
+search the value in the string using uppercase or lowercase.But in the str_replace() the both String
+or replace value will be same otherwise value cann't be replace.</p>
+<p><strong>Syntax :</strong></p>
+<pre class="language-php"><code class="language-php">str_ireplace(find,replace,string,count(optional))</code></pre> 
+<p><strong>Example :</strong></p>
+<pre class="language-php"><code class="language-php">$str = &quot;PHP is a general-purpose scripting language&quot;;
+$find = &quot;php&quot;;
+$replace_value = &quot;Python&quot;;
+print_r(str_ireplace($find, $replace_value, $str));</code></pre> 
+    
+<p><code class="markcode">substr_replace();</code> is used to replace the specific part of the string.</p>
+<p><strong>Syntax : </strong></p>
+<pre class="language-php"><code class="language-php">substr_replace(string,replacement,start,length(optional))</code></pre> 
+<p><strong>Example : </strong></p>
+<pre class="language-php"><code class="language-php">$string = &quot;PHP is a general-purpose scripting language&quot;;
+$replace_String = &quot;Hassan Ali&quot;;
+$start = 4;
+print_r(substr_replace($string, $replace_String, $start));</code></pre> 
+
+
+<div class="heading2">
+    <h3>String compare Functions</h3>
+</div>
+<p>
+    If we compare two Strings then it will return two resutls.First 0 and other is less then 
+    zero (&lt;0) negative value,third is the greater then (&gt;0) positive value.
+</p>
+
+<pre class="language-php line-numbers"><code class="language-php  line-numbers">strcmp(string1,string2);              // case-sensitive
+strncmp(string1,string2,length);      // case-sensitive
+strcasecmp(string1,string2);          // case-insensitive 
+strncasecmp(string1,string2,length);  // case-insensitive </code></pre> 
+
+<p><code class="markcode">strcmp(string1,string2);</code> is the case sensitive Functions.It means
+that if we have two strings s1 = "hello"; s2 = "Hello"; both are different to each other.</p>
+<p><strong>Syntax : </strong></p>
+<pre class="language-php"><code class="language-php">strcmp(string1,string2);</code></pre> 
+
+<p><strong>Example : </strong></p>
+<pre class="language-php"><code class="language-php">/*if it return positive then mean left side string is larger then right side string.*/
+    $string1 = &quot;Hello World&quot;;
+    $string2 = &quot;Hello World&quot;;
+    $string3 = &quot;Hello world&quot;;
+    // return b/c both match
+    echo strcmp($string1,$string2);
+    echo &quot;\n&quot;;
+    // return -1 b/c case-sensitive
+    echo strcmp($string1,$string3);</code></pre> 
+
+<p><code class="markcode">strncmp();</code>is function is used to compare 
+the limited number of character in the strings.It work in the strcmp(); function both are case-sensitive
+functions.</p>
+<p><strong>Syntax : </strong></p>
+<pre class="language-php"><code class="language-php">strncmp(string1,string2,length);
+// Length : how much character compare</code></pre> 
+
+<p><strong>Example : </strong></p>
+<pre class="language-php"><code class="language-php">$string1 = &quot;Hello World&quot;;
+$string3 = &quot;Hello world&quot;;
+echo strncmp($string1,$string3,6);</code></pre> 
+ 
+<p><code class="markcode">strcasecmp();</code>It is the case case-insensitive function,
+and working is same as strcmp(); but it not puority to the upperCase() or lowerCase() letter.</p>
+<p><strong>Syntax : </strong></p>
+<pre class="language-php"><code class="language-php">strcasecmp(string1,string2);</code></pre> 
+
+<p><strong>Example : </strong></p>
+<pre class="language-php"><code class="language-php">echo strcasecmp(&quot;HELLO world&quot;,&quot;hello world&quot;);
+// return 0 b/c it same character and it is case-insensitive function</code></pre> 
+
+<p><code class="markcode">strncasecmp();</code> is case-insensitive function,
+and work same as strncmp(); but it campare the spacific character of the strings.It compare limited
+string characters.</p>
+<p><strong>Syntax : </strong></p>
+<pre class="language-php"><code class="language-php">strncasecmp(string1,string2,length);</code></pre> 
+<p><strong>Example : </strong></p>
+<pre class="language-php"><code class="language-php">echo strncasecmp(&quot;hello World&quot;,&quot;Hello World&quot;,6);</code></pre> 
+
+<p><code class="markcode">substr_compare();</code> function is used when we campare two strings
+,the both string take the spacific part of string to compare. <br> if we have the two 
+string s1 = &quot;Hello <span style=color:red;">world</span>&quot;, s2=&quot;Hello <span style=color:red;">WORLD</span>&quot;</p>
+<p><strong>Syntax : </strong></p>
+<pre class="language-php"><code class="language-php">substr_compare(string1,string2,start,length(optional),case(optional:false/true));
+//length - Optional : otherwise take start to complete string
+//case - if you add true then they work as case-insensitive</code></pre> 
+<p><strong>Example : </strong></p>
+<pre class="language-php"><code class="language-php">echo substr_compare(&quot;Hello World&quot;,&quot;World&quot;,6,);</code></pre> 
+
+<p><code class="markcode">similiar_text();</code> function is compare the string character and 
+show the percentage. How much character should be matched on both strings.</p>
+<p><strong>Syntax : </strong></p>
+<pre class="language-php"><code class="language-php">similiar_text(string1,string2,percent(optional));</code></pre> 
+<pre class="language-php"><code class="language-php">echo similar_text(&quot;Hi Hassan&quot;,&quot;Hassan Ali&quot;);
+// Return Percenatage
+similar_text(&quot;Hi Hassan&quot;,&quot;Hassan Ali&quot;,$pre);
+echo $pre;</code></pre> 
+
+<div class="heading2">
+    <h3>String Reverse & suffle</h3>
+</div>
+<p><code class="markcode">strrev();</code> function is used to reverse the string.</p>
+<p><strong>Syntax : </strong></p>
+<pre class="language-php"><code class="language-php">strrev($string);</code></pre> 
+<p><strong>Example : </strong></p>
+<pre class="language-php"><code class="language-php">echo strrev(&quot;Hello&quot;);
+// return olleH</code></pre> 
+
+
+<p><code class="markcode">str_shuffle();</code> function is shuffle the string in random order.</p>
+<p><strong>Syntax : </strong></p>
+<pre class="language-php"><code class="language-php">str_shuffle($string);</code></pre> 
+<p><strong>Example : </strong></p>
+<pre class="language-php"><code class="language-php">echo str_shuffle("Hassan");
+// random return shuffle string character</code></pre> 
+
+<div class="heading2">
+    <h3>PHP String Repeat Functions</h3>
+</div>
+<p><code class="markcode">str_repeat();</code></p>
+<p><strong>Syntax : </strong></p>
+<pre class="language-php"><code class="language-php">str_repeat(string,repeat);</code></pre> 
+<p><strong>Example : </strong></p>
+<pre class="language-php"><code class="language-php">$string = &quot;Hassan Ali &quot;;
+echo str_repeat($string,3);</code></pre> 
+
+<div class="heading2">
+    <h3>PHP String Trim Functions</h3>
+</div>
+<p>Basically Trim Function is used in the form to remove the extra space when user input the text or
+    anything in form box.
+</p>
+<p><code class="markcode">trim();</code> function is remove the left or right side match character or string.if you
+Enter those character that not present in the left and right side then they not effect on it, and they 
+work with every character List.
+</p>
+<div class="success size">
+    <p><strong> Note: </strong> if you remove the space around string the 
+        you donn't need to write second parameter in trim(),ltrim(),rtrim(),chop(). Only pass string then they
+        remove the space. like <br>
+        <code class="markcode">$a = "  Hi, Hassan "; trim($a); </code> it remove both left and right space.
+    </p>
+</div>
+
+<p><strong>Syntax : </strong></p>
+<pre class="language-php"><code class="language-php">trim(string,charlist);</code></pre> 
+<p><strong>Example : </strong></p>
+<pre class="language-php"><code class="language-php">$str = &quot;Hassan Ali&quot;;
+echo $str .&quot;\n&quot;;
+//remove the end i from ali
+echo trim($str,&quot;i&quot;);
+echo &quot;\n&quot;;
+//remove H from Hassan Left side
+echo trim($str,&quot;H&quot;);
+echo &quot;\n&quot;;
+//remove Hassan + space
+echo trim($str,&quot;Hassan &quot;);
+echo &quot;\n&quot;;
+/*first check h then they remove h from left side,then check a that on left side 
+remove a then go to right the Ali is complete match.*/
+echo trim($str,&quot;HaAli&quot;);
+
+//Remove Extra space around string
+$a = &quot; Hi, Hassan &quot;; 
+echo trim($a);</code></pre> 
+
+<p><code class="markcode">ltrim()</code> function is remove the 
+    left side character or space.</p>
+<p><strong>Syntax : </strong></p>
+<pre class="language-php"><code class="language-php">ltrim(string,charlist);</code></pre> 
+
+<p><code class="markcode">rtrim()</code>function is remove 
+    the right side character or space.</p>
+<p><strong>Syntax : </strong></p>
+<pre class="language-php"><code class="language-php">rtrim(string,charlist);</code></pre> 
+
+<p><code class="markcode">chop()</code> work same as rtrim(); right side trim the character.</p>
+<p><strong>Syntax : </strong></p>
+<pre class="language-php"><code class="language-php">chop(string,charlist);</code></pre> 
+
+<p><strong>Example : </strong></p>
+<pre class="language-php"><code class="language-php">$str = &quot;Hassan  Ali&quot;;
+echo ltrim($str,&quot;Ali&quot;);
+echo &quot;\n&quot;;
+echo rtrim($str,&quot;Ali&quot;);
+echo &quot;\n&quot;;
+echo chop($str,&quot;Ali&quot;);</code></pre> 
+
+<div class="heading2">
+    <h3>Slashes</h3>
+</div>
+<p><code class="markcode">addslashes();</code> function is used to add the Slashes in the String, for 
+better Security to hide the data from sql injection.</p>
+<p><code class="markcode">stripslashes(); </code> function is used to remove the slashes when the data 
+is get from the database.</p>
+<p><strong>Syntax : </strong></p>
+<pre class="language-php"><code class="language-php">addslashes($string); //add slashes
+stripslashes($string); //remove slashes</code></pre> 
+    
+    <p><strong>Example : </strong></p>
+<p>Slashes is work in the string within single quotes or double quotes before.</p>
+<pre class="language-php"><code class="language-php">$str = &quot;Hi,'Hassan Ali'&quot;;
+$newStr =  addslashes($str);
+echo $newStr.&quot;\n&quot;;
+echo stripslashes($newStr);</code></pre> 
+<hr>
+
+<p><code class="markcode">addcslashes();</code> function not need to single or double quotes within 
+string.If you add the slashes before specific character that you define in string the slashes add,
+we can add multiple slashes before multiple character.</p>
+<p><strong>Syntax : </strong></p>
+<pre class="language-php"><code class="language-php">addcslashes($string,'character');</code></pre> 
+<p><strong>Example : </strong></p>
+<pre class="language-php"><code class="language-php">    $str = &quot;Hi,Hassan Ali&quot;;
+    //Add slashes before H in String
+    echo addcslashes($str,&quot;H&quot;);
+    echo &quot;\n&quot;;
+    //Add Slashes Before H,a in String
+    echo addcslashes($str,&quot;Ha&quot;);
+    echo &quot;\n&quot;;
+    //Add All UpperCase Letter Before Slashes
+    echo addcslashes($str,&quot;A..Z&quot;);
+    echo &quot;\n&quot;;
+    /*if we add small letter before slashes then use but not add before capital only
+    lower letter before add slashes */
+    echo addcslashes($str,&quot;a..z&quot;);
+    echo &quot;\n&quot;;
+    /*if specific character length character then used */
+    echo addcslashes($str,&quot;a..d&quot;);</code></pre> 
+
+<p><code class="markcode">stripcslashes();</code> function is remove the 
+    slashes of addcslashes() function but the stripslashes() is working same as to remove slahes.</p>
+<p><strong>Syntax : </strong></p>
+<pre class="language-php"><code class="language-php">stripcslashes($string);</code></pre> 
+<p><strong>Example : </strong></p>
+<pre class="language-php"><code class="language-php">$str = &quot;Hi \Hassan Ali&quot;;
+    echo stripcslashes($str);
+/* Method 02 */
+$addSlashes = addcslashes($str,'a..z');
+echo stripslashes($addSlashes);</code></pre> 
+
+<div class="heading1" style="background-color: red;color:white;">
+    <h3> PHP HTML Tag Encode</h3>
+</div>
+<pre class="language-php line-numbers"><code class="language-php line-numbers">//------------------------- PHP Entity Functions --------------------------------
+htmlentities();            // convert html code into entity code
+html_entity_decode();      // convert entity code to html code
+htmlspecialchars();        // encode only special character
+htmlspecialchars_decode(); // decode html special character
+get_html_translation_table(); //return Associative Array</code></pre> 
+
+<p><strong class="outputh">Special Character : </strong></p>
+<pre class="language-php line-numbers"><code class="language-php line-numbers">    &lt;    
+    &gt;    
+    &amp;   
+    &quot;  
+    &#039;</code></pre>
+
+<div class="heading2">
+    <h3>HTML code into Entity code</h3>
+</div>
+<p>When we save the data in database using form then hacker try to paste the html code in the form for 
+    sql injection.Then we need to used the html code convert into entity code then save into database.Therefore 
+    we project himself from the sql injection.
+</p>
+<p><code class="markcode">htmlentities();</code> function is convert the html code into entity code.They convert
+the all special character(&lt;,&gt;,&amp;,&quot;,&sbquo;) into entity code.</p>
+<p><strong>Syntax : </strong></p>
+<pre class="language-php"><code class="language-php">htmlentities(string,flags);
+/*
+flags : Accept the blow type of parameter;
+ENT_COMPAT   : Will convert double-quotes and leave single-quotes alone.
+ENT_QUOTES   : Will convert both double and single quotes.
+ENT_NOQUOTES : Will leave both double and single quotes unconverted.only &lt;&gt; encode
+*/</code></pre> 
+<p><strong>Example : </strong></p>
+<pre class="language-php"><code class="language-php">$str = &quot;A 'quote' is <b>bold</b>&quot;;
+echo $str.&quot;&lt;br&gt;&lt;br&gt;&quot;;
+/*only convert by default double quote and greater then or smaller then entity code 
+not encode special character*/
+echo htmlentities($str);
+/*Second parameter convert both single or double quote */
+echo htmlentities($str,ENT_QUOTES);
+/* only special Character Encode into Entity code */
+echo htmlentities($str,ENT_NOQUOTES);
+</code></pre> 
+
+<p><code class="markcode">html_entity_decode();</code> function is convert the entity code into html code.</p>
+<p><strong>Syntax : </strong></p>
+<pre class="language-php"><code class="language-php">html_entity_decode(string,flags);</code></pre> 
+<p><strong>Example : </strong></p>
+<pre class="language-php"><code class="language-php">$str = &quot;A 'quote' is <b>bold</b>&quot;;
+$htmlentity =  htmlentities($str,ENT_QUOTES);
+echo $htmlentity;
+echo &quot;\n&quot;;
+echo html_entity_decode($htmlentity);</code></pre> 
+<hr>
+
+<p><code class="markcode">htmlspecialchars();</code></p>
+<p><strong>Syntax : </strong></p>
+<pre class="language-php"><code class="language-php">htmlspecialchars($string,flag);
+/*
+flags : Accept the blow type of parameter;
+ENT_COMPAT   : Will convert double-quotes and leave single-quotes alone.
+ENT_QUOTES   : Will convert both double and single quotes.
+ENT_NOQUOTES : Will leave both double and single quotes unconverted.only &lt;&gt; encode
+*/</code></pre> 
+<p><strong>Example : </strong></p>
+<pre class="language-php"><code class="language-php">$str = &quot;A 'quote' is <b>bold</b>&quot;;
+echo $str.&quot;\n&quot;;
+echo htmlspecialchars($str,ENT_NOQUOTES);
+//encode all tag
+echo htmlspecialchars($str,ENT_QUOTES);</code></pre> 
+
+
+<p><code class="markcode">htmlspecialchars_decode();</code> function is used to decode the htmlspecialchars();
+function encode entity code.</p>
+<p><strong>Syntax : </strong></p>
+<pre class="language-php"><code class="language-php">htmlspecialchars_decode($string);</code></pre> 
+<p><strong>Example : </strong></p>
+<pre class="language-php"><code class="language-php">$str = &quot;A 'quote' is <b>bold</b>&quot;;
+$htmlentity =  htmlentities($str,ENT_QUOTES);
+echo $htmlentity;
+echo &quot;\n&quot;;
+echo htmlspecialchars_decode($htmlentity);</code></pre> 
+
+<div class="Short-head">
+    <h3>Check what type of code convert into Entity code</h3>
+</div>
+<p><code class="markcode">get_html_translation_table();</code> function is return the Associative Array
+that return the what kind of data they encode.</p>
+<pre class="language-php"><code class="language-php">    print_r(get_html_translation_table(HTML_SPECIALCHARS));    
+    print_r(get_html_translation_table(HTML_ENTITIES));</code></pre> 
+
+<div class="heading1" style="background-color: red;color:white;">
+    <h3>PHP Encryption Data</h3>
+</div>
+<p>When we enter the password in the form then we need to encrypt this password,if someone access the 
+    database they not know the password.
+</p>
+<p>PHP <code class="markcode">sha1();</code>, <code class="markcode">md5();</code> has limit the message
+    number encrypt mean if the message is long then encrypt data is the same length(like encrypt 32 bits).
+Then we used the convert_uuencode(); and convert_uudecode(); function.</p>
+    
+<pre class="language-php line-numbers"><code class="language-php line-numbers">md5();                 // Password Protection To Encrypt Data
+sha1();                // Mostly used,for Password Protection
+//------------------------- PHP Encrypt Message --------------------------------
+convert_uuencode();    // Encrypt the Message
+convert_uudecode();    // Decrypt the Message
+//------------------------- PHP String : bin2hex &amp; hex2bin Function-------------
+bin2hex();             // convert Binary to hexadecimal Form
+hex2bin();             // convert hexadecimal to Binary form
+//------------------------- PHP chr &amp; ord Function------------------------------
+chr();                // Enter Ascii code &amp; return Character  
+ord();                // Return Ascii code when enter Character
+//------------------------- PHP String Remove Tag -------------------------------
+strip_tags();         // Remove HTML Tag From String
+wordwrap();           // Break String into Specific Length</code></pre> 
+
+<div class="Short-head">
+    <h3>md5();</h3>
+</div>
+<p><code class="markcode">md5();</code>The MD5 message-digest algorithm is a cryptographically broken 
+    but still widely used hash function producing a 128-bit hash value. Although MD5 was initially 
+    designed to be used as a cryptographic hash function, it has been found to suffer from extensive 
+    vulnerabilities.</p>
+<p><strong>Syntax : </strong></p>
+<pre class="language-php"><code class="language-php">md5(string,raw);
+/* raw : Accept two types of parameter
+True  : Raw 16 character Binary Formate -> ��S�a��'���x�
+False : Default. 32 character Hex number -> 8b1a9953c4611296a827abf8c47804d7
+*/</code></pre> 
+<p><strong>Example : </strong></p>
+<pre class="language-php"><code class="language-php">$str = &quot;Hello&quot;;
+echo &quot;String : &quot;.$str.&quot;\n&quot;;
+echo  &quot;md5 Binary Formate : &quot;.md5($str,True);
+echo &quot;\n&quot;;
+echo  &quot;md5 Hexa Formate : &quot;.md5($str,False);</code></pre> 
+
+<div class="heading2">
+    <h3>sha1()</h3>
+</div>
+<p><code class="markcode">sha1()</code> function is working same as but they used the password Protection
+algorithm US Secure Hash algorithm 1.This algorithm is more secure.</p>
+<p><strong>Syntax : </strong></p>
+<pre class="language-php"><code class="language-php">sha1(string,raw);
+/* raw : Accept two types of parameter
+True  : Raw 20 character Binary Formate -> ����{���p�Z]x^��Ы�
+False : Default. 40 character Hex number-> f7ff9e8b7bb2e09b70935a5d785e0cc5d9d0abf0
+*/</code></pre> 
+<p><strong>Example : </strong></p>
+<pre class="language-php"><code class="language-php">$str = &quot;Hello&quot;;
+echo &quot;String : &quot;.$str.&quot;\n&quot;;
+echo  &quot;sha1 Binary Formate : &quot;.sha1($str,True);
+echo &quot;\n&quot;;
+echo  &quot;sha1 Hexa Formate : &quot;.sha1($str,False);</code></pre> 
+
+    
+<div class="heading2">
+    <h3>PHP String : convert_uuencode Function </h3>
+</div>
+<p><code class="markcode">convert_uuencode()</code> function is based on uuencode Alogirthm.They encrypt the 
+message to send the database, b/c hacker not read the message.we used basically they to encrypt the message. But 
+the sha1(),md5() is used for password Encryption.In this function we decode the text but in sha1(),md5() we not 
+have the function to decode the text.</p>
+<p><strong>Syntax : </strong></p>
+<pre class="language-php"><code class="language-php">convert_uuencode(string);</code></pre> 
+
+<p><code class="markcode">convert_uudencode()</code> function is used to decrypt the convert_uudencode() data.</p>
+<p><strong>Syntax : </strong></p>
+<pre class="language-php"><code class="language-php">convert_uudencode($encrypt_data);</code></pre> 
+<p><strong>Example : Encrypt &amp; Decrypt Message</strong></p>
+<pre class="language-php"><code class="language-php">$str = &quot;Hello&quot;;
+// encrypt the string
+$encodeString =  convert_uuencode($str);
+echo $encodeString.&quot;\n&quot;;
+//decode the data
+echo &quot;Decode String : &quot;.convert_uudecode($encodeString);</code></pre> 
+
+<div class="heading2">
+    <h3>PHP String : bin2hex &amp; hex2bin Function</h3>
+</div>
+<p><code class="markcode">bin2hex()</code> if php built in function that convert the ASCII Character to hexadecimal
+value.All the character in keyboard or special character in keyboard is convert into hexadecimal form.This is mostly used 
+in the security purpose that anyone not try to read this message.</p>
+<p><strong>Syntax : </strong></p>
+<pre class="language-php"><code class="language-php">bin2hex($string);</code></pre> 
+<p><strong>Example : </strong></p>
+<pre class="language-php"><code class="language-php">$str = &quot;Hassan Ali&quot;;
+echo bin2hex($str);</code></pre> 
+
+<p><code class="markcode">hex2bin():</code> php built in function, they convert the hexadecimal code.</p>
+<p><strong>Syntax : </strong></p>
+<pre class="language-php"><code class="language-php">hex2bin($ASCII_Data):</code></pre> 
+<p><strong>Example : </strong></p>
+<pre class="language-php"><code class="language-php">$str = &quot;Hassan Ali&quot;;
+$strtoHex =  bin2hex($str);
+echo $strtoHex.&quot;\n&quot;;
+echo hex2bin($strtoHex);</code></pre> 
+
+<div class="heading2">
+    <h3> PHP chr & ord Function</h3>
+</div>
+<p>Remember: Capital and Small Letter Has Different Ascii Code.</p>
+<p><code class="markcode">chr();</code> function is if you pass the ASCII code then they return the 
+character.They accept Ascii value,octal value,and hexa value as a parameter</p>
+<p><strong>Syntax : </strong></p>
+<pre class="language-php"><code class="language-php">chr($ASCII_Code);</code></pre> 
+<p><strong>Example : </strong></p>
+<pre class="language-php"><code class="language-php">$str = chr(66); //a aschii value
+echo $str;
+
+//Hexa value
+$str = chr(0x48); 
+echo $str;
+
+//octal value
+$str = chr(0120); 
+echo $str;</code></pre> 
+
+
+<p><code class="markcode">ord();</code> is return the ASCII_Code when you pass the character.If we enter the 
+complete world then they only take first character and return the first character Ascii code.</p>
+<p><strong>Syntax : </strong></p>
+<pre class="language-php"><code class="language-php">ord('character pass');</code></pre> 
+<p><strong>Example : </strong></p>
+<pre class="language-php"><code class="language-php">$str = ord(&quot;A&quot;);
+echo $str;
+// return only H ascii code
+$str = ord(&quot;Hassan&quot;);
+echo $str;</code></pre> 
+
+<!-- <div class="heading2">
+    <h3></h3>
+</div> -->
+<p><code class="markcode">strip_tags();</code> is used to remove the html tag from the strings.</p>
+<p><strong>Syntax : </strong></p>
+<pre class="language-php"><code class="language-php">strip_tags($string,allow(optional));
+/*allow : parameter is used to when you allow the specific tag only then enter
+the name of the tag */</code></pre> 
+<p><strong>Example : </strong></p>
+<pre class="language-php"><code class="language-php">$str = &quot;Hello <br>World</b>, Hello <i> Hassan </i>&quot;;
+echo $str.&quot;\n&quot;;
+echo strip_tags($str).&quot;\n&quot;;
+// allow then they not remove b tag
+echo strip_tags($str,&quot;&lt;b&gt;&quot;);</code></pre> 
+
+
+<p><code class="markcode">wordwrap()</code> function is used to break the string into pieces.</p>
+<p><strong>Syntax : </strong></p>
+<pre class="language-php"><code class="language-php">wordwrap($string,$width_Charcter,$break,cut);
+/* $string : enter the string Name
+$width : How much character are wrape.
+$break : is the br tag &lt;br&gt;
+$cut : True or False(Default).If you not enter True then they break word on space.
+*/
+</code></pre> 
+<p><strong>Example : </strong></p>
+<pre class="language-php"><code class="language-php">$str = &quot;This world is beautiful.&quot;;
+echo wordwrap($str,4,&quot;<br>&quot;,True);</code></pre> 
+
+<div class="heading2">
+    <h3>PHP Math Functions</h3>
+</div>
+<pre class="language-php line-numbers"><code class="language-php line-numbers">min();               // Return the Minimum Value
+max();               // Return the Maximum Value
+abs();               // Return Absolute Value
+floor();             // Decimal value to Base Value/Groud value
+ceil();              // Decimal Value to Round value
+round();             // Return the Round Value
+intdiv();            // integer Division
+pow();               // Power off
+sqrt();              // Find the Squre Root
+rand(min,max);       // Generate Random Number
+mt_rand(min,max);    // Mersenne Twister algorithm(4 time faster then rand())
+lcg_value();         // Return 0 &amp; 1 under value</code></pre> 
+
+<div class="heading2">
+    <h3>PHP Math Min &amp; Max Function</h3>
+</div>
+<p><code class="markcode">min()</code>function is used to find the Minimum value from the given number.
+But it work with two or more then two values only,and it is work with arrays.</p>
+<p><strong>Syntax : </strong></p>
+<pre class="language-php"><code class="language-php">min(value1,value2....);
+                            /* Method 02 */
+min(array_value);</code></pre> 
+<p><strong>Example : </strong></p>
+<pre class="language-php"><code class="language-php">$value = min(22,14,68,16,3);
+    echo $value;
+/* array */
+$array_value = array(22,14,68,16,3);
+echo min($array_value);
+/* multiple Array */
+$array_value1 = array(22,14,55,16,3);
+$array_value2 = array(67,14,3,16,3);
+
+print_r(min($array_value1,$array_value2));</code></pre> 
+
+<p><code class="markcode">max()</code>function is used to find the maximum value from the given number.
+But it work with two or more then two values only,and it is work with arrays.</p>
+<p><strong>Syntax : </strong></p>
+<pre class="language-php"><code class="language-php">max(value1,value2....);
+                            /* Method 02 */
+max(array_value);</code></pre> 
+<p><strong>Example : </strong></p>
+<pre class="language-php"><code class="language-php">$value = max(22,14,68,16,3);
+    echo $value;</code></pre> 
+
+<div class="Short-head">
+    <h3>intdiv()</h3>
+</div>
+<p><code class="markcode">intdiv()</code>is function the integer Division.By using this function we find 
+the any integer number divisble value.like  &nbsp; <span style='font-size:3rem;'>&#8732;</span>8 = value</p>
+<p><strong>Syntax : </strong></p>
+<pre class="language-php"><code class="language-php">intdiv(divident,divisor);</code></pre> 
+<p><strong>Example : </strong></p>
+<pre class="language-php"><code class="language-php">// echo intdiv(division_value,divided_value);
+echo intdiv(8,4);
+echo &quot;\n&quot;;
+echo intdiv(5,2);</code></pre> 
+
+<div class="Short-head">
+    <h3>pow()</h3>
+</div>
+<p><code class="markcode">pow()</code> function is used to find the power of value like. (4)<sup>3</sup></p>
+<p><strong>Syntax : </strong></p>
+<pre class="language-php"><code class="language-php">pow(base,exp);</code></pre> 
+<p><strong>Example : </strong></p>
+<pre class="language-php"><code class="language-php">// 4 x 4 x 4
+echo pow(4,3);</code></pre> 
+
+<div class="Short-head">
+    <h3>sqrt()</h3>
+</div>
+<p><code class="markcode">sqrt()</code> function is used to find the squre root of value. like <span style='font-size:3rem;'>&#8730;</span>4 = 2 </p>
+<p><strong>Syntax : </strong></p>
+<pre class="language-php"><code class="language-php">sqrt(number);</code></pre> 
+<p><strong>Example : </strong></p>
+<pre class="language-php"><code class="language-php">echo sqrt(9);</code></pre> 
+
+
+
+
+<!-- 
+
+<div class="heading2">
+    <h3></h3>
+</div>
+<p><code class="markcode"></code></p>
+<p><strong>Syntax : </strong></p>
+<pre class="language-php"><code class="language-php"></code></pre> 
+<p><strong>Example : </strong></p>
+<pre class="language-php"><code class="language-php"></code></pre> 
+
+-->
+
+
+<div class="heading1" style="background-color: red;color:white;">
+    <h3> PHP Super Global Variables</h3>
+</div>
+<div class="heading2">
+    <h3>PHP Global Variables</h3>
+</div>
+<pre class="language-php line-numbers"><code class="language-php line-numbers">$GLOBALS
+$_GET
+$_POST
+$_REQUEST
+$_SERVER
+$_COOKIE
+$_SESSION
+$_FILES
+$_ENV</code></pre>
+
+<div class="heading2">
+    <h3>$_GET</h3>
+</div>
+<p><code class="markcode">$_GET</code> is a super global variable that is used
+to get the data in another page through url. we used this function for specific purpose that we used
+as public.</p>
+<p><strong>Example :</strong></p>
+<p>First create the file index.php then paste the blow code :</p>
+<pre class="language-php"><code class="language-php">&lt;form action=&quot;action.php&quot; method=&quot;get&quot;&gt;
+    &lt;div&gt;
+        &lt;label for=&quot;name&quot;&gt;Name : &lt;/label&gt; &lt;br&gt;
+        &lt;input type=&quot;text&quot; name=&quot;name&quot; id=&quot;name&quot;&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+        &lt;label for=&quot;fatherName&quot;&gt;Father Name :&lt;/label&gt; &lt;br&gt;
+        &lt;input type=&quot;text&quot; name=&quot;fname&quot; id=&quot;fname&quot;&gt;
+    &lt;/div&gt;&lt;br&gt;
+    &lt;div&gt; &lt;input type=&quot;submit&quot; value=&quot;Submit&quot;&gt;  &lt;/div&gt;
+&lt;/form&gt;</code></pre>
+<p>Create Second php file name is &quot;action.php&quot;</p>
+<pre class="language-php"><code class="language-php">&lt;pre&gt;
+    &lt;?php print_r($_GET); ?&gt;
+&lt;/pre&gt;
+&lt;?php
+    echo $_GET['name'];
+    echo &quot;&lt;br&gt;&quot;;
+    echo $_GET['fname'];
+?&gt;</code></pre>
+
+<div class="heading2">
+    <h3>$_POST</h3>
+</div>
+<p><code class="markcode">$_POST</code> is used to send data but the data is not visible to the url. 
+    The <code class="markcode">$_POST</code> variable is an array of variable names and values sent by the HTTP POST method. 
+    The <code class="markcode">$_POST</code> variable is used to collect values from a form with method="post". 
+    Information sent from a form with the POST method is invisible to others and has no 
+    limits on the amount of information to send. <br>
+    <code class="markcode">$_POST</code> is used for secret Data.</p>
+<pre class="language-php"><code class="language-php">&lt;form action=&quot;action.php&quot; method=&quot;POST&quot;&gt;
+    &lt;div&gt;
+        &lt;label for=&quot;name&quot;&gt;Name : &lt;/label&gt; &lt;br&gt;
+        &lt;input type=&quot;text&quot; name=&quot;name&quot; id=&quot;name&quot;&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+        &lt;label for=&quot;fatherName&quot;&gt;Father Name :&lt;/label&gt; &lt;br&gt;
+        &lt;input type=&quot;text&quot; name=&quot;fname&quot; id=&quot;fname&quot;&gt;
+    &lt;/div&gt;&lt;br&gt;
+    &lt;div&gt; &lt;input type=&quot;submit&quot; value=&quot;Submit&quot;&gt;  &lt;/div&gt;
+&lt;/form&gt;</code></pre>
+<p>Create Second php file name is &quot;action.php&quot;</p>
+<pre class="language-php"><code class="language-php">&lt;pre&gt;
+    &lt;?php print_r($_POST); ?&gt;
+&lt;/pre&gt;
+    
+&lt;?php
+    echo $_POST['name'];
+    echo &quot;&lt;br&gt;&quot;;
+    echo $_POST['fname'];
+?&gt;</code></pre>
+
+<div class="heading2">
+    <h3> $_REQUEST</h3>
+</div>
+<p><code class="markcode"> $_REQUEST</code>is a PHP super global variable which is used to collect data 
+    after submitting an HTML form. <code class="markcode"> $_REQUEST</code> method is work with both <code class="markcode">method = &quot;POST&quot;</code>,
+    <code class="markcode"> method = &quot;POST&quot;</code></p>
+<pre class="language-php"><code class="language-php">&lt;form action=&quot;action.php&quot; method=&quot;POST&quot;&gt;
+    &lt;div&gt;
+        &lt;label for=&quot;name&quot;&gt;Name : &lt;/label&gt; &lt;br&gt;
+        &lt;input type=&quot;text&quot; name=&quot;name&quot; id=&quot;name&quot;&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+        &lt;label for=&quot;fatherName&quot;&gt;Father Name :&lt;/label&gt; &lt;br&gt;
+        &lt;input type=&quot;text&quot; name=&quot;fname&quot; id=&quot;fname&quot;&gt;
+    &lt;/div&gt;&lt;br&gt;
+    &lt;div&gt; &lt;input type=&quot;submit&quot; value=&quot;Submit&quot;&gt;  &lt;/div&gt;
+&lt;/form&gt;</code></pre>
+<p>Create Second php file name is &quot;action.php&quot;</p>
+<pre class="language-php"><code class="language-php">&lt;pre&gt;
+    &lt;?php print_r($_REQUEST); ?&gt;
+&lt;/pre&gt;
+    
+&lt;?php
+    echo $_REQUEST['name'];
+    echo &quot;&lt;br&gt;&quot;;
+    echo $_REQUEST['fname'];
+?&gt;</code></pre>
+
+<div class="heading2">
+    <h3>$_SERVER</h3>
+</div>
+<p><code class="markcode">$_SERVER</code>is a PHP super global variable which holds information about 
+    headers, paths, and script locations. <br>
+    By Using <code>$_SERVER</code> we get following reslults;
+    </p>
+    <p><strong>01 - </strong> HTTP Connection    </p>
+    <p><strong>02 - </strong> Server Information </p>
+    <p><strong>03 - </strong> HOST Information   </p>
+    <p><strong>04 - </strong> URL Information    </p>
+    <p><strong>05 - </strong> You donn't need to create the new file for save the 
+    the data in the database.Only those page where you input the data is used to store
+the data in the database, print data, conditional page content.    </p>
+<pre class="language-php"><code class="language-php">&lt;form action=&quot;action.php&quot; method=&quot;POST&quot;&gt;
+    &lt;div&gt;
+        &lt;label for=&quot;name&quot;&gt;Name : &lt;/label&gt; &lt;br&gt;
+        &lt;input type=&quot;text&quot; name=&quot;name&quot; id=&quot;name&quot;&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+        &lt;label for=&quot;fatherName&quot;&gt;Father Name :&lt;/label&gt; &lt;br&gt;
+        &lt;input type=&quot;text&quot; name=&quot;fname&quot; id=&quot;fname&quot;&gt;
+    &lt;/div&gt;&lt;br&gt;
+    &lt;div&gt; &lt;input type=&quot;submit&quot; value=&quot;Submit&quot;&gt;  &lt;/div&gt;
+&lt;/form&gt;</code></pre>
+<p>Create Second php file name is &quot;action.php&quot;</p>
+<pre class="language-php"><code class="language-php">&lt;pre&gt;
+    &lt;?php print_r($_SERVER); ?&gt;
+&lt;/pre&gt;
+    
+&lt;?php
+    echo $_SERVER['PHP_SELF'];
+    echo &quot;&lt;br&gt;&quot;;
+    echo $_SERVER['SERVER_NAME'];
+?&gt;</code></pre>
+
+<hr>
+<hr>
+<p><strong>Data Print Using <code class="markcode">&lt;?php echo $_SERVER['PHP_SELF']?&gt;</code></strong></p>
+<p>PHP_SELF is used to used same file to data send, print.</p>
+<pre class="language-php"><code class="language-php">&lt;form action=&quot;&lt;?php echo $_SERVER['PHP_SELF']?&gt;&quot; method=&quot;POST&quot;&gt;
+    &lt;div&gt;
+        &lt;label for=&quot;name&quot;&gt;Name : &lt;/label&gt; &lt;br&gt;
+        &lt;input type=&quot;text&quot; name=&quot;name&quot; id=&quot;name&quot;&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+        &lt;label for=&quot;fatherName&quot;&gt;Father Name :&lt;/label&gt; &lt;br&gt;
+        &lt;input type=&quot;text&quot; name=&quot;fname&quot; id=&quot;fname&quot;&gt;
+    &lt;/div&gt;&lt;br&gt;
+    &lt;div&gt; &lt;input type=&quot;submit&quot; value=&quot;Submit&quot;&gt;  &lt;/div&gt;
+&lt;/form&gt;
+&lt;?php
+if(isset($_POST['save'])){
+    echo $_POST['name'];
+    echo &quot;&lt;br&gt;&quot;;
+    echo $_POST['fname'];
+}
+?&gt;</code></pre>
+
+<div class="heading2">
+    <h3>$_COOKIE</h3>
+</div>
+<p>PHP cookie is a small piece of information which is stored at client browser. It is used to 
+    recognize the user. Cookie is created at server side and saved to client browser. Each time 
+    when client sends request to the server, cookie is embedded with request.</p>
+    <p><strong>Create Cookies With PHP</strong></p>
+<pre class="language-php"><code class="language-php">setcookie(name, value, expire, path, domain, secure, httponly);</code></pre>
+<p><code class="markcode">name</code>    : is assign the name of the cookie.</p>
+<p><code class="markcode">value</code>   : is the assign value to cookie like we assign the value to a variable $a = 10;</p>
+<p><code class="markcode">expire</code>  : when you set the cookie from user laptop then you can set the expire date / destroy of 
+                                           the cookie.If you not add the value then they not destroy at the time.They delete if they
+                                            user clear the cached memory of the browser. <br> You have add the cookie expire time in second.</p>
+<p><code class="markcode">path</code>    : when you set the cookie and retrive the cookie set the path in  slash / all the page or /page name is specific page can access the cookie.</p>
+<p><code class="markcode">domain</code>  : You can add the domain name like www.importantmcqs.com or sub-domain test.importantmcqs.com</p>
+<p><code class="markcode">secure</code>  : Accept two parameter Yes or No. Yes is used for the https Secure Connection then cookie set.</p>
+<p><code class="markcode">httponly</code>: It mean that the cookie is access in local side or server side. If you pass the <strong>true</strong>
+then you only access the cookie in server side language (php,node.js) or <strong>NO</strong> is the client side you can access through 
+JavaScript.</p>
+
+<p><strong>View the Cookie Value</strong></p>
+<pre class="language-php"><code class="language-php">$_COOKIE[name];</code></pre>
+
+<p><strong>Example :</strong></p>
+<pre class="language-php"><code class="language-php">&lt;?php
+$cookie_Name = &quot;user&quot;;
+$cookie_Value = &quot;Hassan Ali&quot;;
+/*
+1.cookie Name that save
+2.cookie value we save
+3. time add after cookie destroy
+time() is the current time and 86400 is the 24 hour seconds
+if we need to destroy cookie after one month then we write time()+(86400 * 30);
+4.Set path '/' that cookie access on all pages if you add specific then used 
+    '/page_Name'.
+*/
+setcookie($cookie_Name, $cookie_Value, time() + (86400), &quot;/&quot;)
+?&gt;
+
+&lt;html&gt;
+&lt;body&gt;
+    &lt;?php
+    //isset check if cookie not save the show message,if cookie save then show cookie
+    if (!isset($_COOKIE[$cookie_Name])) {
+        echo &quot;cookie is not set&quot;;
+    } else {
+        echo $_COOKIE[$cookie_Name];
+    }
+    //if you delete the cookie the used the blow code
+    //  setcookie(&quot;user&quot;,&quot;&quot;,time()-(86400 * 30),&quot;/&quot;);
+    ?&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+<div class="heading2">
+    <h3>$_SESSION</h3>
+</div>
+<p><code class="markcode">$_SESSION</code> is used to store temporary information in the server. In cookie we store
+the information in the client browser but the session is store on the server or database.Mostly 90% use of session 
+is the login or logout purpose.</p>
+<p><strong>Three Step to Set & Get SESSION Value</strong></p>
+<p><strong>Step 01 -</strong> <code class="markcode">session_start();</code></p>
+<p><strong>Step 02 -</strong> <code class="markcode">$_SESSION[name] = value ;</code>(Set name & value to session)</p>
+<p><strong>Step 03 -</strong> <code class="markcode">echo $_SESSION[name]; </code></p>
+
+<p><strong>Delete SESSION</strong></p>
+<p>Delete session has two steps, if the user logout from the device.</p>
+<p><strong>Step 01 -</strong> <code class="markcode">session_unset();</code>(Remove all session variable)</p>
+<p><strong>Step 02 -</strong> <code class="markcode">session_destory();</code>(Destroy Session)</p>
+
+<p><strong>Create Session in the index.php file</strong></p>
+<pre class="language-php"><code class="language-php">&lt;?php
+    session_start();
+    $_SESSION['name'] = 'Hassan Ali';
+?&gt;</code></pre>
+<p><strong>Check and Print Session in action.php file</strong></p>
+<pre class="language-php"><code class="language-php">&lt;?php
+session_start();
+?&gt;
+&lt;html&gt;
+&lt;body&gt;
+    &lt;?php
+    if (isset($_SESSION['name'])) {
+        echo &quot;Session Created Successfully&quot;;
+        echo &quot;&lt;br&gt;&quot;;
+        echo &quot;&lt;pre&gt;&quot;;
+        print_r($_SESSION);
+        echo &quot;&lt;/pre&gt;&quot;;
+    } else {
+        echo &quot;Session Not Created&quot;;
+    }
+    ?&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p><strong>Destroy Session in d.php</strong></p>
+<pre class="language-php"><code class="language-php">&lt;?php
+    session_start();
+    session_unset();
+    session_destroy();
+?&gt;</code></pre>
+
+<div class="heading2">
+    <h3>$_FILES</h3>
+</div>
+<p><code class="markcode">$_FILES</code> is used for upload the image</p>
+<p><code class="markcode">move_uploaded_file()</code>is used to upload the file into server
+to add the tmp name of file or file save path.</p>
+<p><code class="markcode">enctype=&quot;multipart/form-data&quot;</code> is used attribute
+in the form tag/element. If your form contain file like video,image,audio then you use This
+attribute in form tag is necessary.</p>
+
+<pre class="language-php"><code class="language-php">&lt;?php
+if (isset($_FILES['image'])) { //check file save or not
+    echo &quot;&lt;pre&gt;&quot;;
+    print_r($_FILES['image']);
+    echo &quot;&lt;/pre&gt;&quot;;
+
+    $file_Name = $_FILES['image']['name'];
+    $file_type = $_FILES['image']['type'];
+    $file_tmp = $_FILES['image']['tmp_name'];
+    $file_size = $_FILES['image']['size'];
+    //upload the file into server we used move_uploaded_file($temp,path);
+    move_uploaded_file($file_tmp, &quot;upload-image/&quot; . $file_Name);
+}
+?&gt;
+&lt;html&gt;
+&lt;body&gt;
+    &lt;form action=&quot;&quot; method=&quot;POST&quot; enctype=&quot;multipart/form-data&quot;&gt;
+        &lt;div&gt;
+            &lt;label for=&quot;file&quot;&gt;&lt;b&gt;Upload File&lt;/b&gt;&lt;/label&gt;
+            &lt;input type=&quot;file&quot; name=&quot;image&quot;&gt;
+        &lt;/div&gt;&lt;br&gt;&lt;br&gt;
+        &lt;div&gt;
+            &lt;input type=&quot;submit&quot; value=&quot;Save&quot; name=&quot;submit&quot;&gt;
+        &lt;/div&gt;
+    &lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+<div class="heading2">
+    <h3>$_FILES Upload on DBMS</h3>
+</div>
+<pre class="language-php"><code class="language-php">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;File Upload&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;form method=&quot;post&quot; enctype=&quot;multipart/form-data&quot;&gt;
+        &lt;label&gt;Title&lt;/label&gt;
+        &lt;input type=&quot;text&quot; name=&quot;title&quot;&gt;
+        &lt;label&gt;File Upload&lt;/label&gt;
+        &lt;input type=&quot;File&quot; name=&quot;file&quot;&gt;
+        &lt;input type=&quot;submit&quot; name=&quot;submit&quot;&gt;
+    &lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+&lt;?php
+$localhost = &quot;localhost&quot;; #localhost
+$dbusername = &quot;root&quot;; #username of phpmyadmin
+$dbpassword = &quot;&quot;;  #password of phpmyadmin
+$dbname = &quot;test&quot;;  #database name
+#connection string
+$conn = mysqli_connect($localhost, $dbusername, $dbpassword, $dbname);
+if (isset($_POST[&quot;submit&quot;])) {
+    #retrieve file title
+    $title = $_POST[&quot;title&quot;];
+    #file name with a random number so that similar dont get replaced
+    $pname = rand(1000, 10000) . &quot;-&quot; . $_FILES[&quot;file&quot;][&quot;name&quot;];
+    #temporary file name to store file
+    $tname = $_FILES[&quot;file&quot;][&quot;tmp_name&quot;];
+    #upload directory path
+    $uploads_dir = 'images';
+    #TO move the uploaded file to specific location
+    move_uploaded_file($tname, $uploads_dir . '/' . $pname);
+    #sql query to insert into database
+    $sql = &quot;INSERT into fileup(title,image) VALUES('$title','$pname')&quot;;
+    if (mysqli_query($conn, $sql)) {
+
+        echo &quot;File Sucessfully uploaded&quot;;
+    } else {
+        echo &quot;Error&quot;;
+    }
+}
+?&gt;</code></pre>
+<p><strong>View Upload File of DBMS</strong></p>
+<pre class="language-php"><code class="language-php">&lt;?php
+$localhost = &quot;localhost&quot;; #localhost
+$dbusername = &quot;root&quot;; #username of phpmyadmin
+$dbpassword = &quot;&quot;;  #password of phpmyadmin
+$dbname = &quot;test&quot;;  #database name
+    
+#connection string
+$conn = mysqli_connect($localhost,$dbusername,$dbpassword,$dbname);
+$query = &quot;select * from test.fileup&quot;;
+$result = mysqli_query($conn,$query) or die(&quot;Mysqli Query not working&quot;);
+// echo mysqli_num_rows($result);
+if(mysqli_num_rows($result)&gt;0){
+
+?&gt;
+&lt;table border=&quot;1&quot; width=&quot;100%&quot;&gt;
+&lt;thead&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Name&lt;/th&gt;
+        &lt;th&gt;Image&lt;/th&gt;
+        &lt;th&gt;Edit&lt;/th&gt;
+    &lt;/tr&gt;
+&lt;/thead&gt;
+&lt;?php
+while($rows = mysqli_fetch_assoc($result)){
+?&gt;
+&lt;tbody&gt;
+    &lt;tr align=&quot;center&quot;&gt;
+        &lt;td&gt;&lt;?php echo $rows['title']; ?&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;?php echo '&lt;img height=&quot;200&quot; width=&quot;200&quot; src=&quot;images/'.$rows['image'].'&quot; /&gt;' ?&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;a href=&quot;delete.php?id=&lt;?php echo $rows['id'];?&gt;&quot;&gt;Delete&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;?php
+}
+?&gt;
+&lt;/table&gt;
+
+&lt;?php
+}
+?&gt;</code></pre>
+
+
+<!-- 
+<div class="heading2">
+    <h3></h3>
+</div>
+<pre class="language-php"><code class="language-php"></code></pre>
+
+<div class="heading2">
+    <h3></h3>
+</div>
+<pre class="language-php"><code class="language-php"></code></pre>
+
+<div class="heading2">
+    <h3></h3>
+</div>
+<pre class="language-php"><code class="language-php"></code></pre> -->
+
+</div>
+<footer>
+    <p>Design By Hassan Ali</p>
+</footer>
+
+
+    <script src="../Files/javaScript.js"></script>
+    <script src="https://kit.fontawesome.com/991a8d9f0e.js" crossorigin="anonymous">
+    </script>
+</body>
+</html>

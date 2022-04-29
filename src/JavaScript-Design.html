@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS Design CheatSheet</title>
+  <link rel="icon" type="image/x-icon" href="../images/js.png">
+  <link rel="stylesheet" href="../Files/style.css">
+  <link rel="stylesheet" href="../Files/prism.css">
+  <script src="../Files/prism.js"></script>
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+</head>
+
+<body id="darkmode">
+
+  <header>
+    <a href="../index.html" class="logo">Cheat<span>Sheet</span>
+      <img src="../images/js.png" style="width:2.0rem;height:inherit;" />
+    </a>
+    <nav class="navbar">
+      <a href="../index.html">Home</a>
+      <a href="JavaScript.html">JavaScript</a>
+      <!-- <a href="src/">CSS</a> -->
+      <a href="#" id="btn-dark">Dark Mode off</a>
+    </nav>
+    <div class="icons">
+      <div id="menu-btn" class="fas fa-bars"></div>
+    </div>
+  </header>
+
+  <button onclick="topFunction()" id="myBtn" title="Go to top">
+    <i class="fas fa-arrow-circle-up"></i>
+  </button>
+
+  <div class="container">
+
+    <h1 class="heading1" style="background-color: red;">JavaScript Introduction</h1>
+    <div class="heading2">
+      <h3> Search Record in Table</h3>
+    </div>
+    <pre class="language-javascript "><code class="language-javascript match-braces" >function tablesearch(){
+    let input  = document.getElementById('myinput').value; //getting input value
+    let filter = input.toUpperCase();   // convert search value to toUpperCase
+    let a = document.getElementById('myTable'); //get table
+    let tr = a.getElementsByTagName('tr');  //get table rows
+
+    for (let i = 1; i &lt; tr.length; i++) {
+        let td = tr[i].getElementsByTagName('td')[0];
+
+        if (td) {
+            let text = td.textcontent || td.innerHTML;
+            if (text.toUpperCase().indexOf(filter) &gt; -1) {
+                tr[i].style.display = &quot;&quot;;
+            } else {
+                tr[i].style.display = &quot;none&quot;;
+            }
+        }
+    }
+}</code></pre>
+
+    <h5 class="heading1" style="color: white; background-color: red">JavaScript Bulb on/off Simple Project</h5>
+    <pre class="language-javascript "><code class="language-javascript match-braces" > &lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;script&gt;
+function lighton() {
+document.getElementById('myimage').src = &quot;bulbon.gif&quot;;
+}
+function lightoff() {
+document.getElementById('myimage').src = &quot;bulboff.gif&quot;;
+}
+&lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+&lt;img id=&quot;myimage&quot; src=&quot;bulboff.gif&quot; width=&quot;100&quot; height=&quot;180&quot; /&gt;
+&lt;br/&gt;
+
+&lt;button onclick = &quot;lighton()&quot;&gt;on Bulb &lt;/button&gt;
+&lt;button onclick = &quot;lightoff()&quot;&gt;off Bulb &lt;/button&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+    <div class="heading2">
+      <h3> Project Demo</h3>
+    </div>
+    <script>
+      function lighton() {
+        document.getElementById('myimage').src = "../images/bulbon.gif";
+      }
+      function lightoff() {
+        document.getElementById('myimage').src = "../images/bulboff.gif";
+      }
+    </script>
+    <center>
+      <br />
+      <img height="180" id="myimage" src="../images/bulboff.gif" width="100" />
+      <br />
+      <button onclick="lighton()"
+        style="background-color: yellow;font-size:18px;border:none;border-radius: 10px; width:100px; height:40px;cursor:pointer;">on
+        Bulb </button>
+      <button onclick="lightoff()"
+        style="background-color: #f1f1f1;font-size:18px;border:none;border-radius: 10px; width:100px; height:40px;cursor:pointer;">off
+        Bulb </button>
+    </center>
+
+
+    <div class="heading2">
+      <h3> Tabs Design in html,css,JavaScript</h3>
+    </div>
+    <pre class="language-html"><code class="language-html match-braces" >&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+
+&lt;head&gt;
+&lt;style&gt;
+    *{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.tab{
+  border: 2px solid black;
+  background-color: #dfdfdf85;
+}
+.tab button{
+  width: 100px;
+  padding: 13px;
+  border: none;
+  margin: 0;
+  cursor: pointer;
+}
+.tabcontent{
+  padding: 10px;
+  border: 2px solid black;
+  display: none;
+}
+.active{
+  background-color: red;
+  color:white;
+}
+&lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+&lt;div class=&quot;tab&quot;&gt;
+ &lt;button class=&quot;tablink active&quot; onclick=&quot;openCity(event,'london')&quot;&gt;London&lt;/button&gt;
+ &lt;button class=&quot;tablink&quot; onclick=&quot;openCity(event,'paris')&quot;&gt; Paris&lt;/button&gt;
+ &lt;button class=&quot;tablink&quot; onclick=&quot;openCity(event,'tokoyo')&quot;&gt;Tokoyo&lt;/button&gt;
+&lt;/div&gt;
+
+
+&lt;div id=&quot;london&quot; class=&quot;tabcontent&quot;&gt;
+	&lt;h1&gt;London&lt;/h1&gt;
+	&lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, assumenda.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div id=&quot;paris&quot; class=&quot;tabcontent&quot;&gt;
+	&lt;h1&gt;Paris&lt;/h1&gt;
+	&lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, assumenda.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div id=&quot;tokoyo&quot; class=&quot;tabcontent&quot;&gt;
+	&lt;h1&gt;Tokoyo&lt;/h1&gt;
+	&lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, assumenda.&lt;/p&gt;
+&lt;/div&gt;
+
+
+&lt;script&gt;
+document.getElementById(&quot;london&quot;).style.display = &quot;block&quot;;
+        function openCity(e, cityName) {
+            var i, tabcontent, tablink;
+
+            //display :none to the tabcontent b/c they not show on click
+            tabcontent = document.getElementsByClassName('tabcontent');
+            for (i = 0; i &lt; tabcontent.length; i++) {
+                tabcontent[i].style.display = &quot;none&quot;;
+            }
+
+            //use for the active button not click
+            tablink = document.getElementsByClassName('tablink');
+            for (i = 0; i &lt; tablink.length; i++) {
+                tablink[i].className = tablink[i].className.replace('active');
+            }
+
+            document.getElementById(cityName).style.display = &quot;block&quot;;
+            e.currentTarget.className += &quot; active&quot;;
+        }
+    &lt;/script&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;</code></pre>
+
+
+
+    <div class="heading2">
+      <h3> Popup Design Using HTML,CSS and JavaScript</h3>
+    </div>
+    <pre class="language-html"><code class="language-html match-braces" >&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;style&gt;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: rgba(226, 226, 226, 0.877);
+        }
+
+        .popup {
+            width: 60%;
+            height: auto;
+            border-radius: 20px;
+            background-color: white;
+            transform: translate(-50%, -50%);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            padding: 30px 20px;
+            display: none;
+        }
+
+        .popup #close {
+            display: block;
+            margin: 0 0 10px auto;
+            border: 2px solid black;
+            border-radius: 50px;
+            width: 40px;
+            outline: none;
+            background-color: transparent;
+            cursor: pointer;
+            font-size: 30px;
+
+        }
+
+        .popup #close:hover {
+            background-color: red;
+            color: white;
+        }
+
+        .popup h1 {
+            margin-top: 20px;
+        }
+
+        .popup p {
+            text-align: justify;
+            color: black;
+            margin-top: 20px;
+        }
+
+        .popup #letgo {
+            display: block;
+            margin: 20px auto;
+            width: 200px;
+            height: 30px;
+            border: none;
+            outline: none;
+            font-size: 20px;
+            font-family: verdana;
+            background-color: rgb(59, 17, 126);
+            color: white;
+            cursor: pointer;
+            border-radius: 20px;
+
+        }
+
+        @media only screen and (max-width: 600px) {
+            .popup {
+                width: 90%;
+            }
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+    &lt;div class=&quot;popup&quot;&gt;
+        &lt;button id=&quot;close&quot;&gt;&times;&lt;/button&gt;
+        &lt;h1&gt;Hello My name is Hassan&lt;/h1&gt;
+        &lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae
+        illo perspiciatis amet provident ducimus, distinctio quidem! Provident
+        reiciendis accusamus possimus vitae magnam voluptate porro consequatur
+            cupiditate, hic inventore modi quae.&lt;/p&gt;
+        &lt;button id=&quot;letgo&quot;&gt;Let Go&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;script&gt;
+
+        //load document then load popup after 1s time
+        window.addEventListener('load', function () {
+            setTimeout(function () {
+                document.querySelector(&quot;.popup&quot;).style.display = &quot;block&quot;;
+            }, 1000);
+        });
+        //when click on close button popup hide
+        let a = document.querySelector(&quot;.popup&quot;);
+        let close = document.querySelector('#close');
+        close.addEventListener('click', function () {
+            a.style.display = &quot;none&quot;;
+        });
+    &lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+
+
+    <div class="heading2">
+      <h3> List Design like &lt;option&gt; </h3>
+    </div>
+    <h5 class="outputh">HTML File :</h5>
+    <pre class="language-html "><code class="language-html match-braces" >&lt;body&gt;
+  &lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;center&quot;&gt;
+      &lt;div class=&quot;opt&quot; id=&quot;opt&quot;&gt;
+        &lt;p&gt;Select the Text&lt;/p&gt;
+        &lt;i class=&quot;fas fa-chevron-down&quot; id=&quot;rotateicon&quot;&gt;&lt;/i&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;list hide&quot; id=&quot;list&quot;&gt;
+        &lt;ul&gt;
+          &lt;li class=&quot;option&quot;&gt;
+            &lt;img src=&quot;fb-icon.png&quot;&gt;
+            &lt;p&gt;Facebook&lt;/p&gt;
+          &lt;/li&gt;
+          &lt;li class=&quot;option&quot;&gt;
+            &lt;img src=&quot;twitter-icon.png&quot;&gt;
+            &lt;p&gt;Twitter&lt;/p&gt;
+          &lt;/li&gt;
+          &lt;li class=&quot;option&quot;&gt;
+            &lt;img src=&quot;whatsapp-icon.png&quot; alt=&quot;&quot;&gt;
+             &lt;p&gt;Whatsapp&lt;/p&gt;
+          &lt;/li&gt;
+          &lt;li class=&quot;option&quot;&gt;
+            &lt;img src=&quot;youtube-icon.png&quot; alt=&quot;&quot;&gt;
+            &lt;p&gt;Youtube&lt;/p&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;</code></pre>
+
+    <h5 class="outputh">CSS :</h5>
+    <pre class="language-css "><code class="language-css match-braces" >* {
+  margin: 0;
+  padding: 0;
+}
+.container {
+  background: linear-gradient(45deg, red, blue);
+  height: 100vh;
+}
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.opt {
+  background-color: white;
+  width: 300px;
+  height: 40px;
+  padding: 10px;
+  box-sizing: border-box;
+  font-size: 16px;
+  color: black;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 520;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  cursor: pointer;
+}
+
+#list {
+  margin-top: 10px;
+  position: absolute;
+  width: 300px;
+  height: 212px;
+  background-color: white;
+}
+.display {
+  display: block;
+}
+#list ul {
+  list-style-type: none;
+}
+#list ul li {
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 1px solid black;
+}
+#list ul li p {
+  margin: 0;
+}
+#list ul li:hover {
+  background-color: aliceblue;
+}
+.option {
+  color: black;
+  display: flex;
+  line-height: 30px;
+  font-family: verdana;
+}
+.option img {
+  width: 30px;
+}
+.hide {
+  visibility: hidden;
+}
+#rotateicon {
+  transition: transform 0.5s;
+}
+.icon {
+  transform: rotate(180deg);
+}
+.fab {
+  width: 40px;
+}
+.fa-youtube {
+  color: red;
+}
+.fa-whatsapp-square {
+  color: green;
+}
+.fa-twitter,
+.fa-facebook {
+  color: blue;
+}
+</code></pre>
+
+    <h5 class="outputh">JavaScript :</h5>
+    <pre class="language-javascript "><code class="language-javascript match-braces" >let text = document.getElementById("opt");
+let textchild = text.firstElementChild;
+let options = document.getElementsByClassName("option");
+let list = document.getElementById("list");
+let icon = document.getElementById("rotateicon");
+
+for (option of options) {
+  option.onclick = function () {
+    textchild.innerHTML = this.textContent;
+    list.classList.toggle("hide");
+    icon.classList.toggle("icon");
+  };
+}
+text.onclick = function () {
+  list.classList.toggle("hide");
+  icon.classList.toggle("icon");
+};</code></pre>
+
+
+    <div class="heading2">
+      <h3> Animated Counter Design Using HTML,CSS and JavaScript </h3>
+    </div>
+    <h5 class="outputh">HTML FILE :</h5>
+    <pre class="language-html "><code class="language-html match-braces" >&lt;div class=&quot;flex-container&quot;&gt;
+    &lt;div class=&quot;wrapper&quot;&gt;
+      &lt;div class=&quot;flex-box&quot;&gt;
+       &lt;div class=&quot;icon&quot;&gt;&lt;i class=&quot;fab fa-facebook fa-2x&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+        &lt;p  id=&quot;a&quot; class=&quot;alignnumber&quot;&gt;&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;flex-box&quot;&gt;
+        &lt;div class=&quot;icon&quot;&gt;&lt;i class=&quot;fas fa-users fa-2x&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+        &lt;p  id=&quot;b&quot; class=&quot;alignnumber&quot;&gt;&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;flex-box&quot;&gt;
+        &lt;div class=&quot;icon a&quot;&gt;&lt;i class=&quot;fas fa-male fa-2x&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+        &lt;p  id=&quot;c&quot; class=&quot;alignnumber&quot;&gt;&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;script src=&quot;https://kit.fontawesome.com/991a8d9f0e.js&quot; crossorigin=&quot;anonymous&quot;&gt;
+  &lt;/script&gt;</code></pre>
+    <h5 class="outputh">CSS FILE :</h5>
+    <pre class="language-css "><code class="language-css match-braces" >* {
+  margin: 0;
+  padding: 0;
+}
+.flex-container{
+	width: 80%;
+	margin: auto;
+}
+.wrapper{
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	gap:10px;
+}
+.flex-box{
+	background: linear-gradient(purple,red);
+	width: 300px;
+	height: 180px;
+	font-size: 30px;
+	color:white;
+	border-radius: 10px;
+	flex:1 1 10rem;
+}
+.icon{
+	width: 80px;
+	height: auto;
+	margin:20px auto;
+	display: grid;
+	justify-content: center;
+}
+.alignnumber{
+	text-align: center;
+}</code></pre>
+    <h5 class="outputh">JavaScript FILE :</h5>
+    <pre class="language-javascript "><code class="language-javascript match-braces" >let a = document.getElementById("a");
+let b = document.getElementById("b");
+let c = document.getElementById("c");
+
+let a_value = 80;
+let b_value = 70;
+let c_value = 60;
+
+let counter = 0;
+let ain = setInterval(()=> {
+  if (counter == a_value) {
+    clearInterval(ain);
+  }else{
+    counter += 1;
+    a.innerHTML = counter + "%";
+  }
+}, 20);
+ 											/*B Counter */
+let bcounter = 0;
+let bin = setInterval(()=> {
+    if (bcounter == b_value) {
+      clearInterval(bin);
+    }else{
+        bcounter += 1;
+      b.innerHTML = bcounter + "%";
+    }
+  }, 20);
+ 											/*C Counter */
+let ccounter = 0;
+let cin =setInterval(()=> {
+    if (ccounter == c_value) {
+      clearInterval();
+    }else{
+        ccounter += 1;
+      c.innerHTML = ccounter + " Person";
+    }
+  }, 20);</code></pre>
+
+    <div class="heading2">
+      <h3> Time Get</h3>
+    </div>
+    <pre class="language-javascript "><code class="language-javascript match-braces" >let now = new Date();  
+let hour = now.getHours(); 
+let minutes = now.getMinutes();
+var ampm = hour>12?'PM':'AM';
+    hour = hour % 12; 
+
+hour = hour?hour:12; 
+minutes = minutes<10?'0'+minutes:minutes;
+
+const t = hour + ':' + minutes+' ' +ampm;
+console.log(t);</code></pre>
+
+
+    <!--<h5 class="heading1" style="color: white; background-color: red"></h5>
+
+<div class="heading2">
+    <h3> </h3>
+</div>
+
+<div class="Short-head">
+   <h3> </h3>
+</div>
+
+
+<p><code class="markcode"></code></p>
+<span class="marku"></span>
+
+
+<div class="heading2">
+    <h3> </h3>
+</div>
+<h5 class="outputh">Output :</h5>
+<pre  class="language-javascript "><code class="language-javascript match-braces" ></code></pre>
+
+
+     -->
+
+  </div>
+
+  <footer>
+    <p>Design By Hassan Ali</p>
+  </footer>
+
+
+  <script src="../Files/javaScript.js"></script>
+  <script src="https://kit.fontawesome.com/991a8d9f0e.js" crossorigin="anonymous">
+  </script>
+</body>
+
+</html>

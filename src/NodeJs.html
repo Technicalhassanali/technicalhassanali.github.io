@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Node.JS CheatSheet</title>
+  <link rel="icon" type="image/x-icon" href="images/logo.svg">
+  <link rel="stylesheet" href="../Files/style.css" />
+  <link rel="stylesheet" href="../Files/prism.css" />
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+</head>
+
+<body id="darkmode">
+
+  <header>
+    <a href="../index.html" class="logo">
+       Node<span>JS</span>
+       <img src="../images/logo.svg" style="width:4.0rem;height:inherit;"/>
+      </a>
+    
+    <nav class="navbar">
+        <a href="../index.html">Home</a>
+        <a href="src/HTML.html">HTML</a>
+        <!-- <a href="src/">CSS</a> -->
+        <a href="src/JavaScript.html">JavaScript</a>
+        <a href="src/php.html">PHP</a>
+        <a href="src/software.html">Software</a>
+        <a href="#" id="btn-dark">Dark Mode off</a>
+    </nav>
+    <div class="icons">
+        <div id="menu-btn" class="fas fa-bars"></div>
+    </div>
+</header>
+
+  
+
+  <!-- Top Up Button -->
+  <button onclick="topFunction()" id="myBtn" title="Go to top">
+    <i class="fas fa-arrow-circle-up"></i>
+  </button>
+
+
+  <div class="container">
+    <div class="heading2">
+      <h3> Node JS Instroduction </h3>
+    </div>
+    <ul>
+      <li>Node.js is a JavaScript runtime built on chrome's V8 JavaScript Engine.</li>
+      <li>Node.js is a JavaScript running on the Server.</li>
+      <li>Node.js is the open source.</li>
+    </ul>
+    <p><strong>History:</strong></p>
+    <p>In 2009 Ago we used the JavaScript in client not in the server.But in 2009 the idea came in the mind of
+      Rayan Dahl(Google Engineer) that why not run javaScript outside the browser(outside clientside), so he took
+      V8 engine and embedded in a C++ Program and called it Node.exe later on become Nodejs.</p>
+
+    <div class="success size">
+      <p><i class="fas fa-check-circle"></i><strong> Note: What is V8?</strong><br>
+        V8 translates JavaScript code directly into machine code* so that computers can actually
+        understand it, then it executes the translated, or compiled, code.It is written in C++ languages.<br>
+        <strong>Example : </strong> Chrome,FireFox(SpiderMonkey),Safari(Nitro)
+      </p>
+    </div>
+
+    <div class="heading2">
+      <h3> What is REPL? </h3>
+    </div>
+    <p>The <code class="markcode">REPL</code> feature of Node is very useful in experimenting
+      with Node.js codes and to Debug JavaScript Code.</p>
+    <div class="info size">
+      <p> <i class="fas fa-arrow-circle-right"></i> <strong>Read</strong> Reads user's Input,Parse the input into
+        JavaScript Data-Structure,and Stores in Memory.</p>
+      <p> <i class="fas fa-arrow-circle-right"></i> <strong>Eval</strong> Takes and Evaluates the Data Structure.</p>
+      <p> <i class="fas fa-arrow-circle-right"></i> <strong>Print</strong> Print the Result. </p>
+      <p> <i class="fas fa-arrow-circle-right"></i> <strong>Loop</strong> Loop the Above Command until the User Presses
+        ctrl+c twice.</p>
+    </div>
+    <div class="heading2">
+      <h3> When to use Node JS? </h3>
+    </div>
+
+    <div class="notecard note">
+      <p><strong>Input/Output Bound</strong></p>
+      <p><strong>Data Streaming Applications : </strong> e.g NetFlix,instagram,Facebook etc.</p>
+      <p><strong>Real Time Applications :</strong> e.g whatsapp,uber,ebay,PayPal etc.</p>
+    </div>
+
+    <div class="heading2">
+      <h3> What is JSON ? | How to convert Object Data to JSON? </h3>
+    </div>
+    <p>
+      JSON stands for JavaScript Object Notation.<br>
+      JSON is a lightweight format for storing and transporting Data.<br>
+      JSON is often used when data is from a server to a web Page.<br>
+    </p>
+    <div class="info size">
+      <p><i class="fas fa-info-circle"></i> <strong>Task :</strong><br>
+        Object Data Convert to String then String Data put into the new file
+        create Data.json name and put the string data.After creating and put the
+        Data in json file you can read the data to convert first in Object.
+      </p>
+    </div>
+    <pre class="line-numbers language-javascript "><code class="language-javascript match-braces" >const bioData = {
+    name : 'Hassan Ali',
+    fatherName : 'Riaz-ul-Hassan',
+    age : 26
+}
+const str_convert = JSON.stringify(bioData); // convert Object to string
+// console.log(str_convert);
+
+const fs = require('fs');
+fs.writeFile("Data.json",str_convert,(error)=>{ //create file & insert Data
+  console.log("Data Add");
+});
+//Read file from the create file Data and again convert to the Object
+fs.readFile("Data.json","utf-8",(error,data)=>{
+  console.log(data);
+  const obj_convert = JSON.parse(data);
+  console.log(obj_convert);
+});</code></pre>
+
+    <div class="heading2">
+      <h3> Node.js HTTP Module | Node JS Server Connection </h3>
+    </div>
+    <p>Node.js has a built-in module called HTTP, which allows Node.js to transfer data over
+      the Hyper Text Transfer Protocol (HTTP).</p>
+    <p><code class="markcode">http.createServer()</code>The HTTP module can create an HTTP server
+      that listens to server ports and gives a response back to the client.<br>
+      In this Method we pass the function that parameter is <code
+        class="markcode">http.createServer((req,res)=>{});</code>
+      req mean request and res mean response the server.</p>
+    <p>
+      <code class="markcode">respose.writeHead(200, {'Content-Type': 'text/html'});</code>If the response from the HTTP
+      server is supposed to be displayed as HTML, you should include an HTTP header.
+      <code class="markcode">res.writeHead(statusCode,response)</code>
+      method is the status code, 200 means that all is OK, the second argument is an object containing
+      the response headers.<br>
+      response.writeHead(statusCode[, statusMessage][, headers]);
+    </p>
+
+    <pre class="language-javascript "><code class="language-javascript match-braces" >const http = require('http');
+const hostname = '127.0.0.1';
+const port = 5500;
+const server = http.createServer((req, res) =&gt; {
+  res.statusCode = 200;        // 'text/html'
+  res.setHeader('Content-Type', 'text/plain');
+  res.end('Hello, World! Hassan Ali\n');
+});
+
+server.listen(port, hostname, () =&gt; {
+  console.log(`Server running at http://${hostname}:${port}/`);
+});
+</code></pre>
+
+    <div class="heading2">
+      <h3> Types of Module in Node JS</h3>
+    </div>
+    <p>Three types of Module in the Node JS</p>
+    <ul>
+      <li>Core Module (Built In Module)</li>
+      <li>NPM Module</li>
+      <li>Third Partiy Module</li>
+    </ul>
+
+    <div class="heading2">
+      <h3> Node JS File System Module </h3>
+    </div>
+    <p>A file system is a mechanism that controls how data is stored, accessed, and managed
+      on an operating system. The file system module in Node. js allows you to work programmatically
+      with the file system on an operating system.</p>
+    <div class="success size">
+      <p><i class="fas fa-check-circle"></i> Using file system (fs) module, we can perform
+        <code class="markcode">Read</code>,<code class="markcode">Create</code>,
+        <code class="markcode">Update</code>,<code class="markcode">Delete</code>,
+        <code class="markcode">Rename</code> the files and many more operations.
+      </p>
+    </div>
+
+    <div class="Short-head">
+      <h3> Read Files </h3>
+    </div>
+    <p><code class="markcode">fs.readFile()</code> method is used to read files on your computer.</p>
+    <p><code class="markcode">fs.readFileSync()</code> method is used to read files on your computer. (same work as
+      readFile)</p>
+    <p><span class="outputh">HTML File : filename => Home.html</span></p>
+    <pre class="language-html "><code class="language-html match-braces" >&lt;html>
+&lt;body&gt;
+  &lt;h1&gt;My Header&lt;/h1&gt;
+  &lt;p&gt;My paragraph.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+    <p><span class="outputh">JS File:</span></p>
+    <pre class="language-javascript "><code class="language-javascript match-braces" >const fs = require('fs');
+const http = require('http');
+const hostname = '127.0.0.1';
+const port = 3000;
+const server = http.createServer((req,res)=>{
+    fs.readFile(&quot;Home.html&quot;,(error,data)=>{
+        res.writeHead(200,{'Content-type':'text/html'});
+        res.write(data);
+        return res.end();
+    });
+});
+server.listen(port,hostname,()=&gt;{
+    console.log(`Server is Running on : http://${hostname}:${port}`)
+});</code></pre>
+    <p class="marku outputh"><strong>Read File using | fs.readFileSync() Method</strong></p>
+    <pre class="language-javascript "><code class="language-javascript match-braces" >// fs -> file system module
+const fs = require("fs");
+//readFileSync Accept two parameter
+// 1: Read File Name
+// 2.Type of File Encoding
+var text = fs.readFileSync('h.txt','utf-8');
+text = text.replace('Hello World!','Hassan Ali')
+// writeFileSync is accept two parameter
+// 1:write file name and you can create new file as you prefer
+// 2:write text
+text = fs.writeFileSync("h.txt",text);  //text = fs.writeFileSync("New.txt",text);
+console.log(text);</code></pre>
+
+    <div class="heading2">
+      <h3> Buffer and Encoding </h3>
+    </div>
+    <p>Node.js includes an Additional Data type Called Buffer.(Not Available in Browser's JavaScript).<br>
+      Buffer is mainly used to store Binary Data.<br>
+      While Reading for a file ore Receiving Packets over the Network.</p>
+
+    <pre class="language-javascript "><code class="language-javascript match-braces" >const  fs = require('fs');
+/* →Return the Buffer Code which hold Binary Digit then convert Buffer Code
+	to text form we used toString();
+ →In Synchronously it return Buffer Data .
+ →But in Asynchronously Not return only return the file data.
+*/
+const fileContent = fs.readFileSync("dummy.txt").toString();
+console.log(fileContent);
+</code></pre>
+
+    <div class="Short-head">
+      <h3> How to read data from file in node js without Buffering ? </h3>
+    </div>
+    <pre class="language-javascript "><code class="language-javascript match-braces" >const  fs = require('fs');
+//const fileContent = fs.readFileSync("[filename.extension]","[Encoding]");
+const fileContent = fs.readFileSync("dummy.txt","utf-8");
+console.log(fileContent);
+							//Same Like in ASynchronous Method Encoding
+var fs = require('fs');
+/* Used Asynchronous Method to Encoding */
+fs.readFile('my-file.txt', 'utf8', function(err, data) {
+    if (err) throw err;
+    console.log(data);
+});</code></pre>
+
+
+    <div class="Short-head">
+      <h3> Create Files </h3>
+    </div>
+    <p>The File System module has methods for creating new files:</p>
+
+    <pre class="line-numbers language-javascript " data-line="2,4"><code class="language-javascript match-braces" >/* To Added the New Text on File Before overlapping.*/
+fs.appendFile(); or fs.appendFileSync("filename.extension","New Text");
+/*It Would Create the File and Overlap the Text mean put text on the file.*/
+fs.writeFile(); or fs.writeFileSync("newFileName.extension","Text Name");
+</code></pre>
+
+    <div class="Short-head">
+      <h3> Update Files </h3>
+    </div>
+    <p>The File System module has methods for updating files:</p>
+
+    <p>
+      <code class="markcode">fs.appendFile()</code>,
+      <code class="markcode">fs.writeFile()</code>
+    </p>
+
+    <div class="Short-head">
+      <h3> Delete Directory/Folder | Delete Files</h3>
+    </div>
+    <p>To delete a file with the File System module;</p>
+    <p><code class="markcode">fs.unlinkSync()</code> use the method for Synchronous Method or Blocking Method.</p>
+    <p><code class="markcode">fs.unlink()</code> use the method for Asynchronous Method or Non-Blocking Method.</p>
+    <pre class="line-numbers language-javascript " data-line=""><code class="language-javascript match-braces" >const  fs = require('fs');
+// Delete File Simple pass the Path as a Parameter
+const DeleteFile = fs.unlinkSync('./alihassan/abc.txt');
+console.log(DeleteFile);
+</code></pre>
+    <p><code class="markcode">fs.rmdirSync()</code> Remove|Delete the Folder Synchronous Method by Passing string the
+      path as a parameter. </p>
+    <p><code class="markcode">fs.rmdir()</code> Remove|Delete the Folder ASynchronous Method by Passing string the path
+      as a parameter. </p>
+
+    <pre class="line-numbers language-javascript " data-line=""><code class="language-javascript match-braces" >const  fs = require('fs');
+const DeleteFolder = fs.rmdirSync('./alihassan');
+console.log(DeleteFolder);
+</code></pre>
+
+    <div class="Short-head">
+      <h3> Rename Files</h3>
+    </div>
+    <p> To rename a file with the File System module; <code class="markcode">use the fs.rename() method.</code></p>
+    <pre class="line-numbers language-javascript " data-line="5"><code class="language-javascript match-braces" >/* To Rename the File First Pass the exist filename with extension then
+New Name of File with extension.*/
+const fs = require('fs');
+/*fs.renameSync("oldfilename.txt","newname.txt");*/
+fs.renameSync("hassan.txt","dummy.txt");
+</code></pre>
+
+    <div class="heading2">
+      <h3> JavaScript Copy File Code </h3>
+    </div>
+    <pre class="line-numbers language-javascript "><code class="language-javascript match-braces" >const fs = require('fs');
+
+// File destination.txt will be created or overwritten by default.
+fs.copyFile('C:/Users/Dell/Documents/javascript/express/index.js', 'C:/Users/Dell/Documents/javascript/express/destination.js', (err) => {
+  if (err) throw err;
+  console.log('source.txt was copied to destination.txt');
+});</code></pre>
+
+
+    <h5 class="heading1" style="color: white; background-color: red">Path Module</h5>
+    <p>The Path module provides a way of working with directories and file paths.</p>
+    <pre
+      class="language-javascript "><code class="language-javascript match-braces" >const path = require('path'); //Add in Top</code></pre>
+
+    <div class="Short-head">
+      <h3>path.basename('path'); </h3>
+    </div>
+    <p>Return the name of file with extension index.js </p>
+    <pre class="language-javascript "><code class="language-javascript match-braces" >//
+console.log(path.basename('C:/Users/Hassan Ali/Documents/js/node/src/index.js'));</code></pre>
+
+    <div class="Short-head">
+      <h3>path.dirname('path'); </h3>
+    </div>
+    <p>Return the Directory name</p>
+    <pre
+      class="language-javascript "><code class="language-javascript match-braces" >console.log(path.dirname('C:/Users/Hassan Ali/Documents/js/node/src/index.js'));</code></pre>
+
+    <div class="Short-head">
+      <h3>path.extname('path'); </h3>
+    </div>
+    <p>It return the provide path file extension name.</p>
+    <pre
+      class="language-javascript "><code class="language-javascript match-braces" >console.log(path.extname('C:/Users/Hassan Ali/Documents/js/node/src/index.js'));</code></pre>
+
+
+    <div class="Short-head">
+      <h3>path.parse('path'); </h3>
+    </div>
+    <p>It return the object that contain the <code class="markcode">root name</code>, <code
+        class="markcode">dir name</code>, <code class="markcode">base name</code>, <code
+        class="markcode">ext extension name</code>, <code class="markcode">name of file</code></p>
+    <pre class="language-javascript "><code class="language-javascript match-braces" >/*
+{
+  root: 'C:/',
+  dir: 'C:/Users/Hassan Ali/Documents/js/node/src',
+  base: 'index.js',
+  ext: '.js',
+  name: 'index'
+}
+*/
+console.log(path.parse('C:/Users/Hassan Ali/Documents/js/node/src/index.js'));
+// Calling Object to give specific properties
+const myPath = path.parse('C:/Users/Hassan Ali/Documents/js/node/src/index.js');
+console.log(myPath);
+console.log(myPath.root);
+console.log(myPath.name);
+console.log(myPath.ext);</code></pre>
+
+
+    <div class="Short-head">
+      <h3> </h3>
+    </div>
+    <p></p>
+    <pre class="language-javascript "><code class="language-javascript match-braces" ></code></pre>
+
+    <div class="Short-head">
+      <h3> </h3>
+    </div>
+    <p></p>
+    <pre class="language-javascript "><code class="language-javascript match-braces" ></code></pre>
+    <!--
+<h5 class="heading1" style="color: white; background-color: red"></h5>
+
+<div class="Short-head">
+   <h3> </h3>
+</div>
+
+<div class="heading2">
+  <h3>  </h3>
+</div>
+<p><code class="markcode"></code></p>
+<pre  class="language-javascript "><code class="language-javascript match-braces" ></code></pre>
+
+
+  <div class="notecard note">
+    <p><strong>Note:</strong> See the <a href="#body">Body</a> section for similar methods to extract other types of body content.</p>
+  </div>
+
+<div class="success size">
+  <p><i class="fas fa-check-circle"></i><strong> </strong></p>
+</div>
+
+
+data-line="2,4"
+
+<div class="heading2">
+  <h3> Challenge Time <span style="float:right; margin-right:15px;">#01</span></h3>
+</div>
+-->
+
+    <div class="heading2">
+      <h3> Synchronous or Blocking Code | Asynchromous or Non-Blocking Code </h3>
+    </div>
+    <p><strong>Synchronous or Blocking Code</strong></p>
+    <p> A code Should be executed Lne by line is known as Synchronous or Blocking Code.</p>
+    <p><strong>Example :</strong> This code run in normal usually run in the programming language
+      line by line.</p>
+    <p><strong>Asynchronous or Non-Blocking Code</strong></p>
+    <p>In this code should not guranteed to executed line by line.<br>
+      They use CallBack Function Fire</p>
+    <pre class="language-javascript "><code class="language-javascript match-braces" >const fs = require(&quot;fs&quot;);
+fs.readFile("delete.txt","utf-8",(error,data)=>{ //callback function is used
+	console.log(error,data);
+});
+console.log("This is the Message"); //first executed this line b/c Asyncronous</code></pre>
+
+
+    <div class="heading2">
+      <h3> Custome Backend Create Practice Code </h3>
+    </div>
+    <p><span class="outputh">HTML File:</span> Put in All Pages Same</p>
+    <pre class="language-html "><code class="language-html match-braces" >&lt;div&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&quot;/&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;/Contact&quot;&gt;Contact Us&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;/Service&quot;&gt;Service&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;/Login&quot;&gt;login&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+&lt;h1 style=&quot;text-align: center;color:green;&quot;&gt;Home Page&lt;/h1&gt;</code></pre>
+
+    <p>In this Program First You Create the 4 Pages of HTML,then Access these pages to using NodeJS
+      File System Module then make the if-else condition when the user click on it they response should be
+      show.</p>
+    <p><span class="outputh">NodeJS File:</span></p>
+    <pre class="language-javascript "><code class="language-javascript match-braces" >const fs = require('fs');
+const Home = fs.readFileSync('./Home.html');
+const Contact = fs.readFileSync('./Contact.html');
+const Services = fs.readFileSync('./Services.html');
+const Login = fs.readFileSync('./Login.html');
+//Creating Server and Listen Port
+const http = require('http');
+const hostname = '127.0.0.1';
+const port = 3000;
+
+const server = http.createServer((request,response)=&gt;{
+    console.log(request.url);
+    const url = request.url;
+    response.statusCode = 200; //ok
+    if(url=='/'){
+        response.end(Home);
+    }else if(url=='/Contact'){
+        response.end(Contact);
+    }else if(url=='/Service'){
+        response.end(Services);
+    }else if(url=='/Login'){
+        response.end(Login);
+    }else {
+        response.statusCode = 404; //file not found
+        response.end(`&lt;h1&gt;404 Error File Not Found&lt;/h1&gt;`)
+        /* res.writeHead(404 ,{'Content-Type': 'text/html'});
+           res.end("404 file not found");  */
+    }
+});
+server.listen(port,hostname,()=&gt;{
+    console.log(`Server is Running on : http:// ${hostname}:${port}`);
+});</code></pre>
+
+
+    <div class="heading2">
+      <h3> Creating Your External Module in NodeJS </h3>
+    </div>
+    <p>In this Code First you have to create two files one files is your module then other file
+      you can import the module in javaScript file.Basically when a function is written to other file
+      then we access this function we Accessed with the help of Module.<br>
+      In Blow code we created two files name <code class="markcode">mod.js</code> and <code
+        class="markcode">index.js</code><br>
+    </p>
+    <p><code class="markcode">module.exports = nameofmodule;</code> use for export the module.But you can multiple
+      module
+      Added in the Object then import to other file.</p>
+    <h5 class="outputh">mod.js :</h5>
+    <pre class="language-javascript "><code class="language-javascript match-braces" >console.log(&quot;This Module File&quot;);
+
+const average = (arr)=&gt;{
+    let sum = 0;
+    arr.forEach(element =&gt; {
+        sum += element;
+    });
+    return sum/arr.length;
+}
+/* 1. Export only one Module
+module.exports = average; */
+
+// 2.for multiple module export then use the object
+module.exports = {
+    averageN : average,
+    Name : &quot;Hassan Ali&quot;,
+    Age : 18
+}
+// 3.create and export module in js
+module.exports.name = &quot;Hassan Ali&quot;;</code></pre>
+    <h5 class="outputh">index.js :</h5>
+    <pre class="language-javascript "><code class="language-javascript match-braces" >console.log("This index File");
+
+// const md = require("./mod");
+// console.log(average([1,2,3,4,5]));
+
+const mod = require("./mod");
+console.log(mod.averageN([1,1,1,1])); //import object average module
+console.log(mod.Name);  // import object Name module
+console.log(mod.Age);  // import object age module
+console.log(mod.name); //import only name module</code></pre>
+
+    <div class="heading2">
+      <h3> How to Create Directory? | Create Folder </h3>
+    </div>
+    <p><code class="markcode">fs.existsSync()</code> method is used to synchronously check if a
+      file already exists in the given path or not. It returns a boolean value which indicates the
+      presence of a file.</p>
+    <p><code class="markcode">fs.mkdirSync()</code> is used to create the Directory/Path in given Path.This Method is
+      used Snchronously or Blocking Methods. </p>
+    <p><code class="markcode">fs.mkdir()</code>method i Node.js is used to create a directory asynchronously.</p>
+    <pre class="output"> fs.mkdir(path[, options], callback);
+ fs.mkdirSync(path[, options]);
+</pre>
+    <pre class="language-javascript "><code class="language-javascript match-braces" >const fs = require('fs');
+var dir = './Hassan'; //var dir = 'C:/Users/Dell/Documents/javascript/alihassan';
+if (!fs.existsSync(dir)){
+    fs.mkdirSync(dir);
+}
+                                     // Method 02
+var fs = require('fs');
+var dir = 'C:/Users/Dell/Documents/javascript/alihassan';
+fs.mkdirSync(dir);
+                                     // Method 03
+
+var fs = require('fs');
+var dir = 'C:/Users/Dell/Documents/javascript/alihassan';
+if (fs.existsSync(dir)){
+    console.log("Directory Found Already")
+}else{
+    fs.mkdirSync(dir);
+}
+</code></pre>
+
+
+    <div class="heading2">
+      <h3> Challenge Time | Synchronous Method or Blocking Method <span
+          style="float:right; margin-right:15px;">#01</span></h3>
+    </div>
+    <div class="success size">
+      <p><strong>1 :</strong> Create a Folder named it Hassan Ali</p>
+      <p><strong>2 :</strong> Create a File in it named bio.txt and Data into it.</p>
+      <p><strong>3 :</strong> Add more data into the File at the end of the existing Data.</p>
+      <p><strong>4 :</strong> Read the Data without getting the Buffer Data at First. (Hint : use Encoding)</p>
+      <p><strong>5 :</strong> Rename the File Name to mybio.txt</p>
+      <p><strong>6 :</strong> Now Delete Both the File and the Folder</p>
+    </div>
+    <pre class="line-numbers language-javascript " data-line="2,9,16,19-20,23,25"><code class="language-javascript match-braces" >const fs = require("fs");    //file System
+/* 1 : Create a Folder named it Hassan Ali */
+const dir = './Hassan Ali';  // For Folder Create Path
+if(fs.existsSync(dir)){
+    console.log("Folder Already Exist in this Name");
+}else{
+    fs.mkdirSync(dir);
+}
+/* 2 : Create a File in it named bio.txt and Data into it. */
+const fileCreate = './Hassan Ali/bio.txt';// For Create a File
+if (fs.existsSync(fileCreate)) {
+  console.log("In this Name File Exist");
+} else {
+  fs.writeFileSync(fileCreate, "My Name is Hassan Ali");
+}
+/*  3 : Add more data into the File at the end of the existing Data. */
+const AddText = './Hassan Ali/bio.txt';
+fs.appendFileSync(AddText,'\n Walikum Slam');
+/*4 : Read the Data without getting the Buffer Data at First.
+(Hint : use Encoding)*/
+const readData = fs.readFileSync('./Hassan Ali/bio.txt','utf-8');
+console.log(readData);
+/*5 : Rename the File Name to mybio.txt*/
+const renameFile= fs.renameSync('./Hassan Ali/bio.txt','./Hassan Ali/mybio.txt');
+/* 6 : Now Delete Both the File and the Folder */
+const deleteFile = fs.unlinkSync('./Hassan Ali/mybio.txt');
+const deleteFolder = fs.rmdirSync('./Hassan Ali');</code></pre>
+
+
+    <div class="heading2">
+      <h3> Challenge Time | Asynchronous Method or Non-Blocking Method <span
+          style="float:right; margin-right:15px;">#02</span></h3>
+    </div>
+    <div class="success size">
+      <p><strong>1 :</strong> Create a Folder named it Hassan Ali</p>
+      <p><strong>2 :</strong> Create a File in it named bio.txt and Data into it.</p>
+      <p><strong>3 :</strong> Add more data into the File at the end of the existing Data.</p>
+      <p><strong>4 :</strong> Read the Data without getting the Buffer Data at First. (Hint : use Encoding)</p>
+      <p><strong>5 :</strong> Rename the File Name to mybio.txt</p>
+      <p><strong>6 :</strong> Now Delete Both the File and the Folder</p>
+    </div>
+    <pre class="line-numbers language-javascript " data-line="2,6,11,16-17,22,26,30"><code class="language-javascript match-braces" >const fs = require('fs');
+// 1 : Create a Folder named it Hassan Ali
+fs.mkdir("./Hassan Ali",(erro)=>{
+    console.log("Folder Created Successfully");
+});
+// 2 : Create a File in it named bio.txt and Data into it.
+fs.writeFile("./Hassan Ali/bio.txt","Hello",(error)=>{
+    console.log("File Created Successfully and Data Inserted");
+    console.log(error);
+});
+// 3 : Add more data into the File at the end of the existing Data.
+fs.appendFile("./Hassan Ali/bio.txt","World!",(error)=>{
+    console.log("Data Inserted");
+    console.log(error);
+});
+/* 4 : Read the Data without getting the Buffer Data at First.
+(Hint : use Encoding) */
+fs.readFile("./Hassan Ali/bio.txt","utf-8",(data,error)=>{
+    console.log(data);
+    console.log(error);
+});
+// 5 : Rename the File Name to mybio.txt
+fs.rename("./Hassan Ali/bio.txt","./Hassan Ali/mybio.txt",(error)=>{
+    console.log("File Rename Successfully");
+});
+// 6 : Now Delete Both the File and the Folder
+fs.unlink("./Hassan Ali/mybio.txt",(error)=>{
+    console.log("File Deleted Successfully");
+})
+// Delete Folder
+fs.rmdir("./Hassan Ali",(error)=>{
+console.log("Directory Deleted Successfully")
+});</code></pre>
+
+    <h5 class="heading1" style="color: white; background-color: red">npm</h5>
+
+
+    <div class="heading2">
+      <h3> What is npm? | Node Package Manager</h3>
+    </div>
+    <p>NPM is a package manager for Node.js packages, or modules if you like.We Install more then thousend
+      Module and use in the code.It is the Default Package Manager for the JavaScript Runtime Environment Node.js.<br>
+      To Start the npm open the JavaScript Shell then type <code class="markcode">npm init</code> then they asked you
+      the requirement.</p>
+    <pre class="language-javascript "><code class="language-javascript match-braces" >    npm init /* Start npm module used */
+	// After init then they option  show you
+	package name: (module)
+	version: (1.0.0)
+	description: Hello World!
+	entry point: (index.js)
+	test command:
+	git repository:
+	keywords:
+	author: Hassan Ali
+	license: (ISC)</code></pre>
+
+    <div class="heading2">
+      <h3> npm Local and Global Packages Installation </h3>
+    </div>
+
+    <div class="success size">
+      <p><i class="fas fa-check-circle"></i><strong> Types of Packages </strong></p>
+      <p><strong>local packages</strong> are installed in the directory where you run <code
+          class="markcode"> npm install <package-name> </code>, and they are put in the node_modules folder under this
+        directory.</p>
+      <p><strong>global packages</strong> are all put in a single place in your system (exactly where depends on your
+        setup), regardless of where you run <code class="markcode">npm install -g &lt;package-name&gt;</code></p>
+    </div>
+
+
+    <div class="Short-head">
+      <h3> Install npm Package </h3>
+    </div>
+    <p>After npm init then the Package.json file created they held the all information about the module/ package and
+      the install new module like <code class="markcode">npm install chalk</code> then they module are add in the
+      Directory
+      and Package.json file are updated to the last show dependiences where npm install package show.</p>
+    <div class="success size">
+      <p><i class="fas fa-check-circle"></i><strong> npm update:</strong>To update npm on latest version
+        open powershell and type <code class="markcode">npm install npm@latest -g</code>
+      </p>
+    </div>
+    <div class="Short-head">
+      <h3> Install Specific version of npm Package </h3>
+    </div>
+    <p><code class="markcode">npm install chalk@1.0.5;</code> or <code
+        class="markcode">npm install [packagename]@[version];</code></p>
+
+    <div class="Short-head">
+      <h3> Uninstall npm Package </h3>
+    </div>
+    <p>If you Uninstall the package then write <code class="markcode">npm uninstall packagename;</code> or <code
+        class="markcode">npm uninstall chalk;</code> then the package are removed
+      from the directory and unistall.</p>
+
+    <div class="heading2">
+      <h3> npm Version Concept | How Version work? </h3>
+    </div>
+    <p><code class="markcode">version: (1.0.0)</code> version in any software is important rule it tell you about
+      what are the bug are fixed in the version and what are the new things are introduce?,what are the function are
+      removed in the new built version.</p>
+    <pre class="language-javascript "><code class="language-javascript match-braces" >version => 1.0.0 => Major.Minor.Patch
+//First  = Major : To remove old function and introduced new Functions =>2.0.0
+//Second = Minor : New Function/Feature are introduced=> 2.1.0
+//Third  = Patch : How much Bugs are  Fixed => 2.1.1  one bug fix
+</code></pre>
+
+    <div class="Short-head">
+      <h3> What is nodemon? <span style="float:right; margin-right:15px;">npm Package</span></h3>
+    </div>
+    <p> In start we have change the content or change something from the file then they not reflect
+      live onf the file.If we restart the node server then the file change content show in the browser.
+      But the <code class="markcode">nodemon</code> is very helpful for this problem after install the nodemon package
+      in the node.js then if you change any content in the file they reflect live on the server we don't
+      reStart the Server.</p>
+    <pre class="language-javascript "><code class="language-javascript match-braces" >/* if you install and work nodemon in devDependencies then use the blow code.*/
+npm install nodemon --save-dev
+/* if you install globally to use the nodemon then use global to install */
+npm install nodemon --global</code></pre>
+    <div class="Short-head">
+      <h3> nodemon not work in vs code Terminal and PowerShell </h3>
+    </div>
+    <p>In Window Default the Execution of the Script is diabled
+      due to malicious virus run the script and Access the system to enable the Execution Script Option
+      in the PowerShell then follow these Steps.</p>
+    <div class="success size">
+      <p><strong> 01</strong> open PowerShell as Adminsitator Mode</p>
+      <p><strong> 02</strong> Type <code class="markcode">Get-ExecutionPolicy</code> or <code
+          class="markcode">Get-ExecutionPolicy -List</code></p>
+      <p><strong> 03</strong> To UnRestricted Policy Type <code class="markcode">Set-ExecutionPolicy unrestricted</code>
+      </p>
+    </div>
+    <pre
+      class="language-javascript "><code class="language-javascript match-braces" >Set-ExecutionPolicy restricted</code></pre>
+    <pre
+      class="language-javascript "><code class="language-javascript match-braces" >Set-ExecutionPolicy unrestricted</code></pre>
+
+    <div class="heading2">
+      <h3> What is API? | Application Programming Interface </h3>
+    </div>
+    <p>API is the acronyme for Application Programming Interface, which is a software intermediary that allows two
+      applications to talk to each other.Each time you use an app like facebook,send an instant message, or check the
+      weather on your phone, you're using an API.</p>
+    <div class="Short-head">
+      <h3> How to use Api and Get the Data? </h3>
+    </div>
+    <p>In this Example you can create the folder that name is api and create the JSON
+      file in the Folder, filename is userApi.json then you can call the file in the
+      server side and convert to the object.</p>
+    <pre class="language-javascript "><code class="language-javascript match-braces" >const http = require('http');
+const fs = require('fs');
+const port = 80;
+const hostname = '127.0.0.1'
+
+const server = http.createServer((req,res)=>{
+    // Read the JSON Data and Convert to Object
+    const fileData =  fs.readFileSync(`${__dirname}/api/userApi.json`,'utf-8');
+    const data = JSON.parse(fileData);
+
+    const url = req.url;
+    if(url == '/'){  //Home Page url
+        res.end("Home Page");
+    }else if(url == '/userapi'){     //user Api
+        res.writeHead(200,{'Content-type':'application/json'});
+        console.log(data); /* Print all the object of JSON Data */
+        res.end(data[0].name); /*Read the first obj data name */
+    }else{  // if the requested url not found then show 
+        res.writeHead(404 ,{'Content-Type': 'text/html'});;
+        res.end("404 file not found");
+    }
+});
+server.listen(port,hostname,()=>{
+    console.log(`Server is running on Port : http://${hostname}:${port}`)
+});</code></pre>
+
+    <div class="heading2">
+      <h3> Events Module </h3>
+    </div>
+    <p>Node.JS has a built-in Module is called Events,where you can create-, fire-, and listen for- your own events.</p>
+    <div class="danger size">
+      <p><i class="fas fa-exclamation-triangle"></i>
+        Every action on a computer is an event. Like when a connection is made or a file is opened.</p>
+    </div>
+    <div class="Short-head">
+      <h3> How to use Events ? </h3>
+    </div>
+    <p>In Node.JS you can call multiple event and create your own events.<br>
+      To include the built-in Events module use the require() method. In addition, all event properties and methods are
+      an instance of an EventEmitter object. To be able to access these properties and methods, create an EventEmitter
+      object:
+    </p>
+    <pre class="language-javascript "><code class="language-javascript match-braces" >                  //Method 01
+    const EventEmitter = require('events');  //create class
+    const event = new EventEmitter(); //create obj
+                   //Method 02 
+    const event = require('events');
+    const EventEmitter = new event.EventEmitter();</code></pre>
+    <p>In blow Example you can see that we have create multiple event on the
+      fire one time,then all the events are working.In Example 03 You can see that you can pass the parameter of the
+      status code check then event display.</p>
+    <p><span class="outputh">Example : Method 01 use</span></p>
+    <pre class="language-javascript "><code class="language-javascript match-braces" >const EventEmitter = require('events');
+const event = new EventEmitter();
+event.on('hassan',()=>{
+    console.log("First Name : Hassan");
+});
+event.on('hassan',()=>{
+    console.log("Last Name : Ali");
+});
+event.emit('hassan'); // emit mean call the event</code></pre>
+
+    <p><span class="outputh">Example : Method 02 use</span></p>
+    <pre class="language-javascript "><code class="language-javascript match-braces" >const event = require('events');
+const EventEmitter = new event.EventEmitter();
+EventEmitter.on('hassan',()=>{
+    console.log("First Name : Hassan");
+});
+EventEmitter.on('hassan',()=>{
+    console.log("Last Name : Ali");
+});
+EventEmitter.emit('hassan');</code></pre>
+
+    <p><span class="outputh">Example : 03</span></p>
+    <pre class="language-javascript "><code class="language-javascript match-braces" >const EventEmitter = require('events');
+const event = new EventEmitter();
+event.on('displayMessage',(status,message)=>{
+    console.log(`Your WebPage has status ${status} and display ${message}`);
+});
+event.emit('displayMessage',200,"ok");</code></pre>
+
+    <h5 class="heading1" style="color: white; background-color: red">Node.js Streams</h5>
+    <p><strong>Streams</strong> are object that let you read data from a source or write data to a destination in
+      continous fashion.In Node.js, there are four types of streams;</p>
+    <p><strong>Readable</strong> : Stream which is used for read operation.</p>
+    <p><strong>Writeable</strong> : Stream which is used for write operation.</p>
+    <p><strong>Duplex</strong> : Stream which can be used for both read and write operation.</p>
+    <p><strong>Transform</strong> : A type of duplex stream where the output is computed based on input.</p>
+    <hr>
+    <div class="Short-head">
+      <h3> Events used for Streams </h3>
+    </div>
+    <p>Each type of Stream is and <code class="markcode">EventEmitter</code> instance and throws several events of
+      different instance of times. <br>
+      <strong>Example :</strong> some of the commonly used events ar : -
+    </p>
+
+    <p><strong>data :</strong> This event is fired when there is data is available to read.</p>
+    <p><strong>end :</strong> This Event is fired when there is no more data to read.</p>
+    <p><strong>error :</strong> This Event is fired when there is any error receiving or writing data.</p>
+    <p><strong>finish :</strong> This event is fired when all the data has been flushed to underlying system.</p>
+
+    <pre class="language-javascript "><code class="language-javascript match-braces" >const fs = require(&quot;fs&quot;);
+const http = require(&quot;http&quot;);
+const hostname = &quot;127.0.0.1&quot;;
+const port = 3000;
+const server = http.createServer();
+server.on(&quot;request&quot;, (req, res) =&gt; {
+  /*   old Method  
+    fs.readFile('index.txt','utf-8',(error,data)=&gt;{
+           if(error) return console.log(error);
+           console.log(data);
+           res.end(data);
+       });
+  */
+
+  const rstream = fs.createReadStream(&quot;file.txt&quot;);
+  // data Events & chunkdata as parameter that data handle
+  rstream.on(&quot;data&quot;, (chunkdata) =&gt; {
+    res.write(chunkdata);
+  });
+  // End Data Events
+  rstream.on(&quot;end&quot;, () =&gt; {
+    res.end();
+  });
+  // error Events call when file now found or other isssue
+  rstream.on(&quot;error&quot;, () =&gt; {
+    res.end(&quot;File Not Found&quot;);
+  });
+});
+//Server listen the port
+server.listen(port, hostname, () =&gt; {
+  console.log(`Server is Running on : http://${hostname}:${port}`);
+});</code></pre>
+
+    <div class="Short-head">
+      <h3> Streams pipe Methods </h3>
+    </div>
+    <p><code class="markcode">stream.pipe()</code> the method used to take a readable stream and connect it to a
+      writable stream.</p>
+    <pre class="language-javascript "><code class="language-javascript match-braces" >const rstream = fs.createReadStream("file.txt");
+rstream.pipe(res); //Realtime data read and write on response</code></pre>
+
+
+    <div class="heading2">
+      <h3> Quote API </h3>
+    </div>
+    <p></p>
+    <pre class="language-css "><code class="language-css match-braces" >https://type.fit/api/quotes</code></pre>
+    <pre
+      class="language-css "><code class="language-css match-braces" >`https://twitter.com/intent/tweet?text=${quotes.innerHTML},${author.innerHTML}`</code></pre>
+
+    <div class="heading2">
+      <h3> Weather API </h3>
+    </div>
+    <div class="success size">
+      <p><strong> 01 </strong> Open Weather API <a href="https://openweathermap.org/" target="_blank"><i
+            class="fas fa-external-link-alt fa-x" aria-hidden="true"></i></a></p>
+    </div>
+    <pre
+      class="language-css "><code class="language-css match-braces" >https://api.openweathermap.org/data/2.5/weather?q=muzaffargarh&appid=05c15144981d0e9e06f7848f916cf0a3</code></pre>
+
+
+    <h5 class="heading1" style="color: white; background-color: red"> Postman </h5>
+    <p>Postman is an application used for API testing. It is an HTTP client that tests HTTP requests,
+      utilizing a graphical user interface, through which we obtain different types of responses
+      that need to be subsequently validated.</p>
+    <p> You can Download the postman free of cost to their website for the request,get,post,put etc</p>
+    <h5 class="heading1" style="color: white; background-color: red"> Express </h5>
+    <div class="heading2">
+      <h3> What is Express?</h3>
+    </div>
+    <p>Express.js, or simply Express, is a back end web application
+      framework for Node.js, released as free and open-source software under the MIT License.
+      It is designed for building web applications and APIs. It has been called the de facto
+      standard server framework for Node.js</p>
+    <div class="heading2">
+      <h3> Install Express</h3>
+    </div>
+    <pre class="line-numbers language-javascript "><code class="language-javascript match-braces" >npm init
+/*After node init then create app.js file */
+npm install express</code></pre>
+
+    <div class="heading2">
+      <h3> Use Express in App | Routing in Express</h3>
+    </div>
+    <pre class="line-numbers language-javascript "><code class="language-javascript match-braces" >//imports express in our node app
+const express = require('express');
+//now  initialize our app
+const app = express();
+//listen to a path and respond with text
+app.get('/', (req,res)=>{
+    res.send('hi we got your request')
+});
+//You can send Post use app.post
+app.post('/', (req,res)=>{
+    res.send('hi we got your request')
+});
+// lets listen to a port
+app.listen(2000, ()=>{
+    console.log('listening at https://localhost:2000');
+});</code></pre>
+
+    <pre class="line-numbers language-javascript "><code class="language-javascript match-braces" >const express = require('express'); // import module
+const app = express();  //initiallize application
+const port = 80; // listen on port 80
+
+app.get('/',(req,res)=>{
+    res.send("This is my first express app with Hassan");
+});
+
+/* Add Status Code on the Application */
+app.get('/login',(req,res)=>{
+    res.status(200).send("This Status is OK");
+});
+
+app.get('/contact',(req,res)=>{
+    res.send("This is my contact express app with Hassan");
+});
+app.get('/about',(req,res)=>{
+    res.send("This is my about express app with Hassan");
+});
+app.listen(port,()=>{
+    console.log(`This Application is running on ${port}`)
+});</code></pre>
+
+    <div class="Short-head">
+      <h3> Send Object Data or JSON Data using res.send(); </h3>
+    </div>
+    <p>In the Node.js when you send the Data as a object then convert automatically as the JSON data.</p>
+    <p class="outputh">Send Object</p>
+    <!-- <p><code class="markcode"></code></p> -->
+    <pre class="language-javascript "><code class="language-javascript match-braces" >app.get('/',(req,res)=>{
+  res.send({
+      id:1,
+      st :"Hassan Ali"
+  });
+});</code></pre>
+
+    <p class="outputh">Send JSON Data using res.send()</p>
+    <!-- <p><code class="markcode"></code></p> -->
+    <pre class="language-javascript "><code class="language-javascript match-braces" >app.get('/',(req,res)=>{
+res.send(
+    [
+        {
+            "id": "1",
+            "Name":"Hassan Ali"
+        },
+        {
+            "id": "2",
+            "Name":"Ali"
+        }
+    ]
+);
+});</code></pre>
+
+    <div class="success size">
+      <p><i class="fas fa-check-circle"></i>The Methods are identical when an object or array is passed, but <code
+          class="markcode">res.json()</code> will also convert non-object, such as null and undefined, which are not
+        valid JSON.</p>
+    </div>
+    <p class="outputh">Send JSON Data using res.json()</p>
+    <!-- <p><code class="markcode"></code></p> -->
+    <pre class="language-javascript "><code class="language-javascript match-braces" >app.get('/',(req,res)=>{
+res.json([
+        {
+            "id": "1",
+            "Name":"Hassan Ali"
+        },
+        {
+            "id": "2",
+            "Name":"Ali"
+        }
+    ]);
+});</code></pre>
+
+    <div class="heading2">
+      <h3> Serving static files in Express </h3>
+    </div>
+    <p>To serve static files such as images, CSS files, and JavaScript files, use the <code
+        class="markcode">express.static</code> built-in <u>middleware</u> function in Express.</p>
+    <p><strong>Middleware :</strong> is the those layer that b/w request and response.</p>
+
+    <pre
+      class="language-javascript "><code class="language-javascript match-braces" >express.static(root, [options]);</code></pre>
+
+    <p><strong>For Example:</strong>use the following code to serve images, CSS files, and JavaScript files in a
+      directory named public.You can use multiple static direcory in the express it is depend on you.</p>
+
+    <pre class="language-javascript "><code class="language-javascript match-braces" >app.use(express.static('public'));
+//By Default __dirname is root then you can change to according need
+const public = path.join(__dirname, '../public');
+app.use(express.static(public));</code></pre>
+
+    <div class="Short-head">
+      <h3>Path in Express</h3>
+    </div>
+    <p>Two types of Path you can add in the Express: <br>
+      <strong> 01 </strong> Relative<br>
+      <strong> 02 </strong> Absolute
+    </p>
+    <p><strong>Relative : </strong>In Relative Path you can add the path <code class="markcode">../</code>.</p>
+    <p><strong>Absolute : </strong> Path is Add using <code class="markcode">/filepath</code></p>
+
+
+    <div class="heading2">
+      <h3> Node.js pug | Node.js Templete Engine </h3>
+    </div>
+    <p>Pug is the middleman. Pug is a template engine for Node. js. A template engine allows us to inject data and then
+      produce HTML. In short: At run time, Pug (and other template engines) replace variables in our file with actual
+      values, and then send the resulting HTML string to the client.</p>
+    <p>Basically,we used pug for the make file static(mean access without login file).First we make the static folder
+      then in this folder we used the files.</p>
+    <div class="success size">
+      <p><code class="markcode">npm install pug</code> It is the npm Package used for pug file.</p>
+    </div>
+    <pre class="language-javascript "><code class="language-javascript match-braces" >const express = require("express");             //get module of express
+const path = require("path");                   //get module of express
+const app = express();                          //initialize express
+const port = 80;                                //use default port
+
+app.use('/static',express.static('static'));    //For serving view static files Path
+app.set('view engine', 'pug');                  //Set the template engine as pug
+app.set('views',path.join(__dirname,'views'));  //Set the views directory
+app.get("/", (req,res) => {                     //Our pug demo endpoint
+    res.status(200).render('index.pug');
+  });
+app.listen(port,()=>{
+console.log(`App is running on the Port : ${port}`);
+})</code></pre>
+
+
+    <div class="heading2">
+      <h3> Node.JS Form Data Send to New Create File </h3>
+    </div>
+    <p><span class="outputh">app.js File :</span>
+      <strong>Complete Project :</strong>
+      <a href="https://github.com/Technicalhassanali/Node.JS/raw/main/Form%20Data%20Send%20to%20New%20Text%20File.rar"><i
+          class="fas fa-link"></i></a>
+    </p>
+    <pre class="language-javascript "><code class="language-javascript match-braces" >const express = require('express');
+const fs = require('fs');
+const app = express();
+const port = 80;
+app.set('view engine', 'pug');
+// app.use(express.urlencoded());//get data from the server url
+app.use(express.urlencoded({ extended: true }))
+app.use('/static',express.static('static')); //For serving view static files Path
+// app.get('/',callback);
+
+app.get('/',(req,res)=>{
+    var heading = "Form Design";
+    var con = "Dummy";
+    var params = {heading,con};
+    res.status(400).render("index.pug",params);
+});
+app.post('/',(req,res)=>{
+    var first_name = req.body.firstname;
+    var second_name = req.body.secondname;
+    var age = req.body.age;
+    var message = req.body.messages;
+fs.writeFile('index.txt',`${first_name},${second_name},${age},${message}`,
+(err,data)=>{
+    console.log("Data is Add");
+});
+    var heading = "Form Design";
+    var con = "Dummy";
+    var params = {heading,con};
+    res.status(400).render("index.pug",params);
+});
+// app.get();
+// app.post();
+app.listen(port,()=>{
+    console.log(`Your Server is Running on Port : ${port}`);
+})</code></pre>
+
+
+
+
+    <!-- 
+<p><strong> 03 </strong><a href="" target="_blank"><i class="fas fa-external-link-alt fa-x"></i></a></p>
+
+<p><strong> 04 </strong><a href="" target="_blank"><i class="fas fa-external-link-alt fa-x"></i></a></p> -->
+    <!-- </div> -->
+
+    <!--
+<h5 class="heading1" style="color: white; background-color: red"></h5>
+
+<div class="Short-head">
+   <h3> </h3>
+</div>
+
+<div class="heading2">
+	<h3>  </h3>
+</div>
+<p><code class="markcode"></code></p>
+<pre  class="language-javascript "><code class="language-javascript match-braces" ></code></pre>
+
+
+  <div class="notecard note">
+    <p><strong>Note:</strong> See the <a href="#body">Body</a> section for similar methods to extract other types of body content.</p>
+  </div>
+
+<div class="success size">
+  <p><i class="fas fa-check-circle"></i><strong> </strong></p>
+</div>
+
+
+data-line="2,4"
+
+<div class="heading2">
+	<h3> Challenge Time <span style="float:right; margin-right:15px;">#01</span></h3>
+</div>
+-->
+
+
+
+  </div>
+  <!--container div end-->
+
+
+
+  <footer>
+    <p>Design By Hassan Ali</p>
+  </footer>
+
+
+  <script src="../Files/prism.js"></script>
+  <script src="../Files/javaScript.js"></script>
+  <!--  <script src="../Files/javaScript.js"></script> -->
+  <script src="https://kit.fontawesome.com/991a8d9f0e.js" crossorigin="anonymous">
+  </script>
+</body>
+
+</html>

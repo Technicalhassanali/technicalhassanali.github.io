@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PHP CheatSheet</title>
+    <link rel="icon" type="image/x-icon" href="images/javascript-favicon.gif" />
+    <link rel="stylesheet" href="../Files/style.css" />
+    <link rel="stylesheet" href="../Files/prism.css" />
+    <script src="../Files/prism.js"></script>
+</head>
+
+<body id="darkmode">
+    <header>
+        <a href="../index.html" class="logo">P<span>HP</span>
+            <img src="../images/php.png" style="width:2.3rem;height:inherit;" />
+        </a>
+        <nav class="navbar">
+            <a href="../index.html">Home</a>
+            <a href="HTML.html">HTML</a>
+            <a href="JavaScript.html">JavaScript</a>
+            <a href="php.html">PHP</a>
+            <a href="php-crud.html">PHP Crude</a>
+            <a href="#" id="btn-dark">Dark Mode off</a>
+        </nav>
+
+        <div class="icons">
+            <div id="menu-btn" class="fas fa-bars"></div>
+        </div>
+    </header>
+
+    <!-- Top Up Button -->
+    <button onclick="topFunction()" id="myBtn" title="Go to top">
+        <i class="fas fa-arrow-circle-up"></i>
+    </button>
+
+    <div class="container">
+
+<div class="heading2">
+    <h3>Crude Operation</h3>
+</div>
+
+<p class="hassanp"><mark class="markcode">CRUD</mark> is an acronym for Create, Read, Update, and Delete. CRUD
+    operations are basic data manipulation for database. ... In this tutorial we'll create a simple PHP
+    application to perform all these operations on a MySQL database table at one place.</p>
+
+    <div class="heading2">
+    <h3>Data Read</h3>
+</div>
+
+<pre class="language-php"><code class="language-php">&lt;?php
+    $conn = mysqli_connect("localhost","root","","crud") or die("Connection Faild");
+    $sql = "SELECT * FROM crud_operation";
+    $result =mysqli_query($conn,$sql) or die("Query Unsucessful.");
+    if(mysqli_num_rows($result)&gt;0){
+    ?&gt;
+&lt;table id="customers"&gt;
+  &lt;tr&gt;
+    &lt;th id="id"&gt;ID&lt;/th&gt;
+    &lt;th&gt;Name&lt;/th&gt;
+    &lt;th&gt;Father Name&lt;/th&gt;
+    &lt;th&gt;Phone Number&lt;/th&gt;
+    &lt;th&gt;Email Address&lt;/th&gt;
+    &lt;th&gt;Current Address&lt;/th&gt;
+    &lt;th&gt;Permanant Address&lt;/th&gt;
+    &lt;td&gt;&lt;a href="#?id=&lt;?php echo $row['id'];?>">Delete&lt;/a&gt;&gt;/td&gt; 
+    &lt;td&gt;&lt;a href="#?id=&lt;?php echo $row['id'];?>">Edit&lt;/a&gt;&gt;/td&gt;   
+  &lt;/tr&gt;
+  &lt;?php
+  while($row = mysqli_fetch_assoc($result)){
+  ?&gt;
+  &lt;tr&gt;
+    &lt;td&gt;&lt;?php echo $row['id'];?&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;?php echo $row['Name'];?&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;?php echo $row['father_name'];?&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;?php echo $row['phone_number'];?&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;?php echo $row['email_address'];?&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;?php echo $row['address_no1'];?&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;?php echo $row['address_no2'];?&gt;&lt;/td&gt;
+    &lt;td&gt;Delete&lt;/td&gt;
+    &lt;td&gt;Edit&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;?php
+  }
+  ?&gt;
+&lt;/table&gt;
+&lt;?php
+}else{
+    echo "record not found";
+}?&gt;</code></pre>
+
+        <br />
+
+<div class="heading2">
+    <h3>Send Data to Database</h3>
+    </div>
+<p>Send Data in Crud Operation is First to Create a Form and use the <mark
+        class="markcode">action="send.php"</mark> and <mark class="markcode">action="POST"</mark> is used in the
+    form section to send data from, <mark>Form</mark> to Server mean Database. When the form is fill the data
+    goes to next file name is used in the <mark class="markcode">action</mark> Section and then Query are the
+    Pass or Data Send to Database.</p>
+
+<div class="heading2">
+    <h3>MySQL Connection Using CMD:</h3>
+</div>
+    
+<pre class="language-php"><code class="language-php">&lt;?php
+    $stud_name = $_POST['sname'];
+    $father_name = $_POST['fname'];
+    $phone_number = $_POST['sphone'];
+    $select_email = $_POST['selectemail'];
+    $current_address = $_POST['caddress'];
+    $Permanant_address = $_POST['paddress'];
+    $conn = mysqli_connect("localhost","root","","crud") or die("Connection Faild");
+    $sql = "INSERT INTO crud_operation(Name,father_name,phone_number,email_address,address_no1,address_no2) values('$stud_name','$father_name','$phone_number','$select_email','$current_address','$Permanant_address')";
+    $result =mysqli_query($conn,$sql) or die("Query Unsucessful.") or die("query not work");
+    header("Location:http://localhost/crud/show.php");
+    mysqli_close($conn);
+    ?&gt;</code></pre>
+
+
+<div class="heading2">
+    <h3>Delete Data in Database</h3>
+</div>
+
+<pre class="language-php"><code class="language-php">&lt;?php
+    include 'config.php';
+    $stu = $_GET['id'];
+    $sql = "Delete From crud_operation where id = {$stu}";
+    $result = mysqli_query($conn,$sql) or die("Query Not Work");
+
+    //Return Back to the Form
+    header("Location:http://localhost/crud/show.php");
+?&gt; </code></pre>
+        
+<br>
+<div class="heading2">
+    <h3>Update Data in Database</h3>
+</div>
+
+
+<pre class="language-php"><code class="language-php">&lt;body style="background-color:#ecf0f1;margin-bottom: 10px;"&gt;
+&lt;h1 id="registration-text"&gt;Registration Form&lt;/h1&gt;
+
+&lt;?php
+$conn = mysqli_connect("localhost","root","","crud") or die("Connection Faild");
+$stu_id = $_GET['id'];
+$sql = "SELECT * FROM crud_operation WHERE id = {$stu_id}";
+$result = mysqli_query($conn,$sql) or die("Query Unsucessful.");
+if(mysqli_num_rows($result)&gt;0){
+
+    while($row = mysqli_fetch_assoc($result)){
+?&gt;
+&lt;form action="updatedata.php" method="post"&gt;
+
+    &lt;div class="form-style"&gt;
+    &lt;label for="studentname"&gt;Name&lt;/label&gt;&lt;br/&gt;
+    &lt;input type="hidden" name="ssid" value="&lt;?php echo $row['id'];?&gt;"/&gt;
+    &lt;input type="text" name="sname" placeholder="Enter Name" value="&lt;?php echo $row['Name'];?&gt;" required/&gt;
+&lt;/div&gt;
+
+&lt;div class="form-style"&gt;
+    &lt;label for="fathername"&gt;Father Name:&lt;/label&gt;&lt;br/&gt;
+    &lt;input type="text" name="fname" placeholder="Enter Father Name" value="&lt;?php echo $row['father_name'];?&gt;"/&gt;
+&lt;/div&gt;
+
+&lt;div class="form-style"&gt;
+    &lt;label for="phoneno"&gt;Phone Number:&lt;/label&gt;&lt;br/&gt;
+    &lt;input type="number" name="sphone" placeholder="Enter Number" value="&lt;?php echo $row['phone_number'];?&gt;"/&gt;
+&lt;/div&gt;
+
+&lt;div class="form-group"&gt;
+    &lt;label for="email"&gt;Email Address:&lt;/label&gt;&lt;br/&gt;
+&lt;?php
+    $sql1 = "SELECT * FROM email";
+    $result1 =mysqli_query($conn,$sql1) or die("Query Unsucessful.");
+    if(mysqli_num_rows($result1)&gt;0){
+        echo '&lt;select name="sclass"&gt;';
+        while($row1= mysqli_fetch_assoc($result1)){
+
+        if($row['sclass']==$row1['email_address']){
+            $select = "selected";
+        }else{
+            $select = " ";
+        }
+        echo "&lt;option {$select} &gt;{$row1['semail']}&lt;/option&gt;";
+        }
+    echo "&lt;/select&gt;";
+    }
+    ?&gt;
+&lt;/div&gt; 
+
+&lt;div class="form-style"&gt;
+    &lt;label for="Address1"&gt;Address No 1:&lt;/label&gt;&lt;br/&gt;
+    &lt;input type="text" name="caddress" placeholder="Enter Current" value="&lt;?php echo $row['address_no1'];?&gt;"&gt;
+&lt;/div&gt;
+
+&lt;div class="form-style"&gt;
+    &lt;label for="Address2"&gt;Address No 2:&lt;/label&gt;&lt;br/&gt;
+    &lt;input type="text" name="paddress" placeholder="Enter Permanant" value="&lt;?php echo $row['address_no2'];?&gt;"&gt;
+&lt;/div&gt;
+
+    &lt;input type="submit" value="Update" class="submit-button"&gt;
+&lt;/form&gt;
+&lt;?php
+}}
+    ?&gt;
+&lt;/body&gt;</code></pre>
+
+<div class="heading2">
+    <h3>Update Data in Database</h3>
+</div>
+
+
+<pre class="language-php"><code class="language-php">&lt;?php
+$stu_id = $_POST['ssid'];
+$stud_name = $_POST['sname'];
+$father_name = $_POST['fname'];
+$phone_number = $_POST['sphone'];
+$select_email = $_POST['sclass'];
+$current_address = $_POST['caddress'];
+$Permanant_address = $_POST['paddress'];
+
+$conn = mysqli_connect(&quot;localhost&quot;,&quot;root&quot;,&quot;&quot;,&quot;crud&quot;) or die(&quot;Connection Faild&quot;);
+
+$sql = &quot;UPDATE crud_operation SET Name='{$stud_name}',father_name='{$father_name}',phone_number='{$phone_number}',email_address='{$select_email}',address_no1='{$current_address}',address_no2='{$Permanant_address}' WHERE id = '{$stu_id}'&quot;;
+$result = mysqli_query($conn,$sql) or die(&quot;Query Unsucessful.&quot;);
+header(&quot;Location:http://localhost/crud/show.php&quot;);
+mysqli_close($conn);
+?&gt;</code></pre>
+
+<!-- 
+<div class="heading2">
+    <h3></h3>
+</div>
+<pre class="language-php"><code class="language-php"></code></pre>
+
+<div class="heading2">
+    <h3></h3>
+</div>
+<pre class="language-php"><code class="language-php"></code></pre>
+
+<div class="heading2">
+    <h3></h3>
+</div>
+<pre class="language-php"><code class="language-php"></code></pre> -->
+
+    </div>
+    <footer>
+        <p>Design By Hassan Ali</p>
+    </footer>
+
+    <script src="../Files/javaScript.js"></script>
+    <script src="https://kit.fontawesome.com/991a8d9f0e.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

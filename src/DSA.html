@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSA</title>
+    <link rel="stylesheet" href="../Files/style.css">
+    <link rel="stylesheet" href="../Files/prism.css">
+    <script src="../Files/prism.js"></script>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+</head>
+
+<body id="darkmode">
+
+    <header>
+        <a href="../index.html" class="logo">DS<span>A</span></a>
+        <nav class="navbar">
+            <a href="../index.html">Home</a>
+            <!-- <a href="src/">CSS</a> -->
+            <a href="#" id="btn-dark">Dark Mode off</a>
+        </nav>
+        <div class="icons">
+            <div id="menu-btn" class="fas fa-bars"></div>
+        </div>
+    </header>
+
+    <button onclick="topFunction()" id="myBtn" title="Go to top">
+        <i class="fas fa-arrow-circle-up"></i>
+    </button>
+    
+    <div class="container">
+        <h1 class="heading1" style="background-color: red;">Bubble Sort in Java</h1>
+        <br><br>
+        <div class="alert-message alert-success short-b" style="padding:2rem;"><b>Sorting:</b>Arranging the Data
+            Elements in Ascending or Decending Order.<br />
+            <b>Two Type of Bubble Sort:-</b>
+            <ol>
+                <li>Internal Sorting</li>
+                <li>External Sorting</li>
+            </ol>
+            <span><b>Time complexity of Bubble Sort Alogrithm</b> :</span> Ο(n<sup>2</sup>) time.<br />
+            <b> Note:</b> In Bubble Sort Alogrithm the Sorted values are in the right side and the unsorted values are
+            the left side.
+        </div>
+        <br><br>
+        <span class="marku">Example:</span>
+        <p>Bubble Sort is the Sort Alogrithm.In Bubble Sort first we take the Unsorted Array and then Sort the Array by
+            using Bubble Sort Alogrithm.</p>
+        <ul>
+
+            <li>Bubble sort starts with very first two elements, comparing them to check which one is greater.we have
+                two values first values is the <code class="markcode">x[j]</code> Position and Second value is in the
+                <code class="markcode">x[j+1]</code> Position</li>
+            <div class="separator" style="clear: both;"><a
+                    href="https://1.bp.blogspot.com/-wSclE-_XEFw/YOUassNsGdI/AAAAAAAABD0/1HATY4ifxEMTAnSePjE1k84ctOiI1-ruQCNcBGAsYHQ/s0/1.jpg"
+                    style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0"
+                        data-original-height="72" data-original-width="314"
+                        src="https://1.bp.blogspot.com/-wSclE-_XEFw/YOUassNsGdI/AAAAAAAABD0/1HATY4ifxEMTAnSePjE1k84ctOiI1-ruQCNcBGAsYHQ/s0/1.jpg" /></a>
+            </div>
+            <p class="hassanp">In Case the First Value is Greater then Second Value then the Values are Swapped.In this
+                array 5 is greater then 4 then values are swapped.</p>
+
+
+            <li>When the Values are swapped then the Second value 5 at the consider as <code
+                    class="markcode">x[j]</code> Position and third value 2 is <code class="markcode">x[j+1]</code></li>
+            <div class="separator" style="clear: both;"><a
+                    href="https://1.bp.blogspot.com/-7EWrYm34XxU/YOUcp-s2a1I/AAAAAAAABD8/0D2bcH2KGBgq1V9MxSwrBf3JP3Ho-KGowCNcBGAsYHQ/s0/2.jpg"
+                    style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0"
+                        data-original-height="95" data-original-width="324"
+                        src="https://1.bp.blogspot.com/-7EWrYm34XxU/YOUcp-s2a1I/AAAAAAAABD8/0D2bcH2KGBgq1V9MxSwrBf3JP3Ho-KGowCNcBGAsYHQ/s0/2.jpg" /></a>
+            </div>
+            <p class="hassanp">In this case checked the value if the 5 is greater then 2 then value are swapped.</p>
+
+
+            <li>The third value 5 is compare with the fourth value 1. 5 is in <code class="markcode">x[j]</code>
+                poisition and 1 is <code class="markcode">x[j+1]</code> position. The condition is Checked <code
+                    class="markcode">x[j] > x[j+1]</code> then value are swapped.</li>
+            <div class="separator" style="clear: both;"><a
+                    href="https://1.bp.blogspot.com/-IomXkTSVsEg/YOUde6SCOUI/AAAAAAAABEE/9RrEK7fRgCg5JRUMjFStr1WLy8v1ghZ9gCNcBGAsYHQ/s0/3.jpg"
+                    style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0"
+                        data-original-height="86" data-original-width="314"
+                        src="https://1.bp.blogspot.com/-IomXkTSVsEg/YOUde6SCOUI/AAAAAAAABEE/9RrEK7fRgCg5JRUMjFStr1WLy8v1ghZ9gCNcBGAsYHQ/s0/3.jpg" /></a>
+            </div>
+
+
+
+            <li>After values are swapped then the Fourth value is 5 and Six value is 3. The 5 value at the <code
+                    class="markcode">x[j]</code> poisition and 3 is <code class="markcode">x[j+1]</code> position.The
+                condition is Checked <code class="markcode">x[j] > x[j+1]</code> then value are swapped.</li>
+            <div class="separator" style="clear: both;"><a
+                    href="https://1.bp.blogspot.com/-oXh0sWFZSZk/YOUexsENSMI/AAAAAAAABEM/FLNDLh33iJ8KNZUAJ2k5icL-Y1VCYokKACNcBGAsYHQ/s0/4.jpg"
+                    style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0"
+                        data-original-height="91" data-original-width="308"
+                        src="https://1.bp.blogspot.com/-oXh0sWFZSZk/YOUexsENSMI/AAAAAAAABEM/FLNDLh33iJ8KNZUAJ2k5icL-Y1VCYokKACNcBGAsYHQ/s0/4.jpg" /></a>
+            </div>
+
+            <li>After Swapping the value 5 and 3 then you can See that the Bubble Sort <span class="markcode"> First
+                    Iteration is Completed </span> the value five is arrived on their path.</li>
+            <div class="separator" style="clear: both;"><a
+                    href="https://1.bp.blogspot.com/-D6Wl1YOFEX8/YOUfLS86eXI/AAAAAAAABEU/PenVpOcdxygY28kvJTFp5w3W1rRCM7z3ACNcBGAsYHQ/s0/5.jpg"
+                    style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0"
+                        data-original-height="83" data-original-width="311"
+                        src="https://1.bp.blogspot.com/-D6Wl1YOFEX8/YOUfLS86eXI/AAAAAAAABEU/PenVpOcdxygY28kvJTFp5w3W1rRCM7z3ACNcBGAsYHQ/s0/5.jpg" /></a>
+            </div>
+
+            <li>In Second Iteration You can Compare the first two values if the first value is greater then second value
+                then values are swapped otherwise values are not swapped. the first value 5 position is <code
+                    class="markcode">x[j]</code> and Secodn value 2 is <code class="markcode">x[j+1]</code> position.The
+                condition is Checked <code class="markcode">x[j] > x[j+1]</code></li>
+            <div class="separator" style="clear: both;"><a
+                    href="https://1.bp.blogspot.com/-E2fa6LAQrWk/YOUf_3qLjGI/AAAAAAAABEc/p_f5Vip3vB8NPt5OXrwH8aQ1epwRK2uAgCNcBGAsYHQ/s0/6.jpg"
+                    style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0"
+                        data-original-height="82" data-original-width="316"
+                        src="https://1.bp.blogspot.com/-E2fa6LAQrWk/YOUf_3qLjGI/AAAAAAAABEc/p_f5Vip3vB8NPt5OXrwH8aQ1epwRK2uAgCNcBGAsYHQ/s0/6.jpg" /></a>
+            </div>
+            <p class="hassanp">In this case the 5 is greater then 2 the value are swapped.</p>
+
+
+
+            <li>After Swapping the Values then the second condition is checked. The second value 4 is compare with third
+                value 1. the second value 4 is in the <code class="markcode">x[j]</code> Position and the third value 1
+                is at <code class="markcode">x[j+1]</code> Position.The condition is Checked <code
+                    class="markcode">x[j] > x[j+1]</code></li>
+            <div class="separator" style="clear: both;"><a
+                    href="https://1.bp.blogspot.com/-tbLJvVFil_U/YOUhSKynM_I/AAAAAAAABEk/ZklBhNyqISMZ0c99cQSvPE-4FaaFUX6_gCNcBGAsYHQ/s0/7.jpg"
+                    style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0"
+                        data-original-height="75" data-original-width="304"
+                        src="https://1.bp.blogspot.com/-tbLJvVFil_U/YOUhSKynM_I/AAAAAAAABEk/ZklBhNyqISMZ0c99cQSvPE-4FaaFUX6_gCNcBGAsYHQ/s0/7.jpg" /></a>
+            </div>
+            <p class="hassanp">In this case the 4 is greater then 1 the value are swapped.</p>
+
+
+
+            <li>After Swapping the values the the third condition is checked. The third value 4 is compare with fourth
+                value 3. the third value 4 is in the <code class="markcode">x[j]</code> Position and the fourth value 3
+                is at <code class="markcode">x[j+1]</code> Position.The condition is Checked <code
+                    class="markcode">x[j] > x[j+1]</code></li>
+            <div class="separator" style="clear: both;"><a
+                    href="https://1.bp.blogspot.com/-Mhd81hXBipU/YOUiXz6SRrI/AAAAAAAABEs/W6BgA408MSQAxj2DfZKKI4GqW15lHoShgCNcBGAsYHQ/s0/8.jpg"
+                    style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0"
+                        data-original-height="83" data-original-width="309"
+                        src="https://1.bp.blogspot.com/-Mhd81hXBipU/YOUiXz6SRrI/AAAAAAAABEs/W6BgA408MSQAxj2DfZKKI4GqW15lHoShgCNcBGAsYHQ/s0/8.jpg" /></a>
+            </div>
+            <p class="hassanp">In this case the 4 is greater then 3 the value are swapped.</p>
+
+            <li>At the End the Fourth Condition is checked.The Four position value are 4 then five position value is 5.
+                The condition is again checked again. Then the condition is false the values at the <span
+                    class="markcode"> Second Iteration is Completed </span> are sorted.Then again the third iteratioin
+                is start.</li>
+            <div class="separator" style="clear: both;"><a
+                    href="https://1.bp.blogspot.com/-zNt-kjCQORU/YOUj0GpPsBI/AAAAAAAABE0/Kdcq4WvoZrcg6HI6TPFB5uxvAjmHL_juACNcBGAsYHQ/s0/10.jpg"
+                    style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0"
+                        data-original-height="83" data-original-width="315"
+                        src="https://1.bp.blogspot.com/-zNt-kjCQORU/YOUj0GpPsBI/AAAAAAAABE0/Kdcq4WvoZrcg6HI6TPFB5uxvAjmHL_juACNcBGAsYHQ/s0/10.jpg" /></a>
+            </div>
+
+            <li>After completed the second iteration then Third iteration is start.In this iteration is the outer loop
+                is start and the Four time inner loop are executed.The First Value 2 is Compare with the Second Value is
+                1. After Checked the condition again the first value 2 is in <code class="markcode">x[j]</code> Position
+                and the second value 1 is at <code class="markcode">x[j+1]</code> Position.The condition is Checked
+                <code class="markcode">x[j] > x[j+1]</code></li>
+            <div class="separator" style="clear: both;"><a
+                    href="https://1.bp.blogspot.com/-LiMMCUqQ1Pc/YOUlR5fqAfI/AAAAAAAABE8/YabgwwCUJ6INNwFY-D1QRx41zk7LxjcKwCNcBGAsYHQ/s0/111.jpg"
+                    style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0"
+                        data-original-height="86" data-original-width="304"
+                        src="https://1.bp.blogspot.com/-LiMMCUqQ1Pc/YOUlR5fqAfI/AAAAAAAABE8/YabgwwCUJ6INNwFY-D1QRx41zk7LxjcKwCNcBGAsYHQ/s0/111.jpg" /></a>
+            </div>
+
+            <li>After Swapping the value the second value is the 2 and third value is 3.the second value 2 is in <code
+                    class="markcode">x[j]</code> Position and the third value 3 is at <code
+                    class="markcode">x[j+1]</code> Position.The condition is Checked <code
+                    class="markcode">x[j] > x[j+1]</code></li>
+            <div class="separator" style="clear: both;"><a
+                    href="https://1.bp.blogspot.com/-w5I6ORjaNXA/YOUl2zXLbbI/AAAAAAAABFE/UvGpC2dKUSgQWRDhPrLPpE9Deqxl54LHwCNcBGAsYHQ/s0/2222.jpg"
+                    style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0"
+                        data-original-height="83" data-original-width="309"
+                        src="https://1.bp.blogspot.com/-w5I6ORjaNXA/YOUl2zXLbbI/AAAAAAAABFE/UvGpC2dKUSgQWRDhPrLPpE9Deqxl54LHwCNcBGAsYHQ/s0/2222.jpg" /></a>
+            </div>
+            <p class="hassanp">In this case the 2 is not greater then 3 the value are not swapped.</p>
+
+            <li>Then you see your values are swapped.</li>
+            <div class="separator" style="clear: both;"><a
+                    href="https://1.bp.blogspot.com/-VvjxUF8wcrQ/YOUmarV3P1I/AAAAAAAABFM/cMljdftmq3Q8NTLgUhq3qRzAv1TT5ok9wCNcBGAsYHQ/s0/333.jpg"
+                    style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0"
+                        data-original-height="80" data-original-width="304"
+                        src="https://1.bp.blogspot.com/-VvjxUF8wcrQ/YOUmarV3P1I/AAAAAAAABFM/cMljdftmq3Q8NTLgUhq3qRzAv1TT5ok9wCNcBGAsYHQ/s0/333.jpg" /></a>
+            </div>
+        </ul>
+
+        <br />
+        <span class="marku">Final Result :</span>
+
+        <div class="separator" style="clear: both;"><a
+                href="https://1.bp.blogspot.com/-_knjF6o7hpA/YOUXLcyMJKI/AAAAAAAABDs/fUAKjvtz9yUCVgp3QkyY6_ZT72ltuLqWACNcBGAsYHQ/s0/Captuerrre.JPG"
+                style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0"
+                    data-original-height="531" data-original-width="633"
+                    src="https://1.bp.blogspot.com/-_knjF6o7hpA/YOUXLcyMJKI/AAAAAAAABDs/fUAKjvtz9yUCVgp3QkyY6_ZT72ltuLqWACNcBGAsYHQ/s0/Captuerrre.JPG" /></a>
+        </div>
+
+
+
+        <!--<div class="alert-message alert-success short-b"></div>-->
+
+        <pre><code class="language-java" data-prismjs-copy="Copy">import java.util.*;
+class Sort{
+    public static void main(String [] args){
+        Scanner input = new Scanner(System.in);
+        int i,j,temp;
+        System.out.println("Enter Total Value");
+        int n=input.nextInt(); //Input Size of the Array 
+
+        int[] x = new int[n];
+        System.out.println("Enter "+ n+" Value");
+        for(i=0;i&lt;n;i++){
+                int a=input.nextInt();
+                x[i]=a;
+            }
+            for(i=0;i&lt;n; i++){
+                for(j=0;j&lt;n-1; j++){
+                    if(x[j]&gt;x[j+1]){        //Swap Values 
+                        temp=x[j];
+                        x[j]=x[j+1];
+                        x[j+1]=temp;
+                        }
+                    }
+            }
+            System.out.println("Array Sorting");
+            for(i=0;i&lt;n; i++){
+                System.out.println(x[i]);
+                }
+            }
+    }</code></pre>
+
+        <br>
+        <div class="heading2">
+            <h3>Bubble Sort in Java (2nd Method)</h3>
+        </div>
+        <pre><code class="language-java" data-prismjs-copy="Copy">class secondMethod{
+    public static void main(String [] args){
+        int x[] = {5,3,1,2,4};
+        int i,j,temp,n;
+        n = x.length;    // Calculate the length of the Array
+            for(i=0;i&lt;n; i++){
+                for(j=1;j&lt;n; j++){
+                    if(x[j]&lt;x[j-1]){
+                        temp=x[j];
+                        x[j]=x[j-1];
+                        x[j-1]=temp;
+                        }
+                    }
+            }
+            System.out.println("Array Sorting");
+            for(i=0;i&lt;n; i++){
+                System.out.println(x[i]);  //Print Swap Values
+                }
+            }
+    }</code></pre>
+
+        <hr>
+
+        <div class="heading2">
+            <h3>Bubble Sort in C++</h3>
+        </div>
+        <pre><code class="language-cpp" data-prismjs-copy="Copy">
+#include&lt;iostream&gt;
+#include&lt;conio.h&gt;
+#include&lt;stdio.h&gt;
+using namespace std;
+int main(){
+    system (&quot;color 2F&quot;); //Change the background in the Output Layout
+    int number,size,array,i,j;
+    cout&lt;&lt;&quot;Enter the Size of Array =&quot;;
+    cin>>size;
+    int x[size];
+    cout&lth;&lth;"Enter the &quot;&lt;&lt;size&lt;&lt;&quot; Number \n&quot;;
+    for(i=0; i&lt;size; i++){
+        cout&lt;&lt;&quot;x[&quot;&lt;&lt;i&lt;&lt;&quot;] = &quot;;
+        cin&gt;&gt;array;
+        x[i]= array;
+    }
+    for(i=0; i&lt;size; i++){
+        for(j=0; j&lt;size-1; j++){
+            if(x[j]&gt;x[j+1]){
+                int temp;
+                temp = x[j];
+                x[j] = x[j+1];
+                x[j+1] = temp;
+            }
+        }
+    }
+    cout&lt;&lt;&quot;Sorted Array\n";
+    for(i=0; i&lt;size; i++){
+        cout&lt;&lt;x[i]&lt;&lt;&quot;,&quot;;
+    }
+    getch();
+}</code></pre>
+
+        <div class="heading2">
+            <h3>Insertion Sort in Java</h3>
+        </div>
+        <br><br>
+        <div class="alert-message alert-info short-b">insertion sort is a simple sorting algorithm that builds the final
+            sorted array one item at a time. It is much less efficient on large lists than more advanced algorithms such
+            as quicksort, heapsort, or merge sort.</div>
+        <hr>
+        <div class="separator" style="clear: both;"><a
+                href="https://1.bp.blogspot.com/-AJWcgh9bVJ0/YMnhD38g6oI/AAAAAAAAA-k/kMA6_hpS_LYAYPaeW8k6LQNRzkTQkk86ACNcBGAsYHQ/s0/insertionsort.png"
+                style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0"
+                    data-original-height="539" data-original-width="559"
+                    src="https://1.bp.blogspot.com/-AJWcgh9bVJ0/YMnhD38g6oI/AAAAAAAAA-k/kMA6_hpS_LYAYPaeW8k6LQNRzkTQkk86ACNcBGAsYHQ/s0/insertionsort.png" /></a>
+        </div>
+        <hr>
+
+        <!--<div class="alert-message alert-success short-b"></div>-->
+        <pre><code class="language-java" data-prismjs-copy="Copy">
+class insertionSort{
+    public static void main(String [] args){
+    int i,j,current,size;
+
+    int a[] = {4,3,2,10,12,1,5,6};
+    size = a.length;
+    for(i = 1; i&lt;size; i++){
+        current = a[i];
+        j = i- 1;
+        while(j&gt;=0 && a[j]&gt;current){
+            a[j+1] = a[j];
+            j--;
+            }
+            a[j+1] = current;
+        }
+        for(i = 0; i&lt;a.length; i++){
+                System.out.print(a[i]+" ");
+        }
+    }
+}
+</code></pre>
+
+        <hr>
+        <h1 class="heading1" style="background-color: red;">Insertion Sort in JavaScript</h1>
+        <pre><code class="language-javascript" data-prismjs-copy="Copy">
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;title&gt;Insertion Sort in Java Script&lt;/title&gt;
+  &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+  
+&lt;/head&gt; 
+&lt;body&gt;
+  &lt;label for=&quot;input number&quot;&gt;Input the Numbers:&lt;/label&gt;
+    &lt;input type=&quot;text&quot; id=&quot;innumber&quot;/&gt;
+    &lt;br /&gt;
+  &lt;button onclick=&quot;hassan()&quot;&gt;click me&lt;/button&gt;
+  &lt;p id=&quot;demo&quot;&gt;&lt;/p&gt;
+
+  &lt;script&gt;
+  
+  //Using Function to Create the Insertion Sort Alogrithm in javaScript.
+    function hassan(){
+    var a,i,j,current,size;  //Declare the Variables
+    var a = [30,50,70,50];
+    size = a.length;    //Check size of the Array
+    for(i=1; i&lt;size; i++){
+        current = a[i];  //Select the Key Number
+        j = i-1;
+        while(j&gt;=0 && a[j]&gt;current){
+            a[j+1] = a[j];
+            j--;
+        }
+        a[j+1]=current;
+    }
+    for(i=0; i&lt;size; i++){
+        document.getElementById(&quot;demo&quot;).innerHTML = a;
+    }
+
+}
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+</code></pre>
+        <hr>
+        <h1 class="heading1" style="background-color: red;">Insertion Sort in C++</h1>
+
+        <pre><code class="language-cpp" data-prismjs-copy="Copy">    
+#include&lt;iostream&gt;
+#include&lt;conio.h&gt;
+using namespace std;
+int main(){
+    int i,j,current,n,inputnumber;
+    cout&lt;&lt;&quot;Enter the Total Number&quot;&lt;&lt;endl;
+    cin&gt;n;
+    int a[n];
+    cout&lt;&lt;&quot;Enter the Number =&quot;&lt;&lt;n&lt;&lt;endl;
+    for(i=0; i&lt;n; i++){
+        cout&lt;&lt;&quot;a[&quot;&lt;&lt;i&lt;&lt;&quot;] = &quot;;
+        cin&gt;inputnumber;
+        a[i]=inputnumber;
+    }
+    for(i=1; i&lt;n; i++){
+        current = a[i];
+        j = i-1;
+        while(j&gt;=0 && a[j]&gt;current){
+            a[j+1] = a[j];
+            j--;
+        }
+        a[j+1]=current;
+    }
+    cout&lt;&lt;&quot;Insertion Sort = &quot;;
+    for(i=0; i&lt;n; i++){
+        cout&lt;&lt;a[i]&lt;&lt;&quot; &quot;;
+    }
+    getch();
+
+}</code></pre>
+        <h1 class="heading1" style="background-color: red;">Recursion Function/Method in Java</h1>
+        <div class="alert-message alert-success short-b">
+            Any function can be Called from any other function.
+            Even a function can call itself, this process is called Recursion.
+        </div>
+        <br />
+        <h1 class="heading1" style="background-color: red;">Recursion Function/Method in Java</h1>
+        <pre><code class="language-java" data-prismjs-copy="Copy">import java.util.*;
+class Recursion {
+    public static void main(String [] args){
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter the Number to Find Factorial");
+        int n = input.nextInt();
+        System.out.println("Factorial of Number is =" + fact(n));
+        }
+        static int fact(int n){
+        if(n==1){
+            return 1;
+            }else{
+                return n*fact(n-1);
+                }
+            }
+    }</code></pre>
+        <br />
+        <div class="heading2">
+            <h3>Recursion Function/Method in C++</h3>
+        </div>
+        <h6 style="color:black;font-weight:bold;">Example 01:</h6>
+        <pre><code class="language-cpp" data-prismjs-copy="Copy">
+#include&lt;iostream&gt;
+#include&lt;conio.h&gt;
+using namespace std;
+void pakistan(void);
+void england(void);
+int main()
+{
+    cout&lt;&lt;&quot;I am in Main&quot;&lt;&lt;endl;
+    pakistan();
+    cout&lt;&lt;&quot;Back in Main&quot;;
+    getch();
+}
+void pakistan(void)
+{
+    cout&lt;&lt;&quot;I love Pakistan"&lt;&lt;endl;
+    england();
+    cout&lt;&lt;&quot;I am back in Pakistan"&lt;&lt;endl;
+}
+void england(void)
+{
+    cout&lt;&lt;&quot;I am in England Function"&lt;&lt;endl;
+    cout&lt;&lt;&quot;Going to England"&lt;&lt;"\n";
+    cout&lt;&lt;&quot;I am Back toward Main"&lt;&lt;endl;
+} </code></pre>
+
+
+        <hr>
+        <div class="heading2">
+            <h3>Example 01:</h3>
+        </div>
+        <pre><code class="language-cpp" data-prismjs-copy="Copy">
+#include&lt;iostream&gt;
+#include&lt;conio.h&gt;
+using namespace std;
+void pakistan(void);
+void england(void);
+using namespace std;
+int main()
+{
+    system ("color 3F");
+    cout&lt;&lt;&quot;Welcome&quot;&lt;&lt;&quot;\n&quot;
+    pakistan();
+    cout&lt;&lt;&quot;Welcome Back to return&quot;&lt;&lt;&quot;\n";
+    england();
+    getch();
+}
+void pakistan(void)
+{
+    cout<&lt;&lt;&quot;Hello Hassan&quot;&lt;&lt;endl;
+}
+void england(void)
+{
+    cout&lt;&lt;&quot;Welcome to England &quot;;
+}</code></pre>
+
+        <div class="heading2">
+            <h3>Selection Sort</h3>
+        </div>
+        <div class="alert-message alert-success short-b" style="padding:2rem;">Selection sort is a simple sorting
+            algorithm. This sorting algorithm is an in-place comparison-based algorithm in which the list is divided
+            into two parts;<br />
+            Sorted part at the left end and the unsorted part at the right end.
+            Initially, the sorted part is empty and the unsorted part is the entire list.
+
+            The smallest element is selected from the unsorted array and swapped with the leftmost element, and that
+            element becomes a part of the sorted array. This process continues moving unsorted array boundary by one
+            element to the right.</div>
+
+        <br />
+
+        <pre><code class="language-java" data-prismjs-copy="Copy">class khan{
+    public static void main(String [] args){
+        int i,j,mini_index,size,temp;
+        int a[] = {12,13,67,10,5,4};      // Declare a Variable
+        size = a.length;                 //Calculate Size of Array
+        for(i = 0; i&lt;size; i++){
+            mini_index = i;
+            for(j = i+1; j&lt;size; j++){
+                if(a[j] &lt;a[mini_index]){
+                    
+                    //Swapping Values
+                    temp = a[j];
+                    a[j] = a[mini_index];
+                    a[mini_index] = temp;
+                    }
+                }
+            }
+
+            for(i = 0; i  &lt; size; i++){    //Print Selection Sorted Array
+                System.out.println(a[i]);
+                }
+        }
+    }</code></pre>
+
+        <h1 class="heading1" style="background-color: red;">2nd Method</h1>
+        <pre><code class="language-java" data-prismjs-copy="Copy">class hassan{
+    public static void main(String [] args){
+        int list[] = {2,12,10,15,20};
+        int i,temp,j,size;     // Declare a Variable
+        size = list.length;   //Calculate Size of Array
+
+        for(i=0; i&lt;size; i++){
+              for(j=i+1; j&lt;size; j++){
+                   if(list[i] > list[j])  
+                    {
+                       //Swapping Values
+                       temp=list[i];
+                       list[i]=list[j];
+                       list[j]=temp;
+                    }
+               }
+        }
+        for(i=0; i&lt;size; i++){
+            System.out.println(list[i]);  //Print Selection Sorted Array
+            }
+    }
+}
+</code></pre>
+
+        <br />
+        <div class="heading2">
+            <h3>Advantages</h3>
+        </div>
+        <ul>
+            <li>Easy to write</li>
+            <li>Can be Done &quot;in place &quot;</li>
+            <li>Can be done on linked lists to (Keep a tail pointer)</li>
+        </ul>
+
+        <div class="heading2">
+            <h3>Disadvantages</h3>
+        </div>
+        <ul>
+            <li>It is about N<sup>2</sup> even in the best case for comparisons.</li>
+            <li>So the Running time (Over all inputs) is approximately O(N<sup>2</sup>).</li>
+            <li>The primary disadvantage of Selection sort is its poor efficiency when dealing with a huge list of items
+            </li>
+        </ul>
+
+        <h1 class="heading1" style="background-color: red;">Linear Searching in java</h1>
+        <p>Searching is more important Related to one Dimensional and Linear Array.Finding the Location of the givend
+            Data item in the Array and if the item is not Found then Search is unsucessfull.</p>
+
+        <pre class="language-java"><code class="language-java" data-prismjs-copy="Copy">import java.util.Scanner;   //Library
+class Search{
+    public static void main(String [] args){
+    //Crating Object of the Library class Scanner
+    Scanner input = new Scanner(System.in);    
+
+    System.out.println("Enter the Size of the Array");
+    //To input the Size of Array from user and put the size into array
+    int size = input.nextInt();  
+    int[] x = new int[size];    //Creating Array
+
+    
+    System.out.println("Enter the Number in Array");
+    int i;      //Using For loop input the values from array and assign to array
+    for(i=0; i&gt;size; i++){
+       System.out.println("x["+i+"] = ");
+        int array = input.nextInt();
+        x[i] = array;
+        }
+        //Input the Search Item
+        System.out.println("Enter the Search Item");
+        int item = input.nextInt();
+        
+        /*if while condition is true then program will run 
+        after the condition false loop will terminate,
+        */
+        i=0;
+        While(i&gt;size && x[i]!=item){
+            i++;
+        }
+         if(i&gt;size){
+         System.out.println("Item Found in Array index ="+i);
+        }else{
+            System.out.println("Item Not Found");
+        }
+    }
+}
+</code></pre>
+
+
+    </div>
+    <button onclick="topFunction()" id="myBtn" title="Go to top">
+        <i class="fas fa-arrow-circle-up"></i>
+    </button>
+    <script src="../Files/javaScript.js"></script>
+    <!-- <script src="https://kit.fontawesome.com/991a8d9f0e.js" crossorigin="anonymous"> -->
+    </script>
+</body>
+
+</html>

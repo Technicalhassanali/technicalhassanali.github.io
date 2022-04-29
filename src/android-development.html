@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Android Development</title>
+<link rel="stylesheet" href="../Files/style.css" />
+<link rel="stylesheet" href="../Files/prism.css" />
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+	integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+	<style>
+		body {
+			/*background-color: hsl(0, 0%, 98%);*/
+		}
+		mark{
+			padding: 1px;
+    		border: 1px solid green;
+		}
+	</style>
+</head>
+<body id="darkmode">
+	<header>
+		<a href="../index.html" class="logo">Android <span>Development</span>
+		<img src="../images/code.png" class="white-filter" style="width:2.3rem;height:inherit;" />
+	</a>
+	<nav class="navbar">
+		<a href="../index.html">Home</a>
+		<!-- <a href="HTML.html">HTML</a> -->
+	</nav>
+	<div class="icons">
+		<div id="menu-btn" class="fas fa-bars"></div>
+	</div>
+</header>
+
+<button class="software-btn" onclick="topFunction()" id="myBtn" title="Go to top">
+<i class="fas fa-arrow-circle-up"></i>
+</button>
+
+<div class="container">
+
+<div class="heading2">
+	<h3>What is ADB &amp; AVD?</h3>
+</div>
+<p>When we create the Android App.Then main steps is to test the android app that work correctly function or not,that user end not show the UI Problem.The testing is necessary to remove the bugs from the app.The Bugs is problem in the android app. </p>
+<div class="Short-head">
+	<h3>Types of Error</h3>
+</div>
+<p>
+	Two types of Error; 
+</p>
+	<ol type="1">
+		<li>compile time error</li>
+		<li>Run time error</li>
+	</ol>
+	<p><strong>Compile time Error :</strong>A compile-time error generally refers to the errors that correspond to the semantics or syntax. </p>
+	<p><strong>Run time Error :</strong> A runtime error refers to the error that we encounter during the code execution during runtime.</p>
+<p><strong>ADB : </strong> ADB(Android Debug Bridge) : Android Real Device using USB to install APP and test the App</p>
+<p><strong>AVD :</strong> AVD(Android Virtual Device) : Android Virtual Device is created with different size and test/debug/check UI of the APP.</p>
+
+	<div class="heading2">
+		<h3>What is APK?</h3>
+	</div>
+
+<ul>
+<li>It is a Package file format used by Android Operating system for distribution and installation of Mobile app</li>
+<li>It means Android Application Package.</li>
+<li>Similar to executable file .exe in Windows Operating System.</li>
+<li>The extension of Apk file is .apk.</li>
+<li>It is installed on Android Operating System.</li>
+</ul>
+<p><b>It consists of</b> <br>
+	<ol>
+<li>Application code(.dex files)</li>
+<li>Manifest file</li>
+<li>Assets</li>
+<li>Resource files</li>
+	</ol>
+</p>
+
+<p><strong>Example:</strong> It just like a zip(winrar) file that collection of multiple file make and show one file.</p>
+
+	<div class="Short-head">
+		<h3>How to make Apk File?</h3>
+	</div>
+<p>In Android Studio the <code class="markcode">build > Build bundle /Apk</code> option on the topbar is used to built the apk file.</p>
+
+	<div class="heading2">
+		<h3>Android Studio Project Folder Details</h3>
+	</div>
+	<div class="Short-head">
+		<h3>Manifest</h3>
+	</div>
+	<p>Manifest is the like control room of any application.By using Manifest we do these things;</p>
+	<ul>
+		<li>App Name(Change)</li>
+		<li>Icon (Change)</li>
+		<li>Activity(Add)</li>
+		<li>Theme (Name Add)</li>
+		<li>Package (Add)</li>
+		<li>User Permission (camera,storage,cotact,location etc)</li>
+<pre class="language-html"><code class="language-html">&lt;uses-permission android:name=&quot;android.permission.Internet&quot;/&gt;</code></pre>
+	</ul>
+
+	<div class="Short-head">
+		<h3>Java</h3>
+	</div>	
+	<p>It has three sub-folders.</p>
+	<p>First folder contain the java main file.Then the other two folder contain test file that used in the testing purpose(unit testing,monkey testing,,J testing,automated testing) purpose.</p>
+
+	<div class="Short-head">
+		<h3>Java(generated)</h3>
+	</div>
+	<p>In this folder the file is used in the run time of the application.All the file check on the run time.</p>
+
+	<div class="Short-head">
+		<h3>res</h3>
+	</div>
+<p><code class="markcode">res</code> folder is the Resource folder that contain the UI Files.In res the multiple folder are present.</p>
+
+<ol type="1">
+	<li>drawable</li>
+	<li>Layout</li>
+	<li>mipmap</li>
+	<li>values</li>
+	<ul>
+		<li>themes</li>
+	</ul>
+</ol>
+
+<p class="folderStyle"><strong>Rules of <code class="markcode">res(Resource)</code> Folder:</strong></p>
+<p>When you creating the files in the res(Resource) Folder then you can follow these steps;</p>
+	<ul>
+		<li>File Name not starting with Number.</li>
+		<li>Not use Special Character in the File,only underscore(_) is used.</li>
+		<li>File Name not add space,if you use space then you add underscore exept space.</li>
+	</ul>
+<p>If you not follow the above condition when creating the file in res(Resource) Folder then the not identify the file in runtime.</p>
+
+<p class="folderStyle"><strong>Drawable (Folder)</strong></p>
+<p>In this folder we can add the images.You can add the image in the drwable folder by copy/past,ctrl+c/ctrl+v, and right click on the drwable folder then click "new" then select "images" that are the svg images.vector images is used only the svg image,other images .png ,.jpg is easily add through copy/past,ctrl+c/ctrl+v,drag/drop way.</p>
+<div class="success size">
+<p><i class="fas fa-check-circle" aria-hidden="true"></i> <strong> Note: </strong> <br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(1) JPG/JPEG<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(2) PNG (Transparent)<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(3) SVG <br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(4) XML(Custome Created Images using Coding) <br>
+	Images only used in the Drawable folder.
+</p>
+</div>
+
+<p class="folderStyle"><strong>Layout</strong></p>
+<ul>
+	<li>UI</li>
+	<li>Activity</li>
+	<li>Java (XML file)</li>
+</ul>
+
+<p class="folderStyle"><strong>mipmap</strong></p>
+<p>Used for icon.By default the same icon is show on the different size if the application used in large and samall phone the icon is according to set.Then this procwss is very time consuming,used svg (vector images) SVG Images that set(zoom) according to the screen.</p>
+
+<p class="folderStyle"><strong>values</strong></p>
+<p>The values folder is contain two files; (1) color.xml (2) strings.xml</p>
+
+<p><code class="markcode"><strong>color.xml</strong></code> : is used to define the color in xml file.if you have used the color in application 5 time then if we changed to color you not need to change the color from 5 places.Only one place you can go and change the password according to the preference.</p>
+<p>two way define color in the color.xml file.</p>
+<div class="success size">
+<p>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(1) RGB      (3 Color Variation)<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(2) RRGGBB   (6 Color Variaton)<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(3) ABRRGGBB (AB is Transparent color)<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R = Red; <br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;G = Green; <br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;B = Blue; <br>
+	If we used 0 then it mean no value and if used FF then mean transparent color. 1 mean color value that we used (0-9) then the character is used.
+</p>
+</div>
+<p>color are defined in the hexadecimal (0-15) form value. </p>
+<p><strong>Examples:</strong></p>
+
+<pre class="language-css"><code class="language-css">#RGB;                       
+#F00; (Red)                 
+#0F0; (Green)
+________________________________________________________               
+#RRGGBB;                    
+#FF0000; (Red)    
+________________________________________________________   	          
+#ABRRGGBB;                  
+#FF010000; (Red Transparent)
+</code></pre>
+
+<br>
+
+<p><code class="markcode">string.xml</code> file is used to store the text that used in the app in multiple time.If we change the text then we don't go to change the text from all over app.Only the string.xml file open then change the text.It would change the text that used most in app. e.g app name,app about us.</p>
+
+	<p class="folderStyle"><strong>themes</strong></p>
+<p>themes folder is contain theme file that used in the application.</p>
+
+
+	<div class="heading2">
+		<h3>Introduction to XML</h3>
+	</div>
+<p>XML (Extnsible Markup Language). <br>
+<strong>Language :</strong> Set of Instructions that process on the runtime,that is the reason we used Language <br>
+<strong>Markup :</strong> mean changing or formatting the text <br>
+</p>
+<br>
+<ol type="1">
+	<li>It is used for storing and transferring data. </li>
+	<li>It is a markup language much like HTML but in html the tag is predefined,xml user define tag himselft.The tag define user himself we says the language is extensible. </li>
+	<li>Unlike HTML, XML is <b>case-sensitive</b>, requires each tag is closed properly, and preserves whitespace.</li> 
+	<li>XML Tags need not to be predefined like HTML known as extensible).</li>
+	<li>A markup language is a language that annotates text so that the computer can manipulate that text.</li>
+	<li>Most markup languages are human-readable because the annotations are written in a way to distinguish them from the text itself.</li>
+</ol>
+
+
+<p class="folderStyle"><strong>XML in Android</strong></p>
+
+<ul>
+<li>We create XML <mark>layouts</mark> in Android, and later alter them using Java logic.</li>
+<li><mark>Resources</mark> are the additional files and static content an application needs, such as animations, color schemes,layouts, menu layouts.</li>
+<li>Each layout file must contain one (and only one!) <mark>root</mark>
+element(tags).</li>
+</ul>
+
+
+
+	<p class="folderStyle"><strong>VIEWS</strong></p>
+<ul>
+	<li>It represents a rectangular area of the screen, and is
+responsible for <mark>displaying information or content</mark>, and
+event handling.</li>
+<li>Text, images, and buttons are allI Views in Android.</li>
+</ul>
+<p>View is a basic building block of UI (User Interface) in android. A view is a small rectangular box that responds to user inputs. Eg: EditText, Button, CheckBox, etc. ViewGroup is an invisible container of other views (child views) and other ViewGroup.</p>
+
+
+	<p class="folderStyle"><strong>VIEW GROUP</strong></p>
+<p>It is essentially an <mark>'invisible container'</mark> that holds multiple
+Views or ViewGroups together, and defines their layout
+properties.</p>
+
+<p><strong>Common View Groups</strong></p>
+<ul>
+<li>A <mark>List View</mark> displays a list of scrollable items.</li>
+<li>A <mark>Grid View</mark> displays items in a two-dimensional scrollable grid.</li>
+<li>A <mark>Table Layout groups</mark> views into rows and colum.</li>
+</ul>
+
+
+	<p class="folderStyle"><strong>ROOT VIEWS</strong></p>
+	<p>It is Root Element of XML Layout file.In starting you take the root tag/element then you can add the code within the root tag/element.</p>
+
+	<p><strong>Common View Groups</strong></p>
+	<ul>
+<li>A <mark>Linear Layout</mark> aligns its contents into a single direction, whether vertical or horizontal.</li>
+<li>A <mark>Relative Layout</mark> displays its child content in positions relative to the parent.(Relation b/w Layout)</li>
+<li>A <mark>Frame Layout</mark> is a placeholder on a screen thae display only a single view (Fragments)</li>
+</ul>
+
+	<div class="heading2">
+		<h3>Android UI Design (XML Layout)</h3>
+	</div>
+<p>Two ways we design the layout in the android studio;</p>
+<ol type="1">
+	<li>Create Layout Using Front Drag/Drop Method</li>
+	<li>Create Layout Using Coding in XML File</li>
+</ol>
+
+
+	<p class="folderStyle"><strong>XML Layout Using Coding</strong></p>
+<pre class="language-xml"><code class="language-xml">&lt;?xml version="1.0" encoding=&quot;utf-8&quot;?&gt;
+&lt;RelativeLayout  
+    xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;
+    xmlns:tools=&quot;http://schemas.android.com/tools&quot;
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;match_parent&quot;
+    tools:context=&quot;.MainActivity&quot;&gt;
+&lt;/RelativeLayout&gt;</code></pre>
+
+	<p class="folderStyle"><strong>What is xmlns? (namespace URl)</strong></p>
+	<ul type="desc">
+<li>Uniform Resource Indicator(URl)</li>
+<li>In computing, it is a string of characters used to identify a name of a resource.</li>
+<li>Such identification enables interaction with representations of the resource over a network, type the World Wide Web, using specific protocols.</li>
+	</ul>
+<p><strong>Structure</strong></p>
+
+<pre class="language-xml"><code class="language-xml">xmlns:prefix=&quot;URI&quot; &lt;!--Syntax--&gt;</code></pre>
+
+	<p class="folderStyle"><strong>URL Namespace</strong></p>
+<ul>
+<li>XML namespaces are used for providing uniquely name elements and attributes in an XML document.</li>
+<li>xmins:android describes the android namespace.</li>
+<li>Also suppose we <mark>write our own textview widget</mark> with
+different features compared to android textview, an
+namespace helps to distinguish between our custome
+textview widget and android textview widget.</li>
+</ul>
+
+	<p class="folderStyle"><strong>Important Attribute</strong></p>
+<ul>
+<li>android:id</li>
+<li>android:layout_width (required)</li>
+<li>android:layout_height (required)</li>
+<li>android:text</li>
+</ul>
+<p class="folderStyle"><strong>LayoutParams</strong></p>
+<p>In root we used mostly <code class="markcode">match_parent</code> b/c we need whole screen width/height of the app.</p>
+<p><mark><strong>wrap_content :</strong></mark> Space provide view that they need.It depend on the requirement of the content in the views if content is large then view size become large. e.g if text "Hello world" is place then the width and hight provide according to content.You not specify the <code class="markcode">wrap_content </code> in the root element b/c you need whole screen.</p>
+<p><mark><strong>Fixed Size :</strong></mark> mean the size define that the not changed.Mostly used <code class="markcode">dp</code>(density pixels) is used.</p>
+<pre class="language-xml"><code class="language-xml">android:layout_width =&quot;match_parent |  wrap_content| 100dp&quot;
+android:layout_height=&quot;match_parent |  wrap_content| 100dp&quot;</code></pre>
+
+
+<!-- 
+	<div class="Short-head">
+		<h3></h3>
+	</div>
+
+	<h1 class="heading1" style="background-color: red;"> </h1>
+	<div class="heading2">
+		<h3></h3>
+	</div>
+	<p class="folderStyle"><strong></strong></p>
+<pre class="language-xml"><code class="language-xml"></code></pre>
+	-->
+
+		<br>
+	<br>
+</div>
+</div>
+	 	<footer>
+			<p>Design By Hassan Ali</p>
+		</footer> 
+
+<button onclick="topFunction()" id="myBtn" title="Go to top">
+<i class="fas fa-arrow-circle-up"></i>
+</button>
+
+	<script src="../Files/prism.js"></script>
+	<script src="../Files/javaScript.js"></script>
+	<script src="https://kit.fontawesome.com/991a8d9f0e.js" crossorigin="anonymous">
+	</script>
+</body>
+</html>

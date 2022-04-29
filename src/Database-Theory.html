@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Database CheatSheet</title>
+    <!-- <link rel="icon" type="image/x-icon" href="../Files/images/favicon.png"> -->
+    <link rel="stylesheet" href="../Files/style.css" />
+    <link rel="stylesheet" href="../Files/prism.css" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+</head>
+
+<body>
+    <header>
+        <a href="../index.html" class="logo">Data<span>base</span>
+        </a>
+        <nav class="navbar">
+            <a href="../index.html">Home</a>
+            <a href="Database.html">Database</a>
+            <!-- <a href="src/">CSS</a> -->
+            <a href="#" id="btn-dark">Dark Mode off</a>
+        </nav>
+        <div class="icons">
+            <div id="menu-btn" class="fas fa-bars"></div>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="heading2">
+            <h3>What is Database?</h3>
+        </div>
+        <p>A database is a collection of related data.</p>
+        <p><span class="outputh">Example : </span> <br>
+            For example, consider the names, telephone phone numbers, and addresses of the people you know.</p>
+
+        <div class="heading2">
+            <h3>Database Management System (DBMS)</h3>
+        </div>
+        <p>A database management system (DBMS) is a collection of programs that enables
+            users to create and maintain a database. The DBMS is a general-purpose software system that facilitates the
+            processes of defining, constructing, manipulating, and sharing
+            databases among various users and applications.</p>
+
+        <div class="heading2">
+            <h3>Query</h3>
+        </div>
+        <p>An application program accesses the database by sending queries or requests for data to the DBMS.</p>
+
+        <div class="heading2">
+            <h3>Touple</h3>
+        </div>
+        <p>Every Table consists of many touples,a one row(record) in database is known as Touple.</p>
+
+
+        <div class="heading2">
+            <h3>Degree</h3>
+        </div>
+        <p>The Table/Relation Contain Number of Attributes(columns) in the Database.Each Table has the Number of
+            Attributes then we calculate the total number of Attribute in the Database.</p>
+
+
+        <div class="heading2">
+            <h3>Cardinality</h3>
+        </div>
+        <p>Cardinality is a relationship or join/bridge between rows of 1 table to the rows of another table.</p>
+
+
+        <div class="heading2">
+            <h3>Domain</h3>
+        </div>
+        <p>The set of permitted values for each attribute is known as the domain of the attribute.</p>
+
+
+        <div class="heading2">
+            <h3>what is Key?</h3>
+        </div>
+        <p>A key in DBMS is an attribute or a set of attributes that help to uniquely identify a tuple (or row) in a
+            relation (or table). Keys are also used to establish relationships between the different tables and columns
+            of a relational database. Individual values in a key are called key values.</p>
+
+        <div class="heading2">
+            <h3>Prime Attribute or key Attributes</h3>
+        </div>
+        <p>The Attributes of a relation that make up the ky are called prime key or key attributes.</p>
+
+        <div class="heading2">
+            <h3>Non-Prime Attribute</h3>
+        </div>
+        <p>The Attribute of a relation that don't participate in key formation are called non-prime attributes or
+            non-key attributes.</p>
+
+        <div class="heading2">
+            <h3>Super Key</h3>
+        </div>
+        <p>A Super Key is a set of one or more Attributes(columns), which can uniquely identify a row in a table. A
+            super key is a group of single or multiple keys which identifies rows in a table.</p>
+
+        <div class="heading2">
+            <h3>Primary key</h3>
+        </div>
+        <p>Primary key is a column or group of columns in a table that uniquely identify every row in that table.</p>
+
+        <div class="heading2">
+            <h3>Canidate Key</h3>
+        </div>
+        <p>canidate key is a set of attributes that uniquely identify tuples in a table. Candidate Key is a super key
+            with no repeated attributes.</p>
+
+        <div class="heading2">
+            <h3>Alternate Key</h3>
+        </div>
+        <p>Alternate Key is a column or group of columns in a table that uniquely identify every row in that table.</p>
+
+        <div class="heading2">
+            <h3>Foreign Key</h3>
+        </div>
+        <p>Foreign Key is a column that creates a relationship between two tables. The purpose of Foreign keys is to
+            maintain data integrity and allow navigation between two different instances of an entity.</p>
+
+        <div class="heading2">
+            <h3>Constraints</h3>
+        </div>
+        <p>Constraints are used to limit the type of data that can go into a table. This ensures the accuracy and
+            reliability of the data in the table. If there is any violation between the constraint and the data action,
+            the action is aborted.
+
+            Constraints can be column level or table level. Column level constraints apply to a column, and table level
+            constraints apply to the whole table.
+            <br>
+            <code class="markcode">Not Null</code>,
+            <code class="markcode">Unique</code>,
+            <code class="markcode">Primary Key</code>,
+            <code class="markcode">Foreign Key</code>,
+            <code class="markcode">Check</code>,
+            <code class="markcode">Default</code>,
+        </p>
+
+</body>
+
+
+
+</section>
+
+<!--  <h1 class="heading1" style="background-color: red;"> </h1>
+
+<div class="heading2" style="background-color: blue;">
+    <h3></h3>
+</div>
+<pre class="language-css"><code class="language-css">
+
+</code></pre>
+
+<ul>
+    <li></li>
+</ul>
+ -->
+
+
+
+
+
+
+
+<button onclick="topFunction()" id="myBtn" title="Go to top">
+    <i class="fas fa-arrow-circle-up"></i>
+</button>
+</div>
+
+<footer>
+    <p>Design By Hassan Ali</p>
+</footer>
+
+
+<script src="prism.js"></script>
+<script src="../Files/javaScript.js"></script>
+<script src="https://kit.fontawesome.com/991a8d9f0e.js" crossorigin="anonymous">
+</script>
+
+
+</body>
+
+</html>

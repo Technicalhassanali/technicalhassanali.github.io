@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Design</title>
+  <link rel="icon" type="../image/x-icon" href="../images/html-5.png" />
+  <link rel="stylesheet" href="../Files/style.css">
+  <link rel="stylesheet" href="../Files/prism.css">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+</head>
+
+<body id="darkmode">
+
+  <header>
+    <a href="../index.html" class="logo">Cheat<span>Sheet</span>
+      <img src="../images/html-5.png" style="width:2.3rem;height:inherit;"/>
+  </a>
+    <nav class="navbar">
+        <a href="../index.html">Home</a>
+        <a href="HTML.html">HTML</a>
+        <!-- <a href="src/">CSS</a> -->
+        <a href="JavaScript.html">JavaScript</a>
+        <!-- <a href="src/php.html">PHP</a>
+        <a href="src/jdbc.html">JDBC</a> -->
+        <a href="#" id="btn-dark">Dark Mode off</a>
+    </nav>
+
+    <div class="icons">
+        <div id="menu-btn" class="fas fa-bars"></div>
+    </div>
+</header>
+
+  <div class="container">
+    <h1 class="heading1" style="background-color: red;">HTML and CSS</h1>
+
+    <div class="heading2" style="color: white; background-color: blue">
+      <h3>Fixed Footer Design</h3>
+    </div>
+    <pre class="language-css"><code class="language-css" >.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: red;
+    color: white;
+    text-align: center;
+}
+</code></pre>
+    <div class="heading2" style="color: white; background-color: blue">
+      <h3>Smooth Scroll</h3>
+    </div>
+    <p>Add scroll-behavior: smooth to the &lt;html&gt; element to enable smooth scrolling for the whole page (note:
+      it is also possible to add it to a specific element/scroll container
+    </p>
+    <pre class="language-css"><code class="language-css" >html {
+        scroll-behavior: smooth;
+      }</code></pre>
+
+    <span class="outputh">Example:</span>
+    <p>You can see in the blow example we created two div and give the id and some styling when one section we click
+      the other section open by using <code class="markcode">scroll-behavior:smooth;</code> adding in css.
+    </p>
+    <pre class="language-html"><code class="language-html" >&lt;!DOCTYPE html&gt;
+    &lt;html&gt;
+    &lt;head&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+    &lt;style&gt;
+
+    html {
+        scroll-behavior: smooth;
+      }
+
+    #section1 {
+        height: 500px;
+        background-color: #130f40;
+        padding: 70px;
+        color:white;
+    }
+    #section2 {
+        padding: 70px;
+        height: 500px;
+        background-color: #f9ca24;
+    }
+    .btn{
+    margin-left:50px;
+    height:40px;
+    line-height:40px;
+    background-color:#f2f2f2;
+    display:inline-block;
+    cursor:pointer;
+    }
+    a{text-decoration:none;}
+    &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+
+&lt;div id="section1"&gt;
+  &lt;h2&gt;Section 1&lt;/h2&gt;
+  &lt;p&gt;Click on the link to see the "smooth" scrolling effect.&lt;/p&gt;
+  &lt;a href="#section2" class="btn"&gt;Click Me to Smooth Scroll to Section 2 Below&lt;/a&gt;
+  &lt;p&gt;Note: Remove the scroll-behavior property to remove smooth scrolling.&lt;/p&gt;
+&lt;/div&gt;
+
+
+&lt;div id="section2"&gt;
+  &lt;h2&gt;Section 2&lt;/h2&gt;
+  &lt;a href="#section1" class="btn"&gt;Click Me to Smooth Scroll to Section 1 Above&lt;/a&gt;
+&lt;/div&gt;
+
+    &lt;/body&gt;
+    &lt;/html&gt;</code></pre>
+
+
+    <div class="heading2" style="color: white; background-color: blue">
+      <h3>Label Design</h3>
+    </div>
+    <span class="outputh">Code:</span>
+    <pre class="language-html"><code class="language-html">&lt;style&gt;
+    .label {
+      color: white;
+      padding: 8px;
+      font-family: Arial;
+      cursor:pointer
+    }
+    .success {background-color: #04AA6D;} /* Green */
+    .info {background-color: #2196F3;} /* Blue */
+    .warning {background-color: #ff9800;} /* Orange */
+    .danger {background-color: #f44336;} /* Red */
+    .other {background-color: #e7e7e7; color: black;} /* Gray */
+    &lt;/style&gt;
+
+    &lt;h1&gt;Labels&lt;/h1&gt;
+
+    &lt;span class="label success"&gt;Success&lt;/span&gt;
+    &lt;span class="label info"&gt;Info&lt;/span&gt;
+    &lt;span class="label warning"&gt;Warning&lt;/span&gt;
+    &lt;span class="label danger"&gt;Danger&lt;/span&gt;
+    &lt;span class="label other"&gt;Other&lt;/span&gt;</code></pre>
+
+
+
+
+    <div class="heading2" style="color: white; background-color: blue">
+      <h3>Error Message Notes Show</h3>
+    </div>
+    <br />
+    <style>
+      .fa-check-circle {
+        color: green;
+      }
+
+      .fa-info-circle {
+        color: blue;
+      }
+
+      .fa-exclamation-triangle {
+        color: red;
+      }
+    </style>
+
+
+    <div class="danger size">
+      <p><i class="fas fa-exclamation-triangle"></i> Some text...</p>
+    </div>
+
+    <div class="success size">
+      <p><i class="fas fa-check-circle"></i> Some text...</p>
+    </div>
+
+    <div class="info size">
+      <p><i class="fas fa-info-circle"></i> Some text...</p>
+    </div>
+
+    <div class="warning size">
+      <p><i class="fas fa-exclamation-triangle"></i> Some text...</p>
+    </div>
+    <pre class="language-html"><code class="language-html">&lt;style&gt;
+         .size {margin: 10px 0;padding: 14px 12px;}
+.size>p{margin:0;}
+.danger {
+    background-color: #ffdddd;
+    border-left: 6px solid #f44336;
+}
+.success {
+    background-color: #ddffdd;
+    border-left: 6px solid #04AA6D;
+}
+.info {
+    background-color: #e7f3fe;
+    border-left: 6px solid #2196F3;
+}
+.warning {
+    background-color: #ffffcc;
+    border-left: 6px solid #ffeb3b;
+}
+.fa-check-circle{color:green; }
+.fa-info-circle{ color:blue;}
+.fa-exclamation-triangle{color:red;}
+&lt;/style&gt;
+
+&lt;div class="danger size"&gt;
+  &lt;p&gt;&lt;i class="fas fa-exclamation-triangle"&gt;&lt;/i&gt; Some text...&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class="success size"&gt;
+  &lt;p&gt;&lt;i class="fas fa-check-circle"&gt;&lt;/i&gt;  Some text...&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class="info size"&gt;
+  &lt;p&gt;&lt;i class="fas fa-info-circle"&gt;&lt;/i&gt; Some text...&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class="warning size"&gt;
+  &lt;p&gt;&lt;i class="fas fa-exclamation-triangle"&gt;&lt;/i&gt; Some text...&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+
+
+
+    <div class="heading2" style="color: white; background-color: blue">
+      <h3>Callout Message</h3>
+    </div>
+
+    <pre class="language-html"><code class="language-html">&lt;style&gt;
+body {font-family: Arial, Helvetica, sans-serif;}
+
+.callout {
+  position: fixed;
+  bottom: 35px;
+  right: 20px;
+  margin-left: 20px;
+  max-width: 300px;
+
+}
+.callout-header {
+  padding: 15px 15px;
+  background: green;
+  font-size: 30px;
+  color: white;
+   border-radius:15px 15px 0  0;
+}
+.callout-container {
+  padding: 15px;
+  background-color: #ccc;
+  color: black;
+  border-radius:0 0 15px 15px;
+}
+.closebtn {
+  position: absolute;
+  top: 5px;
+  right: 15px;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+}
+.closebtn:hover {
+  color: lightgrey;
+}
+&lt;/style&gt;
+&lt;div class="callout"&gt;
+&lt;div class="callout-header"&gt;Callout Header&lt;/div&gt;
+&lt;span class="closebtn" onclick="this.parentElement.style.display='none';"&gt;
+×&lt;/span&gt;
+&lt;div class="callout-container"&gt;
+   &lt;p&gt;Some text to describe the callout message.
+   &lt;a href="#"&gt;Learn more&lt;/a&gt; or close it if it is in your way.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+
+    <div class="heading2" style="color: white; background-color: blue">
+      <h3>ToolTip Design</h3>
+    </div>
+    <p>a message which appears when a cursor is positioned over an icon, image, hyperlink, or other element in a
+      graphical user interface.</p>
+    <pre class="language-html"><code class="language-html">&lt;!DOCTYPE html&gt;
+        &lt;html&gt;
+        &lt;style&gt;
+        .tooltip {
+          position: relative;
+          display: inline-block;
+          border-bottom: 1px solid black;
+        }
+        .tooltip .tooltiptext {
+          visibility: hidden;
+          width: 120px;
+          background-color: black;
+          color: #fff;
+          text-align: center;
+          border-radius: 6px;
+          padding: 5px 0;
+
+          /* Position the tooltip */
+          position: absolute;
+          z-index: 1;
+        }
+
+
+        .tooltip:hover .tooltiptext {
+          visibility: visible;
+        }
+
+        &lt;/style&gt;
+        &lt;body style="text-align:center;"&gt;
+
+        &lt;div class="tooltip"&gt;Hover over me
+          &lt;span class="tooltiptext"&gt;Tooltip text&lt;/span&gt;
+        &lt;/div&gt;
+
+
+        &lt;/body&gt;
+        &lt;/html&gt;</code></pre>
+
+    <p><strong>Left &amp; Right Position of Tooltip:</strong></p>
+    <p>In Left Position you can change the right property to left and in right you can change left to right
+      property in css.
+    </p>
+    <pre class="language-css"><code class="language-css" >.tooltip .tooltiptext {
+        top: -5px;
+        right: 105%;  /* Change Position right : 105%; */
+      }</code></pre>
+
+    <p><strong>Top &amp; Bottom Position of Tooltip:</strong></p>
+    <p>In Change the Position you can simply change the bottom,top property of css.</p>
+    <pre class="language-css"><code class="language-css" >.tooltip .tooltiptext {
+        width: 120px;
+        bottom: 100%; /*In Top top: 100%; */
+        left: 50%;
+        margin-left: -60px;
+        /* Use half of the width (120/2 = 60), to center the tooltip */
+      }</code></pre>
+
+
+
+    <p><strong>Arrow Position of Tooltip in Top, Bottom , Left, Right:</strong></p>
+    <p>In Arrow Position you can just change the </p>
+    <pre class="language-css"><code class="language-css" >/*Top Arrow ToolTip*/
+  .tooltip .tooltiptext {
+    top: 150%;
+      left: 50%;
+      margin-left: -60px;
+          }
+    /* Adding Arrow Blow the  tooltiptext */
+     .tooltip .tooltiptext::after {
+      content: "";
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: transparent transparent black transparent;
+    }
+_________________________________________________________________________
+    /*Bottom Arrow ToolTip*/
+    .tooltip .tooltiptext {
+        bottom: 150%;
+      left: 50%;
+      margin-left: -60px;
+          }
+    .tooltip .tooltiptext::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: black transparent transparent transparent;
+    }
+
+_________________________________________________________________________
+    /*Left Arrow ToolTip*/
+    .tooltip .tooltiptext {
+        top: -5px;
+          right: 110%;
+              }
+        .tooltip .tooltiptext::after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 100%;
+          margin-top: -5px;
+          border-width: 5px;
+          border-style: solid;
+          border-color: transparent transparent transparent black;
+        }
+_________________________________________________________________________
+    /*Right Arrow ToolTip*/
+    .tooltip .tooltiptext {
+        top: -5px;
+          left: 110%;
+              }
+        .tooltip .tooltiptext::after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          right: 100%;
+          margin-top: -5px;
+          border-width: 5px;
+          border-style: solid;
+          border-color: transparent black transparent transparent;
+        }
+_________________________________________________________________________
+</code></pre>
+
+    <h1 class="heading1" style="background-color: red;">Navigation Bar</h1>
+
+
+    <div class="heading2">
+      <h3> 1. Responsive Navigation Bar Design</h3>
+    </div>
+
+    <span class="outputh">HTML FILE:</span>
+    <pre class="language-html"><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;title&gt;Responsive Navbar | Hassan Ali&lt;/title&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;script src=&quot;https://kit.fontawesome.com/991a8d9f0e.js&quot; crossorigin=&quot;anonymous&quot;&gt;
+&lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;nav&gt;
+      &lt;input type=&quot;checkbox&quot; id=&quot;check&quot;&gt;
+      &lt;label for=&quot;check&quot; class=&quot;checkbtn&quot;&gt;
+        &lt;i class=&quot;fas fa-bars&quot;&gt;&lt;/i&gt;
+      &lt;/label&gt;
+
+      &lt;label class=&quot;logo&quot;&gt;DesignX&lt;/label&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a class=&quot;active&quot; href=&quot;#&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;#&quot;&gt; Services   &lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;#&quot;&gt; About      &lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;#&quot;&gt; Contact US &lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;#&quot;&gt; Feedback   &lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/nav&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+    <span class="outputh">CSS FILE:</span>
+    <pre class="language-css"><code class="language-css">* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+:root{
+    --nav-height:60px;
+}
+body {
+  font-family: verdana;
+}
+
+nav {
+  background: #0082e6;
+  height: var(--nav-height);
+  width: 100%;
+}
+label.logo {
+  color: white;
+  font-size: 35px;
+  line-height: var(--nav-height);
+  padding: 0 100px;
+  font-weight: bold;
+}
+nav ul {
+  float: right;
+  margin-right: 20px;
+}
+nav ul li {
+  display: inline-block;
+  line-height: var(--nav-height);
+  margin: 0 5px;
+  font-weight: 400;
+}
+nav ul li a {
+  color: white;
+  font-size: 17px;
+  padding: 14px 16px;
+  border-radius: 3px;
+  text-transform: uppercase;
+}
+a.active,a:hover {
+  background: #1b9bff;
+  transition: 0.5s;
+}
+
+.checkbtn {
+  font-size: 30px;
+  color: white;
+  float: right;
+  line-height: var(--nav-height);
+  margin-right: 40px;
+  cursor: pointer;
+  display: none;
+}
+#check {
+  display: none;
+}
+@media (max-width: 952px) {
+  label.logo {
+    font-size: 30px;
+    padding-left: 50px;
+  }
+  nav ul li a {
+    font-size: 16px;
+  }
+}
+@media (max-width: 858px) {
+  .checkbtn {
+    display: block;
+  }
+  ul {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #2c3e50;
+    top: 60px;
+    left: -100%;
+    text-align: center;
+    transition: all 0.5s;
+  }
+  nav ul li {
+    display: block;
+    margin: 50px 0;
+    line-height: 30px;
+  }
+  nav ul li a {
+    font-size: 20px;
+  }
+  a:hover,a.active {
+    background: none;
+    color: #0082e6;
+  }
+  #check:checked ~ ul {
+    left: 0;
+  }
+}</code></pre>
+    <div class="heading2">
+      <h3> 2.Navigation Bar Hover underline Animation</h3>
+    </div>
+    <pre class="language-css"><code class="language-css">li a::before {
+	content: "";
+	position: absolute;
+	top: 90%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	width: 0;
+	height: 3px;
+	background-color: black;
+	transition: all 0.3s linear;
+
+}
+li a:hover::before{
+	width: 100%;
+	background-color: red;
+}</code></pre>
+
+
+
+    <h1 class="heading1" style="background-color: red;">Form Input Show</h1>
+
+    <pre class="language-html"><code class="language-html">&lt;form action=&quot;#&quot;&gt;
+        &lt;label for=&quot;f&quot;&gt;Enter the Text&lt;/label&gt;&lt;br&gt;
+        &lt;textarea name=&quot;text&quot; id=&quot;texts&quot; cols=&quot;30&quot; rows=&quot;5&quot; oninput=&quot;f()&quot;&gt;&lt;/textarea&gt;
+    &lt;/form&gt;
+    &lt;p id=&quot;demo&quot; oninput=&quot;f()&quot;&gt;&lt;/p&gt;
+    &lt;script&gt;
+        function f(){
+            let a = document.getElementById(&quot;texts&quot;).value;
+            let demo = document.getElementById(&quot;demo&quot;);
+            demo.innerHTML = a;
+        }
+    &lt;/script&gt;</code></pre>
+
+
+    <div class="heading2">
+      <h3> Image Slider using HtML and CSS </h3>
+    </div>
+    <span class="outputh">HTML FILE:</span>
+    <pre class="language-html"><code class="language-html">&lt;div class=&quot;container&quot;&gt;
+&lt;div class=&quot;wrapper&quot;&gt;
+	&lt;img src=&quot;images/g-1.jpg&quot; alt=&quot;&quot;&gt;
+	&lt;img src=&quot;images/g-2.jpg&quot; alt=&quot;&quot;&gt;
+	&lt;img src=&quot;images/g-3.jpg&quot; alt=&quot;&quot;&gt;
+	&lt;img src=&quot;images/g-4.jpg&quot; alt=&quot;&quot;&gt;
+	&lt;img src=&quot;images/g-5.jpg&quot; alt=&quot;&quot;&gt;
+&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+    <span class="outputh">CSS FILE:</span>
+    <pre class="language-css"><code class="language-css">*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body{
+  background-color: #7aacff;
+}
+.container{
+  width: 70%;
+  position: absolute;
+  transform: translate(-50%,-50%);
+  top: 50%;
+  left: 50%;
+  overflow: hidden;
+  border: 20px solid #ffffff;
+  border-radius: 8px;
+  box-shadow: 10px 25px 30px rgba(30,30,200,0.3);
+}
+.wrapper{
+  width: 100%;
+  display: flex;
+  animation: slide 16s infinite;
+}
+@keyframes slide{
+  0%{transform: translateX(0); }
+  25%{transform: translateX(0);}
+  30%{transform: translateX(-100%);}
+  50%{transform: translateX(-100%);}
+  55%{transform: translateX(-200%);}
+  75%{transform: translateX(-200%);}
+  80%{transform: translateX(-300%);}
+  100%{transform: translateX(-300%);}
+}
+img{
+  width: 100%;
+}</code></pre>
+
+    <div class="heading2">
+      <h3> div animation </h3>
+    </div>
+    <p> create only div in the html then you can see the animation</p>
+    <pre class="language-css"><code class="language-css">*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #784BA0;
+    background-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
+
+}
+div{
+    background-color: #784BA0;
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    border-radius: 5px;
+    overflow: hidden;
+}
+div:before{
+    content:"";
+    width: 150%;
+    height: 150%;
+    background-image: conic-gradient(
+        #04b0ee 20deg,
+        transparent 120deg
+    );
+    position: absolute;
+    top:-20%;
+    left:-20%;
+    animation:rotate 2s infinite linear;
+}
+div:hover{
+
+    box-shadow: 5px 5px 40px #f2f2f2;
+}
+@keyframes rotate {
+    100%{
+        transform: rotate(-360deg);
+    }
+}
+div::after{
+    content: "Awasome";
+    background-color: white;
+    width: 94%;
+    height: 94%;
+    display: grid;
+    place-content: center;
+    position: absolute;
+    top:3%;
+    left:3%;
+    border-radius: 5px;
+}</code></pre>
+
+
+
+    <!--
+<h1 class="heading1" style="background-color: red;">Navigation Bar</h1>
+
+
+<div class="heading2">
+  <h3> </h3>
+</div>
+<span class="output"></span>
+<pre class="language-css"><code class="language-css">
+</code></pre>
+-->
+
+  </div>
+  <button onclick="topFunction()" id="myBtn" title="Go to top">
+    <i class="fas fa-arrow-circle-up"></i>
+  </button>
+  <script src="../Files/prism.js"></script>
+  <script src="../Files/javaScript.js"></script>
+  <!-- <script src="https://kit.fontawesome.com/991a8d9f0e.js" crossorigin="anonymous"> -->
+  </script>
+</body>
+
+</html>

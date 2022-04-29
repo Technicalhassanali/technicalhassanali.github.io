@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Network Design &amp; Management</title>
+	<link rel="stylesheet" href="../Files/style.css" />
+	<link rel="stylesheet" href="../Files/prism.css" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+</head>
+
+<body id="darkmode">
+	<header>
+        <a href="../index.html" class="logo">ND<span>M</span></a>
+        <nav class="navbar">
+            <a href="../index.html">Home</a>
+            <!-- <a href="src/">CSS</a> -->
+            <a href="#" id="btn-dark">Dark Mode off</a>
+        </nav>
+        <div class="icons">
+            <div id="menu-btn" class="fas fa-bars"></div>
+        </div>
+    </header>
+
+	<div class="container">
+
+		<h5 class="heading1" style="color: white; background-color: red">Network Design &amp; Management</h5>
+		<div class="heading2">
+			<h3> Create VLAN in Switch For DHCP
+				<span style="float:right; margin-right:15px;"> Step 01</span>
+			</h3>
+		</div>
+		<pre class="language-javascript" data-line="4-6,8-10,12-14"><code class="language-javascript">switch&gt;# en(enable)
+switch&gt;# config terminal
+                    // First Vlan Create
+switch(config)# vlan 10
+switch(config-vlan)# name Hassan
+switch(config-vlan)# exit
+					// Second Vlan Create
+switch(config)# vlan 20
+switch(config-vlan)# name Ali
+switch(config-vlan)# exit
+                   // Third Vlan Create
+switch(config)# vlan 30
+switch(config-vlan)# name Khan
+switch(config-vlan)# exit</code></pre>
+
+		<div class="heading2">
+			<h3> Assigning the VLAN To Pc
+				<span style="float:right; margin-right:15px;"> Step 02</span>
+			</h3>
+		</div>
+
+		<pre class="language-javascript"><code class="language-javascript">switch(config)# interface fastEthernet0/1
+switch(config-if)# interface fastEthernet0/1
+switch(config-if)# interface fastEthernet0/1
+switch(config-if)# switchport mode access
+switch(config-if)# switchport access vlan 10
+switch(config)# exit
+/* Same Method Apply for other vlan*/</code></pre>
+
+		<div class="Short-head">
+			<h3>List of VLAN Created In Switch </h3>
+		</div>
+		<pre class="language-javascript"><code class="language-javascript">Method 01 : switch(config)# do show vlan brief
+Method 02 : switch# show vlan brief</code></pre>
+
+
+		<div class="Short-head">
+			<h3>Made Switchport Trunk</h3>
+		</div>
+		<pre class="language-javascript"><code class="language-javascript">	switch(config)# interface fastEthernet0/1
+	switch(config-if)# no shutdown
+	switch(config-if)# switchport mode trunk</code></pre>
+
+		<div class="heading2">
+			<h3> Config Router As DHCP
+				<span style="float:right; margin-right:15px;"> Step 03</span>
+			</h3>
+		</div>
+		<p>Select Router<code class="markcode">ISR4321</code> insert the port in gigathernet.</p>
+		<pre class="language-javascript" data-line="6-8"><code class="language-javascript">		Router# ip dhcp pool ?            // list of pool
+	Router# ip dhcp binding ?        // list of binding hardware
+	/*Creating Pool */
+	Router(config)# interface gi0/0/0
+	Router(config-if)# no shut
+	Router(config-if)# exit
+	Router(config)# exit
+	Router# show interface gi0/0/0
+	// Creating Sub Interface of One Port
+	// Creating 1st Interface
+	Router(config)# interface gi0/0/0.1
+	Router(config-subif)# interface gi0/0/0.1
+	Router(config-subif)# ip address 10.0.0.1 255.255.255.0
+	Router(config-subif)# encapsulation dot1Q ?
+	Router(config-subif)# encapsulation dot1Q 10
+	Router(config-subif)# exit
+
+	Router(config)# interface gi0/0/0.2
+	Router(config-subif)# ip address 20.0.0.1 255.255.255.0
+	Router(config-subif)# encapsulation dot1Q ?
+	Router(config-subif)# encapsulation dot1Q 20
+
+
+	Router(config)# interface gi0/0/0.3
+	Router(config-subif)# ip address 30.0.0.1 255.255.255.0
+	Router(config-subif)# encapsulation dot1Q ?
+	Router(config-subif)# encapsulation dot1Q 30
+	Router(config-subif)# exit
+
+
+	Router(config)# ip dhcp pool dhcpvlan10(poolname)
+	Router(config)# network 10.0.0.0 255.255.255.0
+	Router(config)# default-router 10.0.0.1 (Gateway)
+	
+	Router(config)# ip dhcp pool dhcpvlan20(poolname)
+	Router(config)# network 20.0.0.0 255.255.255.0
+	Router(config)# default-router 20.0.0.1 (Gateway)
+
+	Router(config)# ip dhcp pool dhcpvlan30(poolname)
+	Router(config)# network 30.0.0.0 255.255.255.0
+	Router(config)# default-router 30.0.0.1 (Gateway)
+
+	Router# ip dhcp pool ?            // list of pool
+	Router# ip dhcp binding ?        // list of binding hardware</code></pre>
+
+
+		<!--
+<h5 class="heading1" style="color: white; background-color: red"></h5>
+
+ data-line="4-6,8-10,12-14"
+
+<div class="heading2">
+	<h3>  </h3>
+</div>
+
+<div class="Short-head">
+   <h3> </h3>
+</div>
+
+<p><code class="markcode"></code></p>
+<pre class="language-javascript"><code class="language-javascript"></code></pre>
+
+
+<div class="heading2">
+<h3> 
+    <span style="float:right; margin-right:15px;"> Step 03</span>
+</h3>
+</div>
+ -->
+		<button onclick="topFunction()" id="myBtn" title="Go to top">
+			<i class="fas fa-arrow-circle-up"></i>
+		</button>
+
+	</div>
+	<!--container div end-->
+
+
+
+	<!--   <footer>
+        <p>Design By Hassan Ali</p>
+    </footer> -->
+
+
+	<script src="../Files/prism.js"></script>
+	<script src="../Files/javaScript.js"></script>
+	<script src="https://kit.fontawesome.com/991a8d9f0e.js" crossorigin="anonymous">
+	</script>
+</body>
+
+</html>

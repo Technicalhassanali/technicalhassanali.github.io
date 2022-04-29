@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Engineering</title>
+    <link rel="stylesheet" href="../Files/style.css">
+    <link rel="stylesheet" href="../Files/prism.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+</head>
+
+<body id="darkmode">
+	<header>
+	    <a href="../index.html" class="logo">Web<span>Engineering</span>
+            <img src="../images/code.png" class="white-filter" style="width:2.3rem;height:inherit;"/>
+        </a>
+	<nav class="navbar">
+		<a href="../index.html">Home</a>
+		<a href="HTML.html">HTML</a>
+		<a href="JavaScript.html">JavaScript</a>
+		<a href="#" id="btn-dark">Dark Mode off</a>
+	</nav>
+    
+	<div class="icons">
+		<div id="menu-btn" class="fas fa-bars"></div>
+	</div>
+</header>
+<div class="container">
+    
+    <h5 class="heading1" style="color: white; background-color: red">HTML</h5>
+    <p><strong>HTML</strong> stands for HyperText Markup Language.HTML is the standard markup language for documents
+        designed to be displayed in a web browser. </p>
+
+    <p><strong class="outputh">Syntax : </strong></p>
+    <pre class="language-html"><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+&lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+    <div class="heading2">
+        <h3>&lt;head&gt; &lt;/head&gt; | Head Tag </h3>
+    </div>
+    <p><code class="markcode">&lt;head&gt;</code>tag contains metadata (document title, character set, styles,
+        links, scripts), specific information about the web page that is not displayed to the user. Metadata
+        provides browsers and search engines with technical information about the web page.</p>
+    <pre class="language-html"><code class="language-html">&lt;head&gt;&lt;/head&gt;</code></pre>
+
+
+    <div class="heading2">
+        <h3>&lt;title&gt; &lt;/title&gt; | Title Tag</h3>
+    </div>
+    <p><code class="markcode">&lt;title&gt;</code>tag defines the title of the document. The title must be
+        text-only, and it is shown in the browser's title bar or in the page's tab.It is most important for search
+        engine optimization(SEO).</p>
+    <pre class="language-html"><code class="language-html">&lt;title&gt;Title Page &lt;/title&gt;</code></pre>
+
+    <div class="heading2">
+        <h3>&lt;body&gt; &lt;body&gt; | Body Tag </h3>
+    </div>
+    <p><code class="markcode">&lt;body&gt;</code> ag defines the main content of an HTML document which displays on
+        the browser. It can contain text content, paragraphs, headings, images, tables, links, videos, etc. </p>
+    <pre class="language-html"><code class="language-html">&lt;body&gt; &lt;body&gt;</code></pre>
+
+    <div class="Short-head">
+        <h3>HTML Tag Attributes</h3>
+    </div>
+    <p><code class="markcode">color=&quot;&quot;</code> attribute is change the color of text.</p>
+    <p><code class="markcode">bgColor=&quot;&quot;</code> attribute is change the background color of text.</p>
+    <p><code class="markcode">width=&quot;&quot;</code> attribute is the set the width(length) of element.</p>
+    <p><code class="markcode">height=&quot;&quot;</code> attribute is used for set the height of element.</p>
+
+
+    <div class="heading2">
+        <h3>&lt;a&gt; &lt;/a&gt; | HyperLink Tag</h3>
+    </div>
+    <p>this tag name is hyperlink, and it is used to link the other document or file.&lt;a&gt; tag defines a
+        hyperlink, which is used to link from one page to another.</p>
+    <pre class="language-html"><code class="language-html">//target = "_blank"," _parent","_self"," _top";
+&lt;a href=&quot;url&quot; target="_blank" &gt;&lt;/a&gt;</code></pre>
+
+    <div class="heading2">
+        <h3>&lt;img&gt; &lt;/img&gt; | Image Tag </h3>
+    </div>
+    <p><code class="markcode">&lt;img&gt;</code> tag is used to embed an image in an HTML page.</p>
+    <p><strong class="outputh">Attributes :</strong></p>
+    <p><code class="markcode">src </code>Specifies the path to the image.</p>
+    <p><code class="markcode">alt </code> name of image,that help in seo.</p>
+    <pre
+        class="language-html"><code class="language-html">&lt;img src=&quot;img_girl.jpg&quot; alt=&quot;Girl in a jacket&quot;/&gt;</code></pre>
+
+    <div class="heading2">
+        <h3>&lt;table&gt; &lt;/table&gt; | Table Tag</h3>
+    </div>
+    <p><code class="markcode">&lt;table&gt;</code> tag is used make the table in the doucment.</p>
+    <p><code class="markcode">border="1"</code> attribute is used for the border of table.</p>
+    <p><code class="markcode">&lt;caption&gt;</code>tag defines a table caption.caption is the display name of
+        table.</p>
+    <p><code class="markcode">&lt;tbody&gt;</code>tag is used to group the body content in an HTML table.</p>
+    <p><code class="markcode">&lt;tr&gt;</code>tag is used for table row.</p>
+    <p><code class="markcode">&lt;th&gt;</code>tag is used for table height.</p>
+    <p><code class="markcode">&lt;td&gt;</code>tag is used for table data.</p>
+    <p><code class="markcode">&lt;tfoot&gt;</code>tag is used to group footer content in an HTML table.</p>
+
+
+    <pre class="language-html"><code class="language-html">&lt;table border=&quot;1&quot; &gt;
+&lt;caption&gt;Table Name&lt;/caption&gt;
+&lt;tbody&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Heading 1&lt;/th&gt;
+        &lt;th&gt;Heading 2&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;column 1&lt;/td&gt;
+        &lt;td&gt;column 2&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/tbody&gt;
+    &lt;tfoot&gt;  
+    &lt;tr&gt;
+        &lt;td&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/tfoot&gt;
+&lt;/table&gt;</code></pre>
+
+
+    <p><code class="markcode">colspan = &quot;2&quot;</code>The value of the colspan attribute represents the number
+        of columns to span.</p>
+    <p><code class="markcode">rowspan = &quot;2&quot;</code>The value of the rowspan attribute represents the number
+        of rows to span.</p>
+
+    <div class="heading2">
+        <h3> &lt;font&gt;&lt;/font&gt; | Font Tag
+            <span style="float:right; margin-right:15px;">
+                Not Supported in HTML 5
+            </span>
+        </h3>
+    </div>
+    <p><code class="markcode">color=&quot;&quot;</code> used for color of the text change.</p>
+    <p><code class="markcode">face=&quot;&quot;</code> attribute is used for change the font family of text.</p>
+    <p><code class="markcode">size=&quot;&quot;</code> attribute is used increase the size of text.</p>
+    <pre
+        class="language-html"><code class="language-html">&lt;font color=&quot;red&quot; face=&quot;Verdana,sans-serif&quot; size=&quot;+1&quot;&gt;Text...&lt;/font&gt;</code></pre>
+
+
+
+<h5 class="heading1" style="color: white; background-color: red">Tomcat Path</h5>
+<p>Download the Apache Tomcat Server or other option is Xampp Server</p>
+<div class="heading2">
+<h3> Set Path </h3>
+</div>
+<p>Paste the zip file on <code class="markcode">C:\</code> drive and extract the folder.After Extract the Folder
+Set Following Path.</p>
+
+<pre class="language-javascript line-numbers" data-line="1,3,5,8"><code class="language-javascript match-braces" >Set the JAVA_HOME variable
+C:\program Files\java\jdk-17
+Set the CATALINA_HOME variable
+D:\xampp\tomcat
+Set the CLASSPATH variable
+C:\D:\xampp\tomcat\lib\tomcat\servlet-api.jar;.
+D:\xampp\tomcat\lib\tomcat\jsp-api.jar
+Test the Server
+</code></pre>
+
+    <div class="heading2">
+        <h3> Manager App </h3>
+    </div>
+    <p> When you click on the <code class="markcode">Manager App</code> on the Home page of Tomcat,they
+        should say user name or password to enter then you open the Tomcat installation folder then open
+        <code class="markcode">D:\xampp\tomcat\conf</code> then open <code class="markcode">tomcat-users.xml</code>
+        to replace all the code with blow code.Then you enter the username and passwork in the tomact then they
+        work.
+    </p>
+    <pre class="language-xml "><code class="language-xml match-braces" >&lt;?xml version='1.0' encoding='utf-8'?&gt;
+&lt;tomcat-users&gt;
+&lt;role rolename=&quot;admin-gui&quot;/&gt;
+&lt;role rolename=&quot;admin-script&quot;/&gt;
+&lt;role rolename=&quot;manager-gui&quot;/&gt;
+&lt;role rolename=&quot;manager-status&quot;/&gt;
+&lt;role rolename=&quot;manager-script&quot;/&gt;
+&lt;role rolename=&quot;manager-jmx&quot;/&gt;
+&lt;user name=&quot;admin&quot; password=&quot;admin&quot; roles=&quot;admin-gui,admin-script,manager-gui,manager-status,manager-script,manager-jmx&quot;/&gt;
+&lt;/tomcat-users&gt;</code></pre>
+
+
+
+
+<h5 class="heading1" style="color: white; background-color: red">Web Engineering Final</h5>
+
+<div class="heading2">
+    <h3>DOM Events</h3>
+</div>
+<div class="alert-message alert-success short-b">A JavaScript can be executed when an event occurs, like when a
+    user clicks on an HTML element.<br />
+    <b>Syntax:</b> onclick=JavaScript
+</div>
+<br />
+    <pre class="output">
+    Click         onclick
+    Double Click  ondblclick
+    Right Click   oncontextmenu
+    Mouse Hover   onmouseenter
+    Mouse Out     onmouseout
+    Mouse Down    onmousedown
+    Mouse Up      onmouseup
+    Key Press     onKeypress
+    Key Up        onKeyup
+    Load          onload
+    Unload        onunload
+    Resize        onresize
+    Scroll        onscroll
+</pre>
+
+
+<div class="heading2">
+    <h3>How to make function?</h3>
+</div>
+<p>In javaScript we have 3 types to make the function. It depend on you what function you choose.</p>
+<pre  class="language-html"><code class="language-html match-braces">&lt;script&gt;
+                        /* Method 1 */
+function nameOfFunction () {
+    //code
+    }
+                        /* Method 2 */
+let a = function(){
+    //code
+}
+                        /* Method 3 Arrow function */
+let nameOfFunction = () =>{
+    //code
+}    
+&lt;/script&gt;</code></pre>
+
+<div class="heading2">
+    <h3>How to Find Even or  odd Number Using if else condition? </h3>
+ </div>
+
+<pre  class="language-html"><code class="language-html match-braces">    &lt;label for=&quot;number&quot;&gt;Enter Number&lt;/label&gt;
+    &lt;input type=&quot;number&quot; name=&quot;number&quot; id=&quot;number&quot; /&gt;
+    &lt;button onclick=&quot;EvenOdd()&quot;&gt;Check&lt;/button&gt;
+    &lt;!-- JavaScript code --&gt;
+    &lt;script&gt;
+      let a = document.getElementById(&quot;number&quot;).value;
+      function EvenOdd() {
+        if (a % 2 == 0) {
+          document.write(&quot;Even Value&quot;);
+        } else {
+          document.write(&quot;Odd Value&quot;);
+        }
+      }
+    &lt;/script&gt;</code></pre>
+
+<div class="heading2">
+    <h3>Check Enter character is Vowel or Not?</h3>
+</div>
+<pre  class="language-html"><code class="language-html match-braces">&lt;label for=&quot;charCheck&quot;&gt;Enter Character :&lt;/label&gt;
+&lt;input type=&quot;text&quot; id=&quot;textInput&quot; /&gt;
+&lt;br /&gt;
+&lt;button onclick=&quot;vowelCheck()&quot;&gt;Click to See&lt;/button&gt;
+&lt;p id=&quot;result&quot;&gt;&lt;/p&gt;
+                                &lt;!-- JavaScript --&gt;
+&lt;script&gt;
+    function vowelCheck() {
+    let txt = document.getElementById(&quot;textInput&quot;).value.toLowerCase();
+    /* toLowerCase() function is help to change the all character that user enter is 
+        in lowercase.The codition will be false on the user
+        the capital letter even letter is vowel */
+        if(txt == 'a' || txt == 'e' || txt == 'i' || txt == 'o' || txt == 'u'){
+            document.getElementById('result').innerHTML = &quot;Vowel Character &quot;+txt;
+        }else{
+            document.getElementById('result').innerHTML = &quot;Not Voewl Charcter &quot;;
+        }
+    }
+&lt;/script&gt;    
+
+                        &lt;!-- Method 02 Using OnInput Event --&gt;
+
+&lt;label for=&quot;charCheck&quot;&gt;Enter Character :&lt;/label&gt;
+&lt;input type=&quot;text&quot; id=&quot;textInput&quot; oninput=&quot;vowelCheck()&quot; /&gt;
+&lt;p id=&quot;result&quot;&gt;&lt;/p&gt;
+                            &lt;!-- JavaScript --&gt;
+&lt;script&gt;
+function vowelCheck() {
+let txt = document.getElementById(&quot;textInput&quot;).value;
+/* It take only first character of your whole string then show the results */
+let text = txt.charAt(0).toLowerCase();
+    if(text == 'a' || text == 'e' || text == 'i' || text == 'o' || text == 'u'){
+        document.getElementById('result').innerHTML = &quot;Vowel Character &quot;+text;
+    }else{
+        document.getElementById('result').innerHTML = &quot;Not Voewl Charcter &quot;;
+    }
+}
+&lt;/script&gt; </code></pre>
+
+<div class="heading2">
+    <h3>Get Three Number as Input through User and check What Number is Greater using if-else condition?</h3>
+</div>
+<pre  class="language-html"><code class="language-html match-braces">&lt;div&gt;
+    &lt;label for=&quot;firstnumber&quot;&gt;First Number :&lt;/label&gt;&lt;br /&gt;
+    &lt;input type=&quot;number&quot; name=&quot;&quot; id=&quot;firstNumber&quot; /&gt;
+  &lt;/div&gt;
+  &lt;div&gt;
+    &lt;label for=&quot;secondnumber&quot;&gt;Second Number :&lt;/label&gt;&lt;br /&gt;
+    &lt;input type=&quot;number&quot; name=&quot;&quot; id=&quot;secondNumber&quot; /&gt;
+  &lt;/div&gt;
+  &lt;div&gt;
+    &lt;label for=&quot;thirdnumber&quot;&gt;Third Number :&lt;/label&gt;&lt;br /&gt;
+    &lt;input type=&quot;number&quot; name=&quot;&quot; id=&quot;thirdNumber&quot; /&gt;
+  &lt;/div&gt;
+  
+  &lt;button onclick=&quot;checkbtn()&quot;&gt;Check&lt;/button&gt;
+  &lt;p id=&quot;result&quot;&gt;&lt;/p&gt;
+  &lt;script&gt;
+    function checkbtn() {
+      let number1 = parseInt(document.getElementById(&quot;firstNumber&quot;).value);
+      let number2 = parseInt(document.getElementById(&quot;secondNumber&quot;).value);
+      let number3 = parseInt(document.getElementById(&quot;thirdNumber&quot;).value);
+      let reslut = document.getElementById(&quot;result&quot;);
+      if (number1 &gt;= number2 &amp;&amp; number1 &gt;= number3) {
+        result.innerHTML = &quot;Number 1 is greater&quot;;
+      } else if (number2 &gt;= number1 &amp;&amp; number2 &gt;= number3) {
+        result.innerHTML = &quot;Number 2 is greater&quot;;
+      } else {
+        reslut.innerHTML = &quot;Number 3 is Greater&quot;;
+      }
+    }
+  &lt;/script&gt;</code></pre>
+   
+<div class="heading2">
+    <h3>Using for loop Count Value Print 0 to 20</h3>
+</div>
+<pre  class="language-html"><code class="language-html match-braces">&lt;p id=&quot;demo&quot;&gt;&lt;/p&gt;
+&lt;script&gt;
+    let d = document.getElementById('demo');
+    for(var i = 0; i&lt;=20; i++){
+        d.innerHTML += i +&quot; &quot;;
+    }
+&lt;/script&gt;</code></pre>
+ 
+<div class="heading2">
+    <h3>Using For Loop Print 0 to 20 odd Number ?</h3>
+</div>
+<pre  class="language-html"><code class="language-html match-braces">&lt;p id=&quot;demo&quot;&gt;&lt;/p&gt;
+&lt;script&gt;
+    let d = document.getElementById('demo');
+    for(var i = 0; i&lt;=20; i++){
+        if(i%2 == 0 ){
+        }else{
+            d.innerHTML +=i +&quot; &quot;;
+        }
+    }
+&lt;/script&gt;</code></pre>
+    
+
+        
+<div class="heading2">
+    <h3>Print Even Number Using For Loop?</h3>
+</div>
+<pre  class="language-html"><code class="language-html match-braces">&lt;p id=&quot;demo&quot;&gt;&lt;/p&gt;
+&lt;script&gt;
+    let d = document.getElementById('demo');
+    for(var i = 0; i&lt;=20; i++){
+        if(i%2 == 0 ){           
+        d.innerHTML +=i +&quot; &quot;;
+        }else{
+        }
+    }
+&lt;/script&gt;</code></pre>
+ 
+
+        
+<div class="heading2">
+    <h3>Click to Print Number</h3>
+</div>
+<pre  class="language-html"><code class="language-html match-braces">&lt;button onclick=&quot;printNumber()&quot;&gt;Click to Print Number&lt;/button&gt;
+    &lt;p id=&quot;demo&quot;&gt;&lt;/p&gt;
+    &lt;script&gt;
+        let d = document.getElementById(&quot;demo&quot;);
+        function printNumber() {
+        for (var i = 0; i &lt;= 20; i++) {
+            d.innerHTML +=i +&quot;&lt;br&gt;&quot;;
+        }
+        }
+    &lt;/script&gt;
+    </code></pre>
+     
+<div class="heading2">
+    <h3>Get Three Input a,b,c and Apply the add,subtract,multiply and divide two Number?</h3>
+</div>
+<pre  class="language-html"><code class="language-html match-braces">&lt;div&gt;
+&lt;label for=&quot;a&quot;&gt;A = &lt;/label&gt;
+&lt;input type=&quot;number&quot; id=&quot;a&quot; /&gt;
+&lt;/div&gt;
+&lt;div&gt;
+&lt;label for=&quot;b&quot;&gt;B = &lt;/label&gt;
+&lt;input type=&quot;number&quot; id=&quot;b&quot; /&gt;
+&lt;/div&gt;
+&lt;div&gt;
+&lt;label for=&quot;c&quot;&gt;C = &lt;/label&gt;
+&lt;input type=&quot;number&quot; id=&quot;c&quot; /&gt;
+&lt;/div&gt;
+
+&lt;br&gt;
+&lt;button onclick=&quot;addValue()&quot;&gt;Add&lt;/button&gt;
+&lt;button onclick=&quot;SubtractValue()&quot;&gt;Subtract&lt;/button&gt;
+&lt;button onclick=&quot;multiplyValue()&quot;&gt;Multiply&lt;/button&gt;
+&lt;button onclick=&quot;&quot;&gt;Divide&lt;/button&gt;
+
+&lt;div id=&quot;demo&quot;&gt;&lt;/div&gt;
+
+&lt;script&gt;
+function addValue() {
+    let a = Number(document.getElementById(&quot;a&quot;).value);
+    let b = Number(document.getElementById(&quot;b&quot;).value);
+    let c = Number(document.getElementById(&quot;c&quot;).value);
+    let add = a + b + c;
+    document.getElementById(&quot;demo&quot;).innerHTML = &quot;Add a,b,c = &quot; + add;
+}
+function SubtractValue() {
+    let a = Number(document.getElementById(&quot;a&quot;).value);
+    let b = Number(document.getElementById(&quot;b&quot;).value);
+    let c = Number(document.getElementById(&quot;c&quot;).value);
+    let subtract = a - b - c;
+    document.getElementById(&quot;demo&quot;).innerHTML = &quot;Subtract a,b,c = &quot; + subtract;
+
+}
+function multiplyValue() {
+    let a = Number(document.getElementById(&quot;a&quot;).value);
+    let b = Number(document.getElementById(&quot;b&quot;).value);
+    let c = Number(document.getElementById(&quot;c&quot;).value);
+    let multiply = a * b * c;
+    document.getElementById(&quot;demo&quot;).innerHTML = &quot;Multiplication a,b,c = &quot; + multiply;
+}
+function Divide() {
+    let a = Number(document.getElementById(&quot;a&quot;).value);
+    let b = Number(document.getElementById(&quot;b&quot;).value);
+    let c = Number(document.getElementById(&quot;c&quot;).value);
+    let divide = a / b;
+    document.getElementById(&quot;demo&quot;).innerHTML = &quot;Divide a,b = &quot; + divide;
+}
+&lt;/script&gt;</code></pre>
+
+<div class="heading2">
+	<h3>Print Number Using While Loop?</h3>
+</div>
+<pre  class="language-html"><code class="language-html match-braces">&lt;button onclick=&quot;printNumber()&quot;&gt;Click to See Counting&lt;/button&gt;
+&lt;p id=&quot;result&quot;&gt;&lt;/p&gt;
+&lt;script&gt;
+    function printNumber(){
+        let i = 1;
+        while(i&lt;20){
+            document.getElementById('result').innerHTML +=i +&quot;&lt;br&gt;&quot;;
+            i++;
+        }
+    }
+&lt;/script&gt;</code></pre>
+
+<div class="heading2">
+	<h3>Sum Number Using Prompt  </h3>
+</div>
+<pre  class="language-html"><code class="language-html match-braces">&lt;script&gt;
+    let a = parseInt(prompt(&quot;Enter First Value&quot;));
+    let b = parseInt(prompt(&quot;Enter First Value&quot;));
+    sum = a + b;
+    document.write("Sum = " + sum);
+&lt;/script&gt;</code></pre>
+
+<div class="heading2">
+	<h3> How to make Table Using For loop?  </h3>
+</div>
+<pre  class="language-html"><code class="language-html match-braces">&lt;div&gt;
+    &lt;label for=&quot;multiply&quot;&gt;Multiply Number&lt;/label&gt; &lt;br /&gt;
+    &lt;input type=&quot;number&quot; id=&quot;startN&quot; /&gt; &lt;br /&gt;
+  &lt;/div&gt;
+  &lt;div&gt;
+    &lt;label for=&quot;end&quot;&gt;End Number&lt;/label&gt; &lt;br /&gt;
+    &lt;input type=&quot;number&quot; id=&quot;endN&quot; /&gt;
+  &lt;/div&gt;
+  &lt;br /&gt;
+  &lt;button onclick=&quot;printTable()&quot;&gt;Print Table&lt;/button&gt;
+  &lt;p id=&quot;result&quot;&gt;&lt;/p&gt;
+  &lt;script&gt;
+  function printTable() {
+  let start = Number(document.getElementById(&quot;startN&quot;).value);
+  let end  =  Number(document.getElementById(&quot;endN&quot;).value);
+  let printvalue = document.getElementById(&quot;result&quot;);
+  
+  for (var i = 1; i &lt;= end; i++) {
+      printvalue.innerHTML += (start + &quot;*&quot; + i + &quot; = &quot;) + (i * start) + &quot;&lt;br&gt;&quot;;
+  }
+  }
+  &lt;/script&gt;</code></pre>
+
+<div class="Short-head">
+    <h3>Print Table using While Loop? </h3>
+</div>
+<pre  class="language-html"><code class="language-html match-braces">&lt;div&gt;
+&lt;label for=&quot;multiply&quot;&gt;Multiply Number&lt;/label&gt; &lt;br /&gt;
+&lt;input type=&quot;number&quot; id=&quot;startN&quot; /&gt; &lt;br /&gt;
+&lt;/div&gt;
+&lt;div&gt;
+&lt;label for=&quot;end&quot;&gt;End Number&lt;/label&gt; &lt;br /&gt;
+&lt;input type=&quot;number&quot; id=&quot;endN&quot; /&gt;
+&lt;/div&gt;
+&lt;br /&gt;
+&lt;button onclick=&quot;printTable()&quot;&gt;Print Table&lt;/button&gt;
+&lt;p id=&quot;result&quot;&gt;&lt;/p&gt;
+&lt;script&gt;
+function printTable() {
+    let start = Number(document.getElementById(&quot;startN&quot;).value);
+    let end = Number(document.getElementById(&quot;endN&quot;).value);
+    let printvalue = document.getElementById(&quot;result&quot;);
+    var i = 1;
+    while (i &lt;= end) {
+    printvalue.innerHTML += (start + &quot; * &quot; + i + &quot;=&quot;) + start * i + &quot;&lt;br&gt;&quot;;
+    i++;
+    }
+}
+&lt;/script&gt;</code></pre>
+
+<div class="heading2">
+	<h3>Print Even Using for loop?  </h3>
+</div>
+<p>if you initialize the i=1 then they print odd value.</p>
+<pre  class="language-html"><code class="language-html match-braces">&lt;button onclick=&quot;checkEven()&quot;&gt;Check&lt;/button&gt;
+&lt;script&gt;
+    function checkEven() {
+    let d = document.getElementById(&quot;demo&quot;);
+    for (var i = 0; i &lt; 20; i = i + 2) {
+        document.write(i +&quot;&lt;br&gt;&quot;);
+    }
+    }
+&lt;/script&gt;</code></pre>
+
+<div class="heading2">
+	<h3>Multiply Even Value in Using for loop?</h3>
+</div>
+<pre  class="language-html"><code class="language-html match-braces">&lt;button onclick=&quot;printTable()&quot;&gt;Print Table&lt;/button&gt;
+&lt;p id=&quot;result&quot;&gt;&lt;/p&gt;
+&lt;script&gt;
+    function printTable() {
+    let printvalue = document.getElementById(&quot;result&quot;);
+    let p = 1;
+    for (var i = 2; i &lt;= 20; i = i + 2) {
+        p = p * i;
+        printvalue.innerHTML += p + &quot;&lt;br&gt;&quot;;
+    }
+    }
+&lt;/script&gt;</code></pre>
+
+<div class="heading2">
+	<h3>Multiply odd Value in Using for loop?</h3>
+</div>
+<pre  class="language-html"><code class="language-html match-braces">&lt;button onclick=&quot;printTable()&quot;&gt;Print Table&lt;/button&gt;
+&lt;p id=&quot;result&quot;&gt;&lt;/p&gt;
+&lt;script&gt;
+    function printTable() {
+    let printvalue = document.getElementById(&quot;result&quot;);
+    let p = 1;
+    for (var i = 1; i &lt;= 20; i = i + 2) {
+        p = p * i;
+        printvalue.innerHTML += p + &quot;&lt;br&gt;&quot;;
+    }
+    }
+&lt;/script&gt;</code></pre>
+
+
+        <!--
+<h5 class="heading1" style="color: white; background-color: red"></h5>
+
+<div class="Short-head">
+   <h3> </h3>
+</div>
+<span class="marku"></span>
+
+<div class="heading2">
+	<h3>  </h3>
+</div>
+<p><code class="markcode"></code></p>
+<pre  class="language-html"><code class="language-html match-braces"></code></pre>
+
+<h5 class="outputh">Output :</h5>
+<pre class="output">  30</pre>
+
+ <ul>
+    <li></li>
+  </ul>
+     -->
+
+
+     <button onclick="topFunction()" id="myBtn" title="Go to top">
+        <i class="fas fa-arrow-circle-up"></i>
+    </button>
+    
+    </div>
+    
+
+
+    <footer>
+        <p>Design By Hassan Ali</p>
+    </footer>
+
+
+    <script src="../Files/javaScript.js"></script>
+    <script src="../Files/prism.js"></script>
+    <script src="https://kit.fontawesome.com/991a8d9f0e.js" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>
