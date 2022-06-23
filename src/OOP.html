@@ -9,6 +9,105 @@
 	<link rel="stylesheet" href="../Files/style.css" />
 	<link rel="stylesheet" href="../Files/prism.css" />
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <style type="text/css" media="screen">
+    	:root {
+	--main-bg-color: #f0f0f0;
+	--item-hover-bg: #8e44ad;
+	--item-hover-color: #fff;
+	--item-bg-color: #fff;
+	--box-header-bg: #9b59b6;
+	--box-header-color: #fff;
+}
+
+body {
+	font-family: 'Roboto', sans-serif;
+/*
+	display: flex;
+	justify-content: center;
+	align-items: center;
+*/
+
+}
+
+.box {
+	width: 75%;
+margin:auto;
+/*
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	display: flex;
+	flex-direction: column;
+	background: var(--main-bg-color);
+	box-shadow: 0 14px 28px rgba(0,0,0,0.25),
+							0 10px 10px rgba(0,0,0,0.22);
+*/
+	
+}
+
+.box-header {
+	padding: 10px 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: var(--box-header-bg);
+	color: var(--box-header-color);
+	font-size:20px;
+	border-radius: 5px 5px 0 0;
+}
+
+.list {
+	position: relative;
+	padding: unset;
+	margin: 0;
+	width: 100%;	
+}
+
+.item {
+	list-style: none;
+	padding: 15px 40px;
+	box-shadow: 0 5px 25px rgba(0,0,0,.1);
+	position: relative;
+	background: var(--item-bg-color);
+	cursor: pointer;
+	transition: all 0.3s;
+}
+.item a {
+	text-decoration: none;
+	color:inherit;
+}
+
+.item:hover {
+	transform: scale(1.1);
+	z-index: 100;
+	background: var(--item-hover-bg);
+	color: var(--item-hover-color);
+}
+
+.item i {
+	color: var(--item-hover-bg);
+}
+
+.item:hover i {
+	color: var(--item-hover-color);
+}
+
+.right-icon {
+	position: absolute;
+	right: 13px;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.left-icon {
+	position: absolute;
+	left: 13px;
+	top: 50%;
+	transform: translateY(-50%);
+}
+    	
+    </style>
 </head>
 
 <body id="darkmode">
@@ -26,14 +125,49 @@
             <div id="menu-btn" class="fas fa-bars"></div>
         </div>
     </header>
+<br><br>
+<br><br>
+<br><br>
+<div class="box">
+		<div class="box-header">
+				Content List
+		</div>
+		<ul class="list">
+			<li class="item">
+				<i class="left-icon far fa-circle"></i>
+				<a href="#constructor" title="">
+				<div>
+					Constructor
+				</div>
+				</a>
+			</li>
+			<li class="item">
+				<i class="left-icon far fa-circle"></i>
+				<a href="#propertiesoop" title="">
+				<div>
+					Properties/Principle of OOP
+				</div>
+				</a>
+			</li>
+			<li class="item">
+				<i class="left-icon far fa-circle"></i>
+				<a href="#getter-setter" title="">
+				<div>
+					Getter and Setter
+				</div>
+				</a>
+			</li>
+		</ul>
+	</div>
 
 	<div class="container">
+
 		<h5 class="heading1" style="color: white; background-color: red">Object Oriented Programming</h5>
 
 		<p><span class="markcode">new keyword</span> When we create the object and give the new keyword then it take the
 			space in heap data.Those place the object can store.</p>
 
-		<div class="heading2">
+		<div class="heading2" id="constructor">
 			<h3>Constructor</h3>
 		</div>
 		<p>Constructor mean is the something construct (make thing).In Java Constructor are used to construct the
@@ -75,7 +209,7 @@ public class OOP{
 		}
 	}</code></pre>
 
-		<div class="heading2">
+		<div class="heading2" id="ali">
 			<h3>Parameterized Constructor </h3>
 		</div>
 		<p>In Parameterized constructor we have passed the argument in the method/function of constructor. <br>
@@ -139,7 +273,7 @@ public class OOP{
 					work.</span></p>
 		</div>
 
-		<h5 class="heading1" style="color: white; background-color: red">Properties/Principle of OOP</h5>
+		<h5 class="heading1" style="color: white; background-color: red" id="propertiesoop">Properties/Principle of OOP</h5>
 		<p>
 			<span><strong>01 : </strong>Polymorphism</span> <br>
 			<span><strong>02 : </strong>Inheritance</span> <br>

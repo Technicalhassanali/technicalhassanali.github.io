@@ -10,6 +10,7 @@
 }
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 70px;
   font-size: 62.5%; /*1rem = 10px */
 }
 :root {
